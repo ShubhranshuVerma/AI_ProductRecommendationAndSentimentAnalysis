@@ -1,0 +1,251 @@
+product_id,product_name,category,subcategory,brand,price,average_rating,review_count,popularity_score,stock_status
+PROD00001,BeautyPlus Makeup Product 001,Beauty,Makeup,BeautyPlus,718.71,4.8,114,0.797,Out of Stock
+PROD00002,BeautyPlus Haircare Product 002,Beauty,Haircare,BeautyPlus,1240.4,4.5,90,0.85,In Stock
+PROD00003,ComfortLiving Furniture Product 003,Home & Kitchen,Furniture,ComfortLiving,282.31,4.7,63,0.909,In Stock
+PROD00004,UrbanStyle Men Product 004,Fashion,Men,UrbanStyle,6301.34,3.6,37,0.576,In Stock
+PROD00005,StyleHub Men Product 005,Fashion,Men,StyleHub,4283.58,4.3,34,0.367,Low Stock
+PROD00006,NovaTech Audio Product 006,Electronics,Audio,NovaTech,6281.85,4.0,60,0.882,In Stock
+PROD00007,ActiveX Yoga Product 007,Sports,Yoga,ActiveX,592.15,3.9,14,0.629,In Stock
+PROD00008,KnowledgeHub Self Help Product 008,Books,Self Help,KnowledgeHub,6985.97,3.3,16,0.546,In Stock
+PROD00009,MoveWell Yoga Product 009,Sports,Yoga,MoveWell,1247.42,4.6,52,0.52,In Stock
+PROD00010,SportMax Running Product 010,Sports,Running,SportMax,1155.63,4.8,164,0.538,In Stock
+PROD00011,StyleHub Women Product 011,Fashion,Women,StyleHub,26362.2,3.7,31,0.495,In Stock
+PROD00012,HomeCraft Appliances Product 012,Home & Kitchen,Appliances,HomeCraft,596.75,4.4,5,0.958,In Stock
+PROD00013,ActiveX Yoga Product 013,Sports,Yoga,ActiveX,6329.87,3.3,138,0.569,In Stock
+PROD00014,Harvest Snacks Product 014,Grocery,Snacks,Harvest,1167.18,4.0,19,0.843,In Stock
+PROD00015,NovaTech Audio Product 015,Electronics,Audio,NovaTech,3693.47,4.8,107,0.708,In Stock
+PROD00016,BookHouse Science Product 016,Books,Science,BookHouse,3034.13,3.8,287,0.661,Low Stock
+PROD00017,Peak Fitness Product 017,Sports,Fitness,Peak,21534.86,3.9,46,0.686,In Stock
+PROD00018,GoodFood Snacks Product 018,Grocery,Snacks,GoodFood,5609.84,4.4,51,0.953,In Stock
+PROD00019,Casa Appliances Product 019,Home & Kitchen,Appliances,Casa,7843.0,4.5,72,0.626,In Stock
+PROD00020,ComfortLiving Kitchen Product 020,Home & Kitchen,Kitchen,ComfortLiving,20238.42,3.4,68,0.641,In Stock
+PROD00021,PlayMax Console Product 021,Gaming,Console,PlayMax,37634.02,4.1,53,0.823,In Stock
+PROD00022,KnowledgeHub Science Product 022,Books,Science,KnowledgeHub,5222.16,4.6,63,0.636,In Stock
+PROD00023,NatureBest Organic Product 023,Grocery,Organic,NatureBest,736.49,3.4,29,0.729,In Stock
+PROD00024,DailyBasket Packaged Food Product 024,Grocery,Packaged Food,DailyBasket,1942.26,4.2,71,0.839,In Stock
+PROD00025,Zenith Audio Product 025,Electronics,Audio,Zenith,7804.51,4.5,126,0.788,In Stock
+PROD00026,BeautyPlus Haircare Product 026,Beauty,Haircare,BeautyPlus,1674.34,4.8,60,0.768,In Stock
+PROD00027,DailyBasket Packaged Food Product 027,Grocery,Packaged Food,DailyBasket,797.06,3.2,26,0.886,In Stock
+PROD00028,Aura Personal Care Product 028,Beauty,Personal Care,Aura,1169.55,3.3,62,0.728,Out of Stock
+PROD00029,ModeFit Accessories Product 029,Fashion,Accessories,ModeFit,626.87,5.0,57,0.935,In Stock
+PROD00030,Electra Mobile Product 030,Electronics,Mobile,Electra,6455.68,3.1,351,0.672,Low Stock
+PROD00031,Casa Appliances Product 031,Home & Kitchen,Appliances,Casa,1102.01,4.5,44,0.837,In Stock
+PROD00032,ModeFit Sportswear Product 032,Fashion,Sportswear,ModeFit,5797.62,3.8,27,0.522,In Stock
+PROD00033,DailyBasket Organic Product 033,Grocery,Organic,DailyBasket,3739.69,4.8,183,0.885,In Stock
+PROD00034,XCore Accessories Product 034,Gaming,Accessories,XCore,2991.06,3.9,25,0.828,In Stock
+PROD00035,NovaTech Mobile Product 035,Electronics,Mobile,NovaTech,1138.88,4.2,166,0.658,In Stock
+PROD00036,Glow Fragrance Product 036,Beauty,Fragrance,Glow,7943.62,3.8,143,0.83,In Stock
+PROD00037,TechPro Mobile Product 037,Electronics,Mobile,TechPro,536.94,3.6,136,0.857,In Stock
+PROD00038,UrbanStyle Footwear Product 038,Fashion,Footwear,UrbanStyle,127.6,3.6,103,0.741,In Stock
+PROD00039,Harvest Packaged Food Product 039,Grocery,Packaged Food,Harvest,3948.21,4.2,323,0.403,In Stock
+PROD00040,FreshChoice Organic Product 040,Grocery,Organic,FreshChoice,21998.19,4.2,145,0.881,In Stock
+PROD00041,UrbanStyle Accessories Product 041,Fashion,Accessories,UrbanStyle,2441.36,3.2,70,0.815,In Stock
+PROD00042,Aura Haircare Product 042,Beauty,Haircare,Aura,1457.2,4.9,119,0.712,In Stock
+PROD00043,TrendX Sportswear Product 043,Fashion,Sportswear,TrendX,166.54,4.9,22,0.59,Out of Stock
+PROD00044,GameTech Games Product 044,Gaming,Games,GameTech,1643.7,3.6,33,0.708,Low Stock
+PROD00045,ClassicWear Sportswear Product 045,Fashion,Sportswear,ClassicWear,893.0,4.5,21,0.266,In Stock
+PROD00046,XCore Games Product 046,Gaming,Games,XCore,5560.76,4.2,58,0.505,In Stock
+PROD00047,PageTurner Science Product 047,Books,Science,PageTurner,680.04,3.5,26,0.812,In Stock
+PROD00048,DailyBasket Organic Product 048,Grocery,Organic,DailyBasket,33252.98,4.7,35,0.295,In Stock
+PROD00049,Casa Storage Product 049,Home & Kitchen,Storage,Casa,1446.96,4.1,29,0.69,In Stock
+PROD00050,Harvest Breakfast Product 050,Grocery,Breakfast,Harvest,43374.86,3.9,23,0.901,Low Stock
+PROD00051,TechPro Smart Home Product 051,Electronics,Smart Home,TechPro,2034.21,4.3,306,0.534,In Stock
+PROD00052,PaperTrail Science Product 052,Books,Science,PaperTrail,1262.3,4.5,40,0.723,In Stock
+PROD00053,SportMax Cricket Product 053,Sports,Cricket,SportMax,34071.92,3.9,86,0.773,In Stock
+PROD00054,ActiveX Cricket Product 054,Sports,Cricket,ActiveX,368.68,3.6,23,0.66,In Stock
+PROD00055,PaperTrail Science Product 055,Books,Science,PaperTrail,4052.93,4.3,392,0.65,In Stock
+PROD00056,TechPro Mobile Product 056,Electronics,Mobile,TechPro,140.8,3.3,40,0.544,In Stock
+PROD00057,BookHouse Self Help Product 057,Books,Self Help,BookHouse,1295.63,4.3,12,0.78,In Stock
+PROD00058,SoundMax Audio Product 058,Electronics,Audio,SoundMax,517.17,3.9,84,0.55,In Stock
+PROD00059,GameZone Controller Product 059,Gaming,Controller,GameZone,6878.67,4.8,34,0.747,Low Stock
+PROD00060,MoveWell Fitness Product 060,Sports,Fitness,MoveWell,7530.55,3.8,55,0.515,In Stock
+PROD00061,ReadWell Science Product 061,Books,Science,ReadWell,271.19,4.7,81,0.957,Low Stock
+PROD00062,NatureTouch Personal Care Product 062,Beauty,Personal Care,NatureTouch,38478.15,3.9,143,0.751,Low Stock
+PROD00063,FitPro Running Product 063,Sports,Running,FitPro,1457.89,2.6,108,0.856,In Stock
+PROD00064,ReadWell Self Help Product 064,Books,Self Help,ReadWell,3622.93,4.1,24,0.491,Low Stock
+PROD00065,NatureTouch Personal Care Product 065,Beauty,Personal Care,NatureTouch,2724.43,3.9,21,0.712,In Stock
+PROD00066,Casa Decor Product 066,Home & Kitchen,Decor,Casa,6749.56,4.9,27,0.461,In Stock
+PROD00067,TechPro Audio Product 067,Electronics,Audio,TechPro,638.57,4.6,15,0.319,In Stock
+PROD00068,Aura Skincare Product 068,Beauty,Skincare,Aura,43594.12,3.7,68,0.76,In Stock
+PROD00069,XCore Controller Product 069,Gaming,Controller,XCore,1251.79,3.6,58,0.867,In Stock
+PROD00070,Peak Running Product 070,Sports,Running,Peak,7156.27,4.1,28,0.643,In Stock
+PROD00071,XCore Console Product 071,Gaming,Console,XCore,42043.9,3.6,38,0.438,Low Stock
+PROD00072,NatureBest Packaged Food Product 072,Grocery,Packaged Food,NatureBest,7137.33,4.4,88,0.841,Low Stock
+PROD00073,DailyHome Decor Product 073,Home & Kitchen,Decor,DailyHome,689.22,3.9,91,0.871,In Stock
+PROD00074,Glow Fragrance Product 074,Beauty,Fragrance,Glow,5489.61,4.5,174,0.771,In Stock
+PROD00075,FreshChoice Beverages Product 075,Grocery,Beverages,FreshChoice,5398.07,4.6,85,0.835,In Stock
+PROD00076,TrendX Men Product 076,Fashion,Men,TrendX,1098.99,2.9,86,0.739,In Stock
+PROD00077,Casa Storage Product 077,Home & Kitchen,Storage,Casa,3235.79,3.8,18,0.796,In Stock
+PROD00078,KitchenPro Decor Product 078,Home & Kitchen,Decor,KitchenPro,6787.38,4.2,144,0.56,In Stock
+PROD00079,Peak Fitness Product 079,Sports,Fitness,Peak,3754.46,4.6,70,0.625,In Stock
+PROD00080,FitPro Fitness Product 080,Sports,Fitness,FitPro,34119.8,3.6,55,0.415,In Stock
+PROD00081,TrendX Accessories Product 081,Fashion,Accessories,TrendX,1292.56,4.9,11,0.573,In Stock
+PROD00082,XCore Accessories Product 082,Gaming,Accessories,XCore,1441.25,4.2,33,0.768,In Stock
+PROD00083,StyleHub Men Product 083,Fashion,Men,StyleHub,7439.92,3.5,67,0.742,In Stock
+PROD00084,DailyBasket Snacks Product 084,Grocery,Snacks,DailyBasket,2333.81,4.2,68,0.895,Low Stock
+PROD00085,PaperTrail Business Product 085,Books,Business,PaperTrail,4019.16,4.4,17,0.409,In Stock
+PROD00086,ActiveX Outdoor Product 086,Sports,Outdoor,ActiveX,3859.67,3.8,28,0.323,In Stock
+PROD00087,BookHouse Business Product 087,Books,Business,BookHouse,7351.3,4.5,209,0.867,In Stock
+PROD00088,FreshChoice Snacks Product 088,Grocery,Snacks,FreshChoice,7100.1,4.7,63,0.688,Out of Stock
+PROD00089,PixelPro Games Product 089,Gaming,Games,PixelPro,6152.73,4.1,242,0.718,In Stock
+PROD00090,UrbanStyle Sportswear Product 090,Fashion,Sportswear,UrbanStyle,1403.49,4.3,54,0.824,In Stock
+PROD00091,Aura Personal Care Product 091,Beauty,Personal Care,Aura,6668.97,3.8,116,0.898,In Stock
+PROD00092,PixelPro Controller Product 092,Gaming,Controller,PixelPro,1925.67,3.9,27,0.566,Low Stock
+PROD00093,TechPro Smart Home Product 093,Electronics,Smart Home,TechPro,805.25,3.4,240,0.72,Low Stock
+PROD00094,FreshChoice Beverages Product 094,Grocery,Beverages,FreshChoice,842.59,3.8,130,0.653,In Stock
+PROD00095,UrbanStyle Footwear Product 095,Fashion,Footwear,UrbanStyle,27464.48,4.1,13,0.744,Out of Stock
+PROD00096,PaperTrail Business Product 096,Books,Business,PaperTrail,1327.71,4.3,35,0.985,In Stock
+PROD00097,KnowledgeHub Self Help Product 097,Books,Self Help,KnowledgeHub,2154.89,4.0,225,0.873,In Stock
+PROD00098,Harvest Beverages Product 098,Grocery,Beverages,Harvest,34583.88,3.5,69,0.584,In Stock
+PROD00099,TechPro Mobile Product 099,Electronics,Mobile,TechPro,356.4,3.9,46,0.733,In Stock
+PROD00100,Casa Appliances Product 100,Home & Kitchen,Appliances,Casa,1353.25,4.5,28,0.845,In Stock
+PROD00101,Harvest Breakfast Product 101,Grocery,Breakfast,Harvest,4450.92,2.7,110,0.798,Low Stock
+PROD00102,ComfortLiving Kitchen Product 102,Home & Kitchen,Kitchen,ComfortLiving,1315.44,4.0,82,0.569,In Stock
+PROD00103,ComfortLiving Storage Product 103,Home & Kitchen,Storage,ComfortLiving,5641.96,4.4,20,0.903,In Stock
+PROD00104,Electra Smart Home Product 104,Electronics,Smart Home,Electra,1388.58,3.1,138,0.747,In Stock
+PROD00105,NatureBest Snacks Product 105,Grocery,Snacks,NatureBest,1053.84,3.4,57,0.625,In Stock
+PROD00106,GameTech Controller Product 106,Gaming,Controller,GameTech,9773.15,3.5,58,0.462,In Stock
+PROD00107,Zenith Audio Product 107,Electronics,Audio,Zenith,34679.27,4.5,224,0.544,In Stock
+PROD00108,ReadWell Self Help Product 108,Books,Self Help,ReadWell,161.39,3.6,32,0.787,In Stock
+PROD00109,Harvest Breakfast Product 109,Grocery,Breakfast,Harvest,1308.59,3.6,138,0.529,Low Stock
+PROD00110,ReadWell Business Product 110,Books,Business,ReadWell,4830.09,3.9,40,0.605,In Stock
+PROD00111,ClassicWear Accessories Product 111,Fashion,Accessories,ClassicWear,1451.07,4.0,25,0.757,Low Stock
+PROD00112,TrendX Men Product 112,Fashion,Men,TrendX,1191.29,4.6,12,0.427,In Stock
+PROD00113,ComfortLiving Kitchen Product 113,Home & Kitchen,Kitchen,ComfortLiving,4026.51,4.6,100,0.582,Low Stock
+PROD00114,BookHouse Self Help Product 114,Books,Self Help,BookHouse,1672.78,3.5,106,0.696,In Stock
+PROD00115,Peak Cricket Product 115,Sports,Cricket,Peak,26439.79,3.8,69,0.47,In Stock
+PROD00116,PixelPro Console Product 116,Gaming,Console,PixelPro,32624.05,3.4,63,0.726,In Stock
+PROD00117,GameZone Console Product 117,Gaming,Console,GameZone,7812.9,4.2,136,0.833,In Stock
+PROD00118,DailyHome Appliances Product 118,Home & Kitchen,Appliances,DailyHome,4672.74,4.5,56,0.557,In Stock
+PROD00119,PixelPro Console Product 119,Gaming,Console,PixelPro,1477.86,4.2,28,0.723,In Stock
+PROD00120,PageTurner Technology Product 120,Books,Technology,PageTurner,4979.75,4.7,42,0.872,In Stock
+PROD00121,SoundMax Smart Home Product 121,Electronics,Smart Home,SoundMax,3891.14,3.7,36,0.663,In Stock
+PROD00122,KnowledgeHub Business Product 122,Books,Business,KnowledgeHub,6380.53,4.3,34,0.382,In Stock
+PROD00123,DailyBasket Beverages Product 123,Grocery,Beverages,DailyBasket,7036.64,3.8,16,0.746,In Stock
+PROD00124,PageTurner Business Product 124,Books,Business,PageTurner,6301.48,4.0,73,0.674,In Stock
+PROD00125,BookHouse Business Product 125,Books,Business,BookHouse,209.51,4.1,39,0.609,Out of Stock
+PROD00126,PaperTrail Fiction Product 126,Books,Fiction,PaperTrail,1040.93,3.3,11,0.618,In Stock
+PROD00127,Casa Appliances Product 127,Home & Kitchen,Appliances,Casa,7081.46,4.1,97,0.693,Out of Stock
+PROD00128,Harvest Breakfast Product 128,Grocery,Breakfast,Harvest,32753.52,3.9,25,0.528,In Stock
+PROD00129,GameZone Controller Product 129,Gaming,Controller,GameZone,119.43,3.9,66,0.769,In Stock
+PROD00130,SoundMax Mobile Product 130,Electronics,Mobile,SoundMax,1008.07,4.0,45,0.652,In Stock
+PROD00131,PlayMax Accessories Product 131,Gaming,Accessories,PlayMax,1177.61,3.9,111,0.557,In Stock
+PROD00132,GameZone Console Product 132,Gaming,Console,GameZone,313.39,5.0,12,0.83,In Stock
+PROD00133,FreshChoice Packaged Food Product 133,Grocery,Packaged Food,FreshChoice,31335.18,3.4,76,0.787,In Stock
+PROD00134,XCore Console Product 134,Gaming,Console,XCore,982.57,3.9,58,0.618,In Stock
+PROD00135,GameTech Gaming Audio Product 135,Gaming,Gaming Audio,GameTech,4880.13,4.6,72,0.661,In Stock
+PROD00136,GoodFood Packaged Food Product 136,Grocery,Packaged Food,GoodFood,6072.3,4.3,92,0.924,Low Stock
+PROD00137,FreshChoice Beverages Product 137,Grocery,Beverages,FreshChoice,3954.03,3.0,110,0.466,In Stock
+PROD00138,ModeFit Footwear Product 138,Fashion,Footwear,ModeFit,10262.33,4.7,24,0.797,In Stock
+PROD00139,NatureTouch Fragrance Product 139,Beauty,Fragrance,NatureTouch,503.22,3.5,76,0.696,In Stock
+PROD00140,PureCare Fragrance Product 140,Beauty,Fragrance,PureCare,5113.61,4.9,50,0.77,In Stock
+PROD00141,NatureBest Beverages Product 141,Grocery,Beverages,NatureBest,3732.6,4.0,45,0.716,In Stock
+PROD00142,PureCare Fragrance Product 142,Beauty,Fragrance,PureCare,2977.2,4.4,46,0.739,In Stock
+PROD00143,DailyBasket Beverages Product 143,Grocery,Beverages,DailyBasket,948.05,3.6,80,0.889,In Stock
+PROD00144,XCore Gaming Audio Product 144,Gaming,Gaming Audio,XCore,879.56,4.4,26,0.547,Out of Stock
+PROD00145,BeautyPlus Makeup Product 145,Beauty,Makeup,BeautyPlus,2223.0,4.0,39,0.909,Low Stock
+PROD00146,NovaTech Audio Product 146,Electronics,Audio,NovaTech,5322.94,3.1,101,0.87,In Stock
+PROD00147,SportMax Cricket Product 147,Sports,Cricket,SportMax,40319.86,4.1,61,0.66,In Stock
+PROD00148,PageTurner Technology Product 148,Books,Technology,PageTurner,1728.99,3.5,26,0.674,In Stock
+PROD00149,FreshChoice Packaged Food Product 149,Grocery,Packaged Food,FreshChoice,40174.36,4.0,82,0.844,In Stock
+PROD00150,UrbanStyle Sportswear Product 150,Fashion,Sportswear,UrbanStyle,2169.32,4.8,64,0.843,In Stock
+PROD00151,ActiveX Outdoor Product 151,Sports,Outdoor,ActiveX,5957.14,4.2,57,0.598,In Stock
+PROD00152,DailyBasket Snacks Product 152,Grocery,Snacks,DailyBasket,3342.25,3.9,465,0.599,In Stock
+PROD00153,Peak Cricket Product 153,Sports,Cricket,Peak,1046.11,3.4,108,0.875,Low Stock
+PROD00154,NatureBest Breakfast Product 154,Grocery,Breakfast,NatureBest,1596.64,5.0,25,0.317,In Stock
+PROD00155,PlayMax Controller Product 155,Gaming,Controller,PlayMax,1154.91,3.9,12,0.385,In Stock
+PROD00156,Peak Running Product 156,Sports,Running,Peak,3865.17,3.1,24,0.923,In Stock
+PROD00157,NatureTouch Skincare Product 157,Beauty,Skincare,NatureTouch,113.93,3.9,25,0.421,Low Stock
+PROD00158,ClassicWear Men Product 158,Fashion,Men,ClassicWear,1474.72,4.8,48,0.431,In Stock
+PROD00159,SoundMax Accessories Product 159,Electronics,Accessories,SoundMax,5490.26,4.9,247,0.717,Low Stock
+PROD00160,NovaTech Smart Home Product 160,Electronics,Smart Home,NovaTech,7200.48,4.0,50,0.743,In Stock
+PROD00161,KnowledgeHub Business Product 161,Books,Business,KnowledgeHub,491.69,3.8,12,0.525,In Stock
+PROD00162,Casa Appliances Product 162,Home & Kitchen,Appliances,Casa,7213.06,3.8,15,0.73,In Stock
+PROD00163,GoodFood Breakfast Product 163,Grocery,Breakfast,GoodFood,7166.82,4.1,192,0.942,In Stock
+PROD00164,PureCare Fragrance Product 164,Beauty,Fragrance,PureCare,4785.53,3.7,19,0.92,In Stock
+PROD00165,KnowledgeHub Self Help Product 165,Books,Self Help,KnowledgeHub,2120.19,4.4,47,0.593,In Stock
+PROD00166,KnowledgeHub Technology Product 166,Books,Technology,KnowledgeHub,7908.68,4.6,261,0.427,In Stock
+PROD00167,NovaTech Laptop Product 167,Electronics,Laptop,NovaTech,3481.31,5.0,16,0.64,In Stock
+PROD00168,ClassicWear Accessories Product 168,Fashion,Accessories,ClassicWear,1036.49,4.2,39,0.769,In Stock
+PROD00169,MoveWell Yoga Product 169,Sports,Yoga,MoveWell,7562.78,4.2,53,0.797,In Stock
+PROD00170,SportMax Outdoor Product 170,Sports,Outdoor,SportMax,1198.7,3.5,32,0.389,In Stock
+PROD00171,DailyHome Appliances Product 171,Home & Kitchen,Appliances,DailyHome,1736.59,4.6,65,0.633,In Stock
+PROD00172,Peak Outdoor Product 172,Sports,Outdoor,Peak,1096.3,4.3,58,0.691,Low Stock
+PROD00173,UrbanStyle Men Product 173,Fashion,Men,UrbanStyle,1910.44,4.3,5,0.724,In Stock
+PROD00174,StyleHub Footwear Product 174,Fashion,Footwear,StyleHub,4912.78,4.6,116,0.514,In Stock
+PROD00175,PaperTrail Self Help Product 175,Books,Self Help,PaperTrail,7975.58,3.7,108,0.706,In Stock
+PROD00176,DailyBasket Packaged Food Product 176,Grocery,Packaged Food,DailyBasket,277.97,4.4,82,0.529,In Stock
+PROD00177,DailyHome Storage Product 177,Home & Kitchen,Storage,DailyHome,397.7,4.7,96,0.558,In Stock
+PROD00178,ComfortLiving Storage Product 178,Home & Kitchen,Storage,ComfortLiving,10344.47,3.9,30,0.629,Low Stock
+PROD00179,ClassicWear Men Product 179,Fashion,Men,ClassicWear,1281.97,3.0,64,0.818,In Stock
+PROD00180,BeautyPlus Makeup Product 180,Beauty,Makeup,BeautyPlus,780.3,3.1,29,0.767,In Stock
+PROD00181,Casa Storage Product 181,Home & Kitchen,Storage,Casa,1351.95,4.5,46,0.944,Low Stock
+PROD00182,Peak Running Product 182,Sports,Running,Peak,866.55,4.0,68,0.935,In Stock
+PROD00183,Zenith Accessories Product 183,Electronics,Accessories,Zenith,4960.35,2.3,63,0.684,Low Stock
+PROD00184,GameTech Gaming Audio Product 184,Gaming,Gaming Audio,GameTech,293.93,4.4,25,0.659,In Stock
+PROD00185,DailyBasket Packaged Food Product 185,Grocery,Packaged Food,DailyBasket,19634.73,4.2,36,0.931,In Stock
+PROD00186,PlayMax Gaming Audio Product 186,Gaming,Gaming Audio,PlayMax,20254.9,3.7,61,0.392,In Stock
+PROD00187,FreshChoice Breakfast Product 187,Grocery,Breakfast,FreshChoice,36824.39,3.8,61,0.876,In Stock
+PROD00188,ReadWell Self Help Product 188,Books,Self Help,ReadWell,1596.06,3.3,28,0.48,Out of Stock
+PROD00189,Electra Smart Home Product 189,Electronics,Smart Home,Electra,766.17,4.5,48,0.744,Low Stock
+PROD00190,TrendX Sportswear Product 190,Fashion,Sportswear,TrendX,17373.31,2.7,49,0.692,In Stock
+PROD00191,Harvest Snacks Product 191,Grocery,Snacks,Harvest,3812.59,4.5,146,0.665,In Stock
+PROD00192,Zenith Laptop Product 192,Electronics,Laptop,Zenith,133.68,4.3,143,0.748,In Stock
+PROD00193,GameZone Controller Product 193,Gaming,Controller,GameZone,239.07,3.2,8,0.835,In Stock
+PROD00194,ComfortLiving Furniture Product 194,Home & Kitchen,Furniture,ComfortLiving,2079.59,3.8,174,0.675,Out of Stock
+PROD00195,DailyHome Kitchen Product 195,Home & Kitchen,Kitchen,DailyHome,13165.6,4.6,51,0.89,In Stock
+PROD00196,ReadWell Science Product 196,Books,Science,ReadWell,677.95,4.2,26,0.385,In Stock
+PROD00197,GameZone Console Product 197,Gaming,Console,GameZone,1152.99,3.5,90,0.544,In Stock
+PROD00198,Harvest Organic Product 198,Grocery,Organic,Harvest,1805.57,4.0,24,0.829,In Stock
+PROD00199,GoodFood Organic Product 199,Grocery,Organic,GoodFood,140.47,3.9,24,0.303,In Stock
+PROD00200,Electra Laptop Product 200,Electronics,Laptop,Electra,35379.38,4.0,44,0.6,In Stock
+PROD00201,DailyHome Decor Product 201,Home & Kitchen,Decor,DailyHome,1587.36,4.4,96,0.73,In Stock
+PROD00202,SportMax Running Product 202,Sports,Running,SportMax,2177.32,4.4,87,0.746,In Stock
+PROD00203,PixelPro Accessories Product 203,Gaming,Accessories,PixelPro,1237.7,4.1,188,0.816,Out of Stock
+PROD00204,ReadWell Technology Product 204,Books,Technology,ReadWell,1390.53,4.1,56,0.667,In Stock
+PROD00205,KnowledgeHub Science Product 205,Books,Science,KnowledgeHub,14573.94,3.1,28,0.916,Low Stock
+PROD00206,BookHouse Fiction Product 206,Books,Fiction,BookHouse,4941.57,4.0,65,0.638,In Stock
+PROD00207,PlayMax Console Product 207,Gaming,Console,PlayMax,7991.75,4.7,85,0.49,Low Stock
+PROD00208,MoveWell Yoga Product 208,Sports,Yoga,MoveWell,19323.68,4.9,24,0.819,In Stock
+PROD00209,NatureTouch Makeup Product 209,Beauty,Makeup,NatureTouch,1027.19,4.5,51,0.623,In Stock
+PROD00210,MoveWell Cricket Product 210,Sports,Cricket,MoveWell,1379.63,3.5,290,0.417,In Stock
+PROD00211,Zenith Smart Home Product 211,Electronics,Smart Home,Zenith,113.41,3.9,41,0.446,In Stock
+PROD00212,Harvest Packaged Food Product 212,Grocery,Packaged Food,Harvest,1327.41,3.2,44,0.533,In Stock
+PROD00213,SoundMax Accessories Product 213,Electronics,Accessories,SoundMax,6689.47,3.1,79,0.952,Low Stock
+PROD00214,PureCare Fragrance Product 214,Beauty,Fragrance,PureCare,41534.14,4.2,55,0.519,Out of Stock
+PROD00215,ClassicWear Accessories Product 215,Fashion,Accessories,ClassicWear,25005.99,4.4,19,0.474,In Stock
+PROD00216,NovaTech Laptop Product 216,Electronics,Laptop,NovaTech,1242.79,3.8,54,0.405,In Stock
+PROD00217,Peak Running Product 217,Sports,Running,Peak,6655.82,3.7,67,0.646,In Stock
+PROD00218,ActiveX Fitness Product 218,Sports,Fitness,ActiveX,33729.62,3.8,32,0.785,In Stock
+PROD00219,PageTurner Self Help Product 219,Books,Self Help,PageTurner,4862.5,3.6,157,0.876,In Stock
+PROD00220,DailyHome Kitchen Product 220,Home & Kitchen,Kitchen,DailyHome,191.07,3.0,122,0.463,In Stock
+PROD00221,SportMax Yoga Product 221,Sports,Yoga,SportMax,1049.17,3.3,97,0.838,Out of Stock
+PROD00222,PaperTrail Self Help Product 222,Books,Self Help,PaperTrail,697.96,3.8,94,0.604,In Stock
+PROD00223,Zenith Laptop Product 223,Electronics,Laptop,Zenith,23309.42,4.9,59,0.824,In Stock
+PROD00224,NatureBest Packaged Food Product 224,Grocery,Packaged Food,NatureBest,1304.25,3.9,114,0.434,In Stock
+PROD00225,Zenith Laptop Product 225,Electronics,Laptop,Zenith,3213.69,3.3,73,0.827,In Stock
+PROD00226,Aura Skincare Product 226,Beauty,Skincare,Aura,49561.91,2.6,64,0.67,In Stock
+PROD00227,PlayMax Console Product 227,Gaming,Console,PlayMax,560.91,4.4,141,0.363,In Stock
+PROD00228,ModeFit Men Product 228,Fashion,Men,ModeFit,1168.16,4.2,36,0.595,In Stock
+PROD00229,PureCare Makeup Product 229,Beauty,Makeup,PureCare,433.7,3.4,22,0.898,In Stock
+PROD00230,Electra Laptop Product 230,Electronics,Laptop,Electra,7604.83,3.1,31,0.903,In Stock
+PROD00231,GoodFood Snacks Product 231,Grocery,Snacks,GoodFood,1598.74,4.4,44,0.382,In Stock
+PROD00232,NovaTech Accessories Product 232,Electronics,Accessories,NovaTech,36201.37,4.0,28,0.485,In Stock
+PROD00233,SoundMax Accessories Product 233,Electronics,Accessories,SoundMax,976.66,4.4,16,0.899,In Stock
+PROD00234,SoundMax Smart Home Product 234,Electronics,Smart Home,SoundMax,634.04,5.0,657,0.775,In Stock
+PROD00235,GameTech Games Product 235,Gaming,Games,GameTech,5368.06,3.8,229,0.633,In Stock
+PROD00236,Harvest Packaged Food Product 236,Grocery,Packaged Food,Harvest,3377.32,4.5,33,0.815,Low Stock
+PROD00237,Electra Accessories Product 237,Electronics,Accessories,Electra,369.47,4.2,101,0.485,In Stock
+PROD00238,TrendX Sportswear Product 238,Fashion,Sportswear,TrendX,10669.17,3.4,40,0.631,In Stock
+PROD00239,NatureTouch Fragrance Product 239,Beauty,Fragrance,NatureTouch,4112.37,3.2,41,0.691,In Stock
+PROD00240,TechPro Audio Product 240,Electronics,Audio,TechPro,710.19,4.0,32,0.695,Out of Stock
+PROD00241,Aura Makeup Product 241,Beauty,Makeup,Aura,39897.3,2.8,131,0.783,In Stock
+PROD00242,KnowledgeHub Self Help Product 242,Books,Self Help,KnowledgeHub,1458.38,4.6,89,0.919,In Stock
+PROD00243,KitchenPro Kitchen Product 243,Home & Kitchen,Kitchen,KitchenPro,6846.22,3.8,61,0.349,Low Stock
+PROD00244,PlayMax Controller Product 244,Gaming,Controller,PlayMax,33824.97,3.2,132,0.363,In Stock
+PROD00245,TrendX Footwear Product 245,Fashion,Footwear,TrendX,5863.47,3.7,13,0.334,Out of Stock
+PROD00246,Aura Personal Care Product 246,Beauty,Personal Care,Aura,32724.64,4.1,81,0.591,In Stock
+PROD00247,Casa Kitchen Product 247,Home & Kitchen,Kitchen,Casa,45974.44,3.8,67,0.748,In Stock
+PROD00248,TechPro Mobile Product 248,Electronics,Mobile,TechPro,2491.97,4.0,29,0.815,In Stock
+PROD00249,PureCare Fragrance Product 249,Beauty,Fragrance,PureCare,6782.59,3.0,25,0.607,In Stock
+PROD00250,NovaTech Audio Product 250,Electronics,Audio,NovaTech,261.27,3.5,24,0.699,In Stock

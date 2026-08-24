@@ -1,0 +1,1001 @@
+customer_id,age,gender,city,membership_tier,preferred_category,secondary_category,price_preference,customer_segment
+CUST00001,36,Other,Chennai,Bronze,Fashion,Electronics,Budget,Frequent_Buyer
+CUST00002,30,Female,Bengaluru,Bronze,Fashion,Beauty,Budget,Occasional_Buyer
+CUST00003,37,Male,Jaipur,Bronze,Electronics,Beauty,Mid,Occasional_Buyer
+CUST00004,45,Male,Kolkata,Bronze,Electronics,Grocery,Budget,Window_Shopper
+CUST00005,29,Male,Kolkata,Bronze,Beauty,Electronics,Premium,Value_Seeker
+CUST00006,29,Female,Jaipur,Bronze,Electronics,Gaming,Premium,Frequent_Buyer
+CUST00007,46,Other,Bhubaneswar,Gold,Books,Grocery,Mid,Frequent_Buyer
+CUST00008,38,Other,Hyderabad,Gold,Fashion,Electronics,Premium,Window_Shopper
+CUST00009,27,Female,Ahmedabad,Silver,Fashion,Books,Mid,Occasional_Buyer
+CUST00010,36,Female,Mumbai,Silver,Sports,Gaming,Budget,Value_Seeker
+CUST00011,27,Female,Chennai,Platinum,Home & Kitchen,Books,Mid,Occasional_Buyer
+CUST00012,27,Male,Hyderabad,Gold,Beauty,Grocery,Premium,Occasional_Buyer
+CUST00013,34,Other,Pune,Bronze,Fashion,Home & Kitchen,Mid,Window_Shopper
+CUST00014,18,Female,Delhi,Bronze,Grocery,Fashion,Mid,Occasional_Buyer
+CUST00015,18,Female,Pune,Bronze,Gaming,Books,Premium,Occasional_Buyer
+CUST00016,26,Male,Mumbai,Bronze,Fashion,Grocery,Budget,Value_Seeker
+CUST00017,22,Female,Bhubaneswar,Platinum,Fashion,Books,Mid,Window_Shopper
+CUST00018,34,Other,Mumbai,Silver,Electronics,Gaming,Mid,Occasional_Buyer
+CUST00019,23,Female,Kolkata,Bronze,Beauty,Electronics,Budget,Value_Seeker
+CUST00020,19,Male,Jaipur,Gold,Books,Beauty,Premium,Occasional_Buyer
+CUST00021,45,Female,Delhi,Silver,Sports,Fashion,Mid,Occasional_Buyer
+CUST00022,29,Female,Ahmedabad,Bronze,Electronics,Beauty,Premium,Window_Shopper
+CUST00023,32,Male,Hyderabad,Gold,Books,Fashion,Premium,Frequent_Buyer
+CUST00024,19,Male,Jaipur,Gold,Grocery,Gaming,Budget,Occasional_Buyer
+CUST00025,27,Other,Bhubaneswar,Bronze,Home & Kitchen,Sports,Budget,Occasional_Buyer
+CUST00026,32,Female,Kolkata,Platinum,Sports,Gaming,Mid,Occasional_Buyer
+CUST00027,21,Male,Hyderabad,Bronze,Grocery,Electronics,Budget,Occasional_Buyer
+CUST00028,35,Male,Bengaluru,Bronze,Sports,Electronics,Premium,Window_Shopper
+CUST00029,26,Male,Chennai,Silver,Fashion,Beauty,Budget,Frequent_Buyer
+CUST00030,29,Female,Kolkata,Bronze,Grocery,Fashion,Budget,Occasional_Buyer
+CUST00031,26,Female,Bengaluru,Silver,Gaming,Sports,Premium,Frequent_Buyer
+CUST00032,48,Female,Mumbai,Bronze,Gaming,Beauty,Budget,Occasional_Buyer
+CUST00033,31,Female,Ahmedabad,Bronze,Gaming,Fashion,Premium,Occasional_Buyer
+CUST00034,22,Other,Jaipur,Gold,Fashion,Electronics,Premium,Window_Shopper
+CUST00035,39,Female,Ahmedabad,Silver,Sports,Fashion,Premium,Window_Shopper
+CUST00036,21,Male,Kolkata,Bronze,Home & Kitchen,Books,Mid,Occasional_Buyer
+CUST00037,33,Other,Jaipur,Silver,Gaming,Beauty,Mid,Frequent_Buyer
+CUST00038,18,Other,Jaipur,Bronze,Sports,Electronics,Budget,Frequent_Buyer
+CUST00039,20,Other,Delhi,Bronze,Grocery,Books,Mid,Window_Shopper
+CUST00040,33,Male,Hyderabad,Bronze,Fashion,Beauty,Premium,Occasional_Buyer
+CUST00041,38,Male,Kolkata,Silver,Electronics,Beauty,Mid,Occasional_Buyer
+CUST00042,33,Other,Pune,Bronze,Books,Fashion,Mid,Value_Seeker
+CUST00043,30,Female,Mumbai,Bronze,Books,Sports,Mid,Occasional_Buyer
+CUST00044,29,Other,Hyderabad,Silver,Fashion,Electronics,Budget,Occasional_Buyer
+CUST00045,18,Female,Chennai,Bronze,Fashion,Home & Kitchen,Premium,Value_Seeker
+CUST00046,25,Other,Chennai,Platinum,Electronics,Gaming,Budget,Window_Shopper
+CUST00047,27,Male,Jaipur,Bronze,Books,Electronics,Budget,Frequent_Buyer
+CUST00048,41,Other,Chennai,Silver,Beauty,Fashion,Budget,Window_Shopper
+CUST00049,35,Other,Kolkata,Gold,Electronics,Fashion,Budget,Occasional_Buyer
+CUST00050,18,Female,Delhi,Silver,Home & Kitchen,Gaming,Mid,Occasional_Buyer
+CUST00051,34,Male,Delhi,Silver,Electronics,Fashion,Premium,Occasional_Buyer
+CUST00052,28,Male,Bengaluru,Bronze,Home & Kitchen,Books,Premium,Premium_Buyer
+CUST00053,25,Male,Hyderabad,Silver,Electronics,Sports,Mid,Occasional_Buyer
+CUST00054,37,Other,Delhi,Gold,Gaming,Books,Budget,Frequent_Buyer
+CUST00055,41,Male,Delhi,Silver,Home & Kitchen,Books,Budget,Window_Shopper
+CUST00056,40,Male,Mumbai,Bronze,Sports,Home & Kitchen,Budget,Occasional_Buyer
+CUST00057,24,Female,Pune,Bronze,Sports,Grocery,Mid,Frequent_Buyer
+CUST00058,29,Male,Kolkata,Bronze,Electronics,Gaming,Premium,Window_Shopper
+CUST00059,34,Other,Jaipur,Bronze,Books,Home & Kitchen,Premium,Occasional_Buyer
+CUST00060,40,Female,Delhi,Silver,Electronics,Fashion,Premium,Frequent_Buyer
+CUST00061,27,Other,Pune,Bronze,Gaming,Home & Kitchen,Premium,Frequent_Buyer
+CUST00062,30,Male,Kolkata,Bronze,Sports,Home & Kitchen,Premium,Occasional_Buyer
+CUST00063,22,Female,Mumbai,Platinum,Sports,Home & Kitchen,Premium,Value_Seeker
+CUST00064,21,Female,Jaipur,Bronze,Fashion,Gaming,Mid,Occasional_Buyer
+CUST00065,39,Male,Hyderabad,Bronze,Books,Beauty,Premium,Value_Seeker
+CUST00066,44,Other,Chennai,Bronze,Home & Kitchen,Beauty,Premium,Occasional_Buyer
+CUST00067,31,Other,Bhubaneswar,Silver,Sports,Books,Mid,Occasional_Buyer
+CUST00068,41,Female,Delhi,Silver,Sports,Beauty,Budget,Value_Seeker
+CUST00069,35,Male,Chennai,Bronze,Beauty,Electronics,Budget,Frequent_Buyer
+CUST00070,26,Other,Mumbai,Silver,Sports,Books,Premium,Occasional_Buyer
+CUST00071,35,Female,Hyderabad,Bronze,Gaming,Sports,Mid,Window_Shopper
+CUST00072,45,Female,Hyderabad,Bronze,Fashion,Grocery,Premium,Occasional_Buyer
+CUST00073,31,Male,Mumbai,Silver,Electronics,Beauty,Premium,Value_Seeker
+CUST00074,46,Female,Bhubaneswar,Gold,Beauty,Grocery,Premium,Occasional_Buyer
+CUST00075,18,Other,Ahmedabad,Silver,Grocery,Fashion,Mid,Premium_Buyer
+CUST00076,39,Other,Ahmedabad,Silver,Books,Grocery,Budget,Frequent_Buyer
+CUST00077,32,Female,Pune,Bronze,Books,Fashion,Mid,Frequent_Buyer
+CUST00078,29,Other,Delhi,Silver,Sports,Books,Budget,Occasional_Buyer
+CUST00079,32,Male,Hyderabad,Gold,Grocery,Sports,Mid,Premium_Buyer
+CUST00080,18,Other,Kolkata,Silver,Electronics,Grocery,Premium,Occasional_Buyer
+CUST00081,30,Female,Jaipur,Silver,Gaming,Grocery,Mid,Value_Seeker
+CUST00082,35,Male,Chennai,Bronze,Sports,Books,Budget,Occasional_Buyer
+CUST00083,45,Male,Ahmedabad,Gold,Gaming,Beauty,Premium,Occasional_Buyer
+CUST00084,27,Other,Bengaluru,Bronze,Gaming,Books,Mid,Window_Shopper
+CUST00085,24,Female,Kolkata,Bronze,Home & Kitchen,Electronics,Mid,Occasional_Buyer
+CUST00086,27,Female,Chennai,Gold,Gaming,Home & Kitchen,Mid,Value_Seeker
+CUST00087,40,Male,Mumbai,Gold,Electronics,Sports,Mid,Premium_Buyer
+CUST00088,34,Male,Bhubaneswar,Bronze,Sports,Fashion,Budget,Value_Seeker
+CUST00089,27,Other,Chennai,Gold,Sports,Books,Budget,Value_Seeker
+CUST00090,36,Male,Chennai,Bronze,Fashion,Grocery,Budget,Occasional_Buyer
+CUST00091,32,Other,Hyderabad,Bronze,Gaming,Sports,Mid,Value_Seeker
+CUST00092,40,Female,Bhubaneswar,Gold,Fashion,Gaming,Mid,Occasional_Buyer
+CUST00093,25,Other,Kolkata,Silver,Electronics,Sports,Budget,Value_Seeker
+CUST00094,29,Female,Ahmedabad,Bronze,Electronics,Grocery,Premium,Value_Seeker
+CUST00095,28,Male,Kolkata,Bronze,Grocery,Beauty,Mid,Value_Seeker
+CUST00096,18,Female,Bhubaneswar,Bronze,Grocery,Sports,Premium,Premium_Buyer
+CUST00097,34,Female,Hyderabad,Gold,Fashion,Sports,Mid,Value_Seeker
+CUST00098,34,Female,Pune,Bronze,Beauty,Electronics,Budget,Premium_Buyer
+CUST00099,32,Other,Chennai,Silver,Beauty,Home & Kitchen,Mid,Frequent_Buyer
+CUST00100,29,Female,Ahmedabad,Silver,Sports,Gaming,Budget,Occasional_Buyer
+CUST00101,19,Male,Mumbai,Bronze,Grocery,Sports,Mid,Frequent_Buyer
+CUST00102,28,Other,Jaipur,Bronze,Beauty,Sports,Premium,Occasional_Buyer
+CUST00103,28,Female,Chennai,Bronze,Beauty,Gaming,Budget,Value_Seeker
+CUST00104,24,Other,Jaipur,Platinum,Beauty,Electronics,Mid,Frequent_Buyer
+CUST00105,30,Other,Bhubaneswar,Platinum,Grocery,Home & Kitchen,Mid,Occasional_Buyer
+CUST00106,35,Male,Chennai,Bronze,Fashion,Grocery,Budget,Frequent_Buyer
+CUST00107,48,Male,Bengaluru,Silver,Home & Kitchen,Sports,Mid,Frequent_Buyer
+CUST00108,33,Male,Bhubaneswar,Bronze,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00109,34,Female,Mumbai,Gold,Electronics,Sports,Mid,Frequent_Buyer
+CUST00110,31,Male,Bhubaneswar,Platinum,Electronics,Home & Kitchen,Budget,Frequent_Buyer
+CUST00111,18,Other,Bhubaneswar,Bronze,Gaming,Books,Mid,Occasional_Buyer
+CUST00112,31,Other,Kolkata,Bronze,Grocery,Home & Kitchen,Mid,Value_Seeker
+CUST00113,32,Male,Hyderabad,Bronze,Fashion,Grocery,Budget,Frequent_Buyer
+CUST00114,54,Male,Kolkata,Silver,Fashion,Home & Kitchen,Mid,Occasional_Buyer
+CUST00115,30,Other,Chennai,Silver,Sports,Home & Kitchen,Mid,Value_Seeker
+CUST00116,34,Other,Bhubaneswar,Silver,Books,Grocery,Premium,Occasional_Buyer
+CUST00117,31,Male,Chennai,Gold,Sports,Gaming,Budget,Frequent_Buyer
+CUST00118,21,Other,Bhubaneswar,Gold,Books,Beauty,Mid,Occasional_Buyer
+CUST00119,42,Female,Chennai,Silver,Books,Gaming,Mid,Frequent_Buyer
+CUST00120,38,Other,Pune,Silver,Electronics,Books,Budget,Frequent_Buyer
+CUST00121,39,Other,Chennai,Silver,Electronics,Grocery,Mid,Frequent_Buyer
+CUST00122,23,Male,Bhubaneswar,Bronze,Grocery,Home & Kitchen,Premium,Window_Shopper
+CUST00123,44,Female,Pune,Bronze,Grocery,Home & Kitchen,Budget,Frequent_Buyer
+CUST00124,19,Female,Chennai,Silver,Gaming,Beauty,Mid,Premium_Buyer
+CUST00125,37,Male,Pune,Bronze,Electronics,Books,Budget,Premium_Buyer
+CUST00126,51,Other,Ahmedabad,Bronze,Electronics,Gaming,Budget,Occasional_Buyer
+CUST00127,23,Female,Bengaluru,Bronze,Grocery,Beauty,Mid,Window_Shopper
+CUST00128,26,Female,Mumbai,Bronze,Grocery,Beauty,Mid,Premium_Buyer
+CUST00129,32,Other,Bengaluru,Silver,Home & Kitchen,Sports,Budget,Window_Shopper
+CUST00130,27,Male,Delhi,Silver,Fashion,Books,Mid,Occasional_Buyer
+CUST00131,18,Female,Ahmedabad,Bronze,Books,Sports,Mid,Occasional_Buyer
+CUST00132,32,Male,Chennai,Gold,Home & Kitchen,Grocery,Premium,Occasional_Buyer
+CUST00133,22,Male,Chennai,Silver,Books,Grocery,Premium,Occasional_Buyer
+CUST00134,36,Male,Ahmedabad,Silver,Grocery,Gaming,Budget,Occasional_Buyer
+CUST00135,23,Female,Hyderabad,Platinum,Gaming,Sports,Budget,Occasional_Buyer
+CUST00136,45,Female,Ahmedabad,Silver,Gaming,Electronics,Premium,Occasional_Buyer
+CUST00137,24,Male,Delhi,Silver,Home & Kitchen,Books,Mid,Window_Shopper
+CUST00138,29,Other,Ahmedabad,Bronze,Grocery,Electronics,Budget,Window_Shopper
+CUST00139,39,Female,Chennai,Bronze,Home & Kitchen,Electronics,Mid,Value_Seeker
+CUST00140,20,Other,Jaipur,Bronze,Beauty,Grocery,Budget,Value_Seeker
+CUST00141,34,Other,Bengaluru,Silver,Grocery,Gaming,Budget,Value_Seeker
+CUST00142,43,Other,Mumbai,Bronze,Books,Fashion,Budget,Value_Seeker
+CUST00143,18,Male,Chennai,Gold,Fashion,Books,Budget,Premium_Buyer
+CUST00144,33,Female,Kolkata,Bronze,Books,Home & Kitchen,Mid,Occasional_Buyer
+CUST00145,34,Male,Mumbai,Silver,Home & Kitchen,Fashion,Mid,Value_Seeker
+CUST00146,39,Male,Hyderabad,Silver,Grocery,Books,Budget,Occasional_Buyer
+CUST00147,20,Female,Chennai,Silver,Electronics,Grocery,Budget,Occasional_Buyer
+CUST00148,20,Female,Kolkata,Silver,Beauty,Books,Mid,Occasional_Buyer
+CUST00149,36,Female,Mumbai,Bronze,Gaming,Grocery,Mid,Occasional_Buyer
+CUST00150,34,Other,Kolkata,Bronze,Books,Electronics,Mid,Value_Seeker
+CUST00151,34,Other,Ahmedabad,Gold,Electronics,Beauty,Premium,Premium_Buyer
+CUST00152,35,Female,Hyderabad,Silver,Sports,Beauty,Mid,Value_Seeker
+CUST00153,25,Male,Bengaluru,Bronze,Home & Kitchen,Gaming,Mid,Occasional_Buyer
+CUST00154,34,Female,Pune,Silver,Home & Kitchen,Electronics,Budget,Frequent_Buyer
+CUST00155,34,Other,Chennai,Gold,Beauty,Books,Budget,Premium_Buyer
+CUST00156,25,Female,Pune,Gold,Grocery,Gaming,Mid,Frequent_Buyer
+CUST00157,48,Other,Kolkata,Platinum,Sports,Grocery,Premium,Occasional_Buyer
+CUST00158,36,Female,Jaipur,Bronze,Gaming,Electronics,Mid,Value_Seeker
+CUST00159,21,Female,Pune,Bronze,Books,Beauty,Budget,Frequent_Buyer
+CUST00160,37,Male,Mumbai,Silver,Beauty,Books,Mid,Value_Seeker
+CUST00161,23,Male,Bengaluru,Platinum,Gaming,Electronics,Budget,Occasional_Buyer
+CUST00162,39,Other,Delhi,Bronze,Fashion,Home & Kitchen,Mid,Window_Shopper
+CUST00163,42,Other,Delhi,Gold,Gaming,Books,Mid,Premium_Buyer
+CUST00164,24,Male,Pune,Bronze,Gaming,Home & Kitchen,Mid,Frequent_Buyer
+CUST00165,40,Other,Pune,Silver,Beauty,Electronics,Premium,Occasional_Buyer
+CUST00166,35,Male,Mumbai,Platinum,Gaming,Home & Kitchen,Premium,Frequent_Buyer
+CUST00167,39,Other,Bhubaneswar,Platinum,Sports,Gaming,Budget,Occasional_Buyer
+CUST00168,49,Other,Hyderabad,Bronze,Home & Kitchen,Grocery,Mid,Frequent_Buyer
+CUST00169,29,Male,Pune,Gold,Sports,Grocery,Mid,Occasional_Buyer
+CUST00170,25,Male,Delhi,Silver,Books,Grocery,Mid,Frequent_Buyer
+CUST00171,23,Male,Pune,Gold,Electronics,Home & Kitchen,Budget,Occasional_Buyer
+CUST00172,24,Male,Delhi,Silver,Home & Kitchen,Sports,Mid,Value_Seeker
+CUST00173,31,Female,Jaipur,Silver,Grocery,Sports,Mid,Frequent_Buyer
+CUST00174,35,Other,Jaipur,Bronze,Electronics,Gaming,Mid,Frequent_Buyer
+CUST00175,34,Female,Kolkata,Silver,Grocery,Gaming,Mid,Window_Shopper
+CUST00176,39,Female,Bhubaneswar,Bronze,Fashion,Electronics,Budget,Value_Seeker
+CUST00177,32,Other,Jaipur,Bronze,Beauty,Sports,Mid,Occasional_Buyer
+CUST00178,45,Other,Jaipur,Silver,Fashion,Grocery,Budget,Occasional_Buyer
+CUST00179,29,Female,Ahmedabad,Bronze,Sports,Books,Mid,Occasional_Buyer
+CUST00180,56,Female,Pune,Platinum,Beauty,Gaming,Mid,Occasional_Buyer
+CUST00181,37,Male,Mumbai,Bronze,Fashion,Grocery,Mid,Occasional_Buyer
+CUST00182,24,Male,Bhubaneswar,Platinum,Home & Kitchen,Beauty,Mid,Value_Seeker
+CUST00183,22,Other,Kolkata,Gold,Gaming,Home & Kitchen,Mid,Window_Shopper
+CUST00184,36,Male,Bhubaneswar,Silver,Books,Home & Kitchen,Budget,Occasional_Buyer
+CUST00185,29,Other,Pune,Bronze,Fashion,Sports,Budget,Frequent_Buyer
+CUST00186,38,Other,Bhubaneswar,Silver,Gaming,Grocery,Mid,Frequent_Buyer
+CUST00187,36,Male,Chennai,Silver,Books,Electronics,Budget,Occasional_Buyer
+CUST00188,31,Male,Bhubaneswar,Silver,Electronics,Home & Kitchen,Budget,Value_Seeker
+CUST00189,24,Other,Jaipur,Bronze,Electronics,Fashion,Mid,Occasional_Buyer
+CUST00190,18,Other,Pune,Gold,Beauty,Home & Kitchen,Mid,Frequent_Buyer
+CUST00191,27,Male,Bhubaneswar,Bronze,Electronics,Home & Kitchen,Budget,Occasional_Buyer
+CUST00192,39,Other,Ahmedabad,Bronze,Gaming,Sports,Budget,Occasional_Buyer
+CUST00193,33,Male,Chennai,Silver,Beauty,Sports,Mid,Occasional_Buyer
+CUST00194,20,Male,Kolkata,Platinum,Books,Electronics,Budget,Frequent_Buyer
+CUST00195,33,Male,Chennai,Bronze,Sports,Grocery,Budget,Occasional_Buyer
+CUST00196,35,Male,Kolkata,Silver,Gaming,Fashion,Budget,Occasional_Buyer
+CUST00197,24,Female,Bengaluru,Bronze,Beauty,Electronics,Mid,Frequent_Buyer
+CUST00198,33,Female,Bhubaneswar,Bronze,Beauty,Books,Mid,Occasional_Buyer
+CUST00199,32,Female,Delhi,Gold,Gaming,Electronics,Mid,Premium_Buyer
+CUST00200,21,Female,Mumbai,Bronze,Beauty,Electronics,Mid,Occasional_Buyer
+CUST00201,35,Female,Pune,Bronze,Gaming,Grocery,Mid,Frequent_Buyer
+CUST00202,37,Other,Hyderabad,Gold,Fashion,Beauty,Budget,Value_Seeker
+CUST00203,41,Male,Delhi,Bronze,Home & Kitchen,Fashion,Budget,Frequent_Buyer
+CUST00204,41,Other,Ahmedabad,Silver,Fashion,Home & Kitchen,Mid,Occasional_Buyer
+CUST00205,19,Other,Pune,Bronze,Beauty,Grocery,Budget,Occasional_Buyer
+CUST00206,23,Female,Bhubaneswar,Bronze,Books,Grocery,Mid,Occasional_Buyer
+CUST00207,36,Male,Pune,Gold,Grocery,Electronics,Budget,Window_Shopper
+CUST00208,36,Other,Jaipur,Bronze,Fashion,Beauty,Mid,Window_Shopper
+CUST00209,36,Other,Hyderabad,Bronze,Electronics,Books,Mid,Frequent_Buyer
+CUST00210,65,Male,Pune,Platinum,Electronics,Books,Budget,Value_Seeker
+CUST00211,37,Other,Ahmedabad,Platinum,Electronics,Home & Kitchen,Mid,Value_Seeker
+CUST00212,42,Female,Kolkata,Bronze,Beauty,Home & Kitchen,Budget,Occasional_Buyer
+CUST00213,40,Female,Mumbai,Silver,Beauty,Electronics,Mid,Occasional_Buyer
+CUST00214,37,Male,Bhubaneswar,Silver,Home & Kitchen,Sports,Premium,Occasional_Buyer
+CUST00215,29,Other,Mumbai,Bronze,Gaming,Fashion,Mid,Premium_Buyer
+CUST00216,38,Other,Jaipur,Bronze,Home & Kitchen,Gaming,Mid,Occasional_Buyer
+CUST00217,25,Female,Delhi,Platinum,Electronics,Sports,Budget,Premium_Buyer
+CUST00218,29,Male,Delhi,Bronze,Sports,Fashion,Premium,Frequent_Buyer
+CUST00219,27,Female,Bhubaneswar,Bronze,Electronics,Gaming,Mid,Frequent_Buyer
+CUST00220,32,Female,Bengaluru,Bronze,Home & Kitchen,Gaming,Mid,Frequent_Buyer
+CUST00221,52,Female,Ahmedabad,Bronze,Grocery,Books,Budget,Window_Shopper
+CUST00222,18,Male,Pune,Silver,Grocery,Gaming,Mid,Occasional_Buyer
+CUST00223,38,Female,Jaipur,Silver,Books,Grocery,Premium,Premium_Buyer
+CUST00224,18,Female,Bengaluru,Silver,Home & Kitchen,Grocery,Premium,Occasional_Buyer
+CUST00225,27,Other,Mumbai,Bronze,Fashion,Gaming,Mid,Occasional_Buyer
+CUST00226,41,Female,Mumbai,Platinum,Home & Kitchen,Grocery,Budget,Occasional_Buyer
+CUST00227,32,Female,Bengaluru,Bronze,Beauty,Electronics,Mid,Occasional_Buyer
+CUST00228,22,Male,Bengaluru,Bronze,Fashion,Sports,Budget,Value_Seeker
+CUST00229,25,Male,Delhi,Bronze,Beauty,Grocery,Premium,Occasional_Buyer
+CUST00230,38,Other,Ahmedabad,Bronze,Home & Kitchen,Grocery,Budget,Frequent_Buyer
+CUST00231,25,Male,Jaipur,Platinum,Books,Fashion,Mid,Occasional_Buyer
+CUST00232,33,Female,Mumbai,Bronze,Books,Fashion,Mid,Premium_Buyer
+CUST00233,32,Male,Ahmedabad,Silver,Grocery,Electronics,Budget,Occasional_Buyer
+CUST00234,26,Male,Chennai,Bronze,Sports,Gaming,Mid,Frequent_Buyer
+CUST00235,51,Other,Mumbai,Silver,Gaming,Fashion,Mid,Window_Shopper
+CUST00236,37,Female,Bengaluru,Silver,Electronics,Books,Premium,Occasional_Buyer
+CUST00237,18,Male,Pune,Bronze,Electronics,Sports,Mid,Frequent_Buyer
+CUST00238,33,Male,Pune,Silver,Beauty,Fashion,Premium,Frequent_Buyer
+CUST00239,26,Female,Delhi,Gold,Grocery,Beauty,Budget,Premium_Buyer
+CUST00240,39,Female,Hyderabad,Bronze,Grocery,Electronics,Budget,Frequent_Buyer
+CUST00241,24,Female,Jaipur,Silver,Books,Beauty,Budget,Value_Seeker
+CUST00242,30,Male,Pune,Bronze,Books,Home & Kitchen,Mid,Occasional_Buyer
+CUST00243,36,Female,Kolkata,Bronze,Gaming,Beauty,Budget,Value_Seeker
+CUST00244,39,Other,Chennai,Gold,Beauty,Grocery,Mid,Frequent_Buyer
+CUST00245,21,Female,Pune,Bronze,Home & Kitchen,Beauty,Budget,Occasional_Buyer
+CUST00246,28,Other,Kolkata,Bronze,Grocery,Books,Mid,Occasional_Buyer
+CUST00247,27,Female,Chennai,Silver,Beauty,Books,Mid,Frequent_Buyer
+CUST00248,26,Other,Delhi,Platinum,Gaming,Home & Kitchen,Budget,Value_Seeker
+CUST00249,47,Male,Mumbai,Bronze,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00250,35,Male,Ahmedabad,Platinum,Electronics,Beauty,Mid,Premium_Buyer
+CUST00251,20,Female,Kolkata,Bronze,Home & Kitchen,Beauty,Budget,Window_Shopper
+CUST00252,40,Male,Ahmedabad,Silver,Electronics,Gaming,Premium,Frequent_Buyer
+CUST00253,51,Female,Hyderabad,Platinum,Books,Gaming,Budget,Window_Shopper
+CUST00254,41,Male,Delhi,Gold,Grocery,Fashion,Mid,Window_Shopper
+CUST00255,18,Other,Pune,Silver,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00256,27,Male,Delhi,Gold,Books,Home & Kitchen,Mid,Frequent_Buyer
+CUST00257,43,Male,Hyderabad,Gold,Sports,Grocery,Budget,Occasional_Buyer
+CUST00258,25,Other,Delhi,Silver,Beauty,Sports,Budget,Occasional_Buyer
+CUST00259,35,Female,Kolkata,Gold,Grocery,Books,Budget,Window_Shopper
+CUST00260,38,Female,Jaipur,Bronze,Fashion,Books,Premium,Premium_Buyer
+CUST00261,23,Male,Kolkata,Silver,Home & Kitchen,Grocery,Premium,Premium_Buyer
+CUST00262,31,Male,Delhi,Bronze,Home & Kitchen,Sports,Mid,Occasional_Buyer
+CUST00263,18,Male,Chennai,Bronze,Books,Grocery,Premium,Occasional_Buyer
+CUST00264,22,Other,Mumbai,Silver,Books,Beauty,Budget,Window_Shopper
+CUST00265,29,Other,Bhubaneswar,Silver,Home & Kitchen,Fashion,Mid,Premium_Buyer
+CUST00266,20,Male,Mumbai,Bronze,Electronics,Grocery,Mid,Occasional_Buyer
+CUST00267,46,Other,Kolkata,Silver,Sports,Grocery,Budget,Window_Shopper
+CUST00268,19,Female,Ahmedabad,Bronze,Books,Gaming,Premium,Occasional_Buyer
+CUST00269,28,Other,Bengaluru,Bronze,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00270,33,Male,Pune,Gold,Beauty,Books,Budget,Window_Shopper
+CUST00271,44,Male,Pune,Silver,Beauty,Sports,Budget,Frequent_Buyer
+CUST00272,19,Female,Hyderabad,Bronze,Fashion,Sports,Budget,Window_Shopper
+CUST00273,42,Male,Pune,Platinum,Gaming,Fashion,Mid,Frequent_Buyer
+CUST00274,32,Other,Ahmedabad,Silver,Home & Kitchen,Books,Budget,Frequent_Buyer
+CUST00275,23,Female,Hyderabad,Bronze,Gaming,Books,Mid,Frequent_Buyer
+CUST00276,36,Other,Ahmedabad,Bronze,Grocery,Books,Budget,Frequent_Buyer
+CUST00277,33,Other,Pune,Gold,Home & Kitchen,Sports,Mid,Occasional_Buyer
+CUST00278,26,Other,Chennai,Bronze,Sports,Home & Kitchen,Mid,Premium_Buyer
+CUST00279,32,Other,Bhubaneswar,Bronze,Books,Grocery,Premium,Occasional_Buyer
+CUST00280,28,Female,Delhi,Bronze,Beauty,Books,Mid,Occasional_Buyer
+CUST00281,33,Male,Pune,Gold,Electronics,Fashion,Mid,Frequent_Buyer
+CUST00282,37,Other,Pune,Bronze,Home & Kitchen,Sports,Premium,Value_Seeker
+CUST00283,46,Female,Jaipur,Gold,Books,Beauty,Mid,Value_Seeker
+CUST00284,20,Male,Pune,Bronze,Books,Sports,Budget,Occasional_Buyer
+CUST00285,51,Other,Bengaluru,Silver,Books,Grocery,Budget,Value_Seeker
+CUST00286,18,Male,Bhubaneswar,Silver,Sports,Gaming,Mid,Value_Seeker
+CUST00287,30,Other,Hyderabad,Bronze,Gaming,Fashion,Premium,Frequent_Buyer
+CUST00288,37,Female,Kolkata,Bronze,Electronics,Books,Mid,Occasional_Buyer
+CUST00289,34,Other,Bengaluru,Silver,Grocery,Gaming,Mid,Occasional_Buyer
+CUST00290,26,Female,Pune,Platinum,Grocery,Books,Mid,Occasional_Buyer
+CUST00291,30,Other,Chennai,Silver,Beauty,Gaming,Budget,Frequent_Buyer
+CUST00292,27,Female,Chennai,Silver,Books,Fashion,Mid,Occasional_Buyer
+CUST00293,26,Other,Chennai,Bronze,Grocery,Home & Kitchen,Mid,Occasional_Buyer
+CUST00294,39,Female,Delhi,Bronze,Gaming,Grocery,Budget,Value_Seeker
+CUST00295,35,Other,Chennai,Silver,Beauty,Sports,Budget,Premium_Buyer
+CUST00296,25,Other,Chennai,Bronze,Books,Beauty,Mid,Occasional_Buyer
+CUST00297,40,Other,Jaipur,Bronze,Sports,Electronics,Budget,Frequent_Buyer
+CUST00298,34,Female,Mumbai,Silver,Beauty,Gaming,Budget,Window_Shopper
+CUST00299,39,Other,Ahmedabad,Silver,Home & Kitchen,Books,Budget,Window_Shopper
+CUST00300,37,Other,Bengaluru,Gold,Beauty,Home & Kitchen,Budget,Occasional_Buyer
+CUST00301,24,Female,Delhi,Platinum,Electronics,Home & Kitchen,Budget,Premium_Buyer
+CUST00302,26,Other,Chennai,Gold,Grocery,Fashion,Budget,Occasional_Buyer
+CUST00303,38,Female,Ahmedabad,Platinum,Fashion,Sports,Mid,Occasional_Buyer
+CUST00304,37,Other,Ahmedabad,Bronze,Home & Kitchen,Grocery,Premium,Occasional_Buyer
+CUST00305,31,Female,Delhi,Bronze,Grocery,Beauty,Budget,Occasional_Buyer
+CUST00306,33,Other,Kolkata,Gold,Sports,Fashion,Mid,Frequent_Buyer
+CUST00307,43,Male,Ahmedabad,Bronze,Fashion,Home & Kitchen,Budget,Occasional_Buyer
+CUST00308,26,Female,Pune,Bronze,Sports,Books,Mid,Frequent_Buyer
+CUST00309,36,Male,Bengaluru,Silver,Beauty,Gaming,Mid,Frequent_Buyer
+CUST00310,30,Male,Chennai,Bronze,Books,Gaming,Budget,Window_Shopper
+CUST00311,30,Female,Bhubaneswar,Bronze,Grocery,Fashion,Mid,Window_Shopper
+CUST00312,41,Male,Bhubaneswar,Gold,Sports,Grocery,Budget,Occasional_Buyer
+CUST00313,39,Other,Mumbai,Bronze,Beauty,Electronics,Mid,Occasional_Buyer
+CUST00314,39,Female,Jaipur,Bronze,Home & Kitchen,Fashion,Mid,Value_Seeker
+CUST00315,43,Other,Ahmedabad,Gold,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00316,32,Male,Jaipur,Silver,Grocery,Books,Premium,Value_Seeker
+CUST00317,38,Male,Hyderabad,Silver,Gaming,Home & Kitchen,Budget,Occasional_Buyer
+CUST00318,29,Male,Mumbai,Platinum,Fashion,Beauty,Mid,Occasional_Buyer
+CUST00319,34,Male,Kolkata,Bronze,Home & Kitchen,Grocery,Premium,Occasional_Buyer
+CUST00320,30,Male,Jaipur,Bronze,Gaming,Sports,Premium,Frequent_Buyer
+CUST00321,32,Male,Hyderabad,Gold,Gaming,Books,Mid,Window_Shopper
+CUST00322,37,Other,Jaipur,Bronze,Grocery,Beauty,Mid,Frequent_Buyer
+CUST00323,24,Male,Chennai,Bronze,Grocery,Home & Kitchen,Premium,Premium_Buyer
+CUST00324,50,Other,Kolkata,Silver,Electronics,Grocery,Premium,Window_Shopper
+CUST00325,22,Male,Mumbai,Silver,Sports,Fashion,Mid,Value_Seeker
+CUST00326,21,Other,Bengaluru,Bronze,Electronics,Home & Kitchen,Budget,Frequent_Buyer
+CUST00327,42,Other,Chennai,Bronze,Electronics,Home & Kitchen,Premium,Occasional_Buyer
+CUST00328,39,Female,Delhi,Platinum,Beauty,Fashion,Mid,Occasional_Buyer
+CUST00329,37,Other,Bhubaneswar,Gold,Books,Electronics,Premium,Value_Seeker
+CUST00330,37,Female,Bengaluru,Platinum,Gaming,Books,Premium,Value_Seeker
+CUST00331,31,Female,Kolkata,Bronze,Beauty,Gaming,Mid,Premium_Buyer
+CUST00332,23,Male,Chennai,Gold,Grocery,Fashion,Budget,Occasional_Buyer
+CUST00333,32,Female,Kolkata,Silver,Electronics,Beauty,Budget,Frequent_Buyer
+CUST00334,25,Other,Mumbai,Gold,Sports,Home & Kitchen,Premium,Frequent_Buyer
+CUST00335,40,Female,Kolkata,Silver,Sports,Electronics,Mid,Window_Shopper
+CUST00336,30,Other,Jaipur,Bronze,Sports,Grocery,Budget,Window_Shopper
+CUST00337,24,Male,Hyderabad,Platinum,Books,Electronics,Budget,Window_Shopper
+CUST00338,29,Other,Bhubaneswar,Silver,Grocery,Fashion,Mid,Frequent_Buyer
+CUST00339,35,Female,Kolkata,Silver,Beauty,Grocery,Mid,Occasional_Buyer
+CUST00340,26,Female,Ahmedabad,Bronze,Beauty,Books,Premium,Occasional_Buyer
+CUST00341,24,Female,Pune,Bronze,Beauty,Fashion,Mid,Frequent_Buyer
+CUST00342,34,Female,Jaipur,Platinum,Home & Kitchen,Electronics,Mid,Occasional_Buyer
+CUST00343,34,Female,Hyderabad,Bronze,Home & Kitchen,Fashion,Premium,Occasional_Buyer
+CUST00344,27,Female,Ahmedabad,Silver,Beauty,Home & Kitchen,Mid,Occasional_Buyer
+CUST00345,27,Other,Ahmedabad,Bronze,Home & Kitchen,Gaming,Premium,Window_Shopper
+CUST00346,34,Male,Mumbai,Platinum,Electronics,Beauty,Mid,Premium_Buyer
+CUST00347,18,Other,Hyderabad,Bronze,Gaming,Fashion,Budget,Frequent_Buyer
+CUST00348,19,Male,Bhubaneswar,Silver,Grocery,Home & Kitchen,Premium,Window_Shopper
+CUST00349,25,Male,Jaipur,Silver,Grocery,Electronics,Budget,Occasional_Buyer
+CUST00350,30,Female,Bengaluru,Silver,Books,Beauty,Mid,Occasional_Buyer
+CUST00351,34,Male,Jaipur,Bronze,Home & Kitchen,Electronics,Budget,Occasional_Buyer
+CUST00352,45,Female,Mumbai,Bronze,Beauty,Home & Kitchen,Mid,Occasional_Buyer
+CUST00353,39,Other,Mumbai,Silver,Sports,Home & Kitchen,Premium,Premium_Buyer
+CUST00354,30,Female,Kolkata,Silver,Fashion,Books,Budget,Frequent_Buyer
+CUST00355,31,Female,Kolkata,Silver,Home & Kitchen,Electronics,Budget,Window_Shopper
+CUST00356,22,Male,Hyderabad,Bronze,Fashion,Beauty,Premium,Window_Shopper
+CUST00357,31,Male,Mumbai,Silver,Grocery,Home & Kitchen,Budget,Occasional_Buyer
+CUST00358,29,Female,Bengaluru,Platinum,Electronics,Home & Kitchen,Mid,Premium_Buyer
+CUST00359,34,Female,Delhi,Silver,Gaming,Electronics,Mid,Premium_Buyer
+CUST00360,24,Other,Delhi,Gold,Beauty,Sports,Mid,Frequent_Buyer
+CUST00361,36,Male,Kolkata,Bronze,Beauty,Electronics,Budget,Value_Seeker
+CUST00362,45,Female,Bengaluru,Silver,Gaming,Grocery,Mid,Occasional_Buyer
+CUST00363,31,Other,Kolkata,Bronze,Sports,Home & Kitchen,Mid,Value_Seeker
+CUST00364,35,Other,Chennai,Gold,Fashion,Grocery,Mid,Frequent_Buyer
+CUST00365,38,Other,Delhi,Silver,Home & Kitchen,Books,Budget,Frequent_Buyer
+CUST00366,28,Female,Pune,Gold,Electronics,Sports,Budget,Frequent_Buyer
+CUST00367,34,Other,Jaipur,Silver,Gaming,Sports,Budget,Frequent_Buyer
+CUST00368,32,Other,Pune,Gold,Fashion,Beauty,Budget,Occasional_Buyer
+CUST00369,32,Other,Hyderabad,Silver,Fashion,Gaming,Budget,Occasional_Buyer
+CUST00370,25,Female,Chennai,Silver,Home & Kitchen,Sports,Budget,Occasional_Buyer
+CUST00371,32,Female,Mumbai,Bronze,Gaming,Home & Kitchen,Premium,Value_Seeker
+CUST00372,36,Other,Hyderabad,Silver,Grocery,Books,Budget,Frequent_Buyer
+CUST00373,45,Other,Kolkata,Gold,Gaming,Home & Kitchen,Budget,Occasional_Buyer
+CUST00374,40,Female,Bhubaneswar,Platinum,Home & Kitchen,Sports,Budget,Occasional_Buyer
+CUST00375,51,Female,Ahmedabad,Platinum,Gaming,Home & Kitchen,Mid,Occasional_Buyer
+CUST00376,25,Female,Pune,Bronze,Books,Grocery,Mid,Occasional_Buyer
+CUST00377,39,Other,Bengaluru,Platinum,Home & Kitchen,Gaming,Mid,Value_Seeker
+CUST00378,33,Female,Mumbai,Gold,Grocery,Gaming,Mid,Occasional_Buyer
+CUST00379,51,Other,Chennai,Bronze,Grocery,Fashion,Mid,Value_Seeker
+CUST00380,24,Female,Bhubaneswar,Silver,Gaming,Electronics,Mid,Occasional_Buyer
+CUST00381,24,Male,Pune,Silver,Gaming,Books,Premium,Occasional_Buyer
+CUST00382,26,Male,Pune,Bronze,Fashion,Electronics,Mid,Occasional_Buyer
+CUST00383,18,Female,Kolkata,Bronze,Gaming,Grocery,Budget,Frequent_Buyer
+CUST00384,27,Female,Kolkata,Silver,Sports,Books,Mid,Value_Seeker
+CUST00385,25,Male,Ahmedabad,Bronze,Home & Kitchen,Sports,Mid,Window_Shopper
+CUST00386,33,Other,Delhi,Bronze,Fashion,Grocery,Budget,Premium_Buyer
+CUST00387,35,Female,Mumbai,Bronze,Grocery,Home & Kitchen,Mid,Occasional_Buyer
+CUST00388,48,Other,Mumbai,Bronze,Books,Electronics,Budget,Frequent_Buyer
+CUST00389,40,Male,Jaipur,Bronze,Home & Kitchen,Gaming,Budget,Occasional_Buyer
+CUST00390,26,Female,Delhi,Bronze,Grocery,Fashion,Mid,Occasional_Buyer
+CUST00391,23,Other,Kolkata,Bronze,Sports,Books,Mid,Frequent_Buyer
+CUST00392,36,Male,Jaipur,Bronze,Fashion,Beauty,Budget,Occasional_Buyer
+CUST00393,20,Female,Jaipur,Platinum,Books,Gaming,Budget,Occasional_Buyer
+CUST00394,48,Male,Pune,Bronze,Gaming,Books,Mid,Frequent_Buyer
+CUST00395,42,Other,Mumbai,Silver,Books,Beauty,Budget,Frequent_Buyer
+CUST00396,27,Female,Delhi,Silver,Fashion,Home & Kitchen,Mid,Frequent_Buyer
+CUST00397,18,Male,Ahmedabad,Silver,Gaming,Sports,Mid,Value_Seeker
+CUST00398,44,Male,Ahmedabad,Bronze,Home & Kitchen,Beauty,Budget,Premium_Buyer
+CUST00399,30,Female,Bengaluru,Silver,Electronics,Grocery,Budget,Occasional_Buyer
+CUST00400,43,Other,Ahmedabad,Bronze,Grocery,Sports,Premium,Occasional_Buyer
+CUST00401,18,Male,Hyderabad,Bronze,Fashion,Beauty,Budget,Occasional_Buyer
+CUST00402,26,Female,Bhubaneswar,Silver,Home & Kitchen,Grocery,Mid,Occasional_Buyer
+CUST00403,32,Male,Chennai,Gold,Fashion,Beauty,Premium,Occasional_Buyer
+CUST00404,32,Other,Ahmedabad,Silver,Electronics,Grocery,Premium,Frequent_Buyer
+CUST00405,27,Male,Ahmedabad,Bronze,Sports,Home & Kitchen,Premium,Frequent_Buyer
+CUST00406,37,Male,Hyderabad,Gold,Fashion,Grocery,Mid,Occasional_Buyer
+CUST00407,22,Other,Delhi,Gold,Gaming,Fashion,Premium,Premium_Buyer
+CUST00408,30,Female,Bhubaneswar,Silver,Beauty,Books,Budget,Value_Seeker
+CUST00409,33,Female,Jaipur,Platinum,Books,Beauty,Mid,Frequent_Buyer
+CUST00410,36,Female,Delhi,Silver,Gaming,Electronics,Budget,Frequent_Buyer
+CUST00411,38,Male,Kolkata,Silver,Beauty,Grocery,Mid,Occasional_Buyer
+CUST00412,21,Female,Mumbai,Silver,Gaming,Sports,Premium,Frequent_Buyer
+CUST00413,18,Female,Ahmedabad,Platinum,Books,Gaming,Budget,Frequent_Buyer
+CUST00414,43,Female,Pune,Gold,Fashion,Gaming,Mid,Occasional_Buyer
+CUST00415,34,Male,Ahmedabad,Bronze,Gaming,Grocery,Premium,Occasional_Buyer
+CUST00416,25,Female,Pune,Gold,Home & Kitchen,Beauty,Mid,Frequent_Buyer
+CUST00417,45,Male,Delhi,Bronze,Grocery,Electronics,Budget,Window_Shopper
+CUST00418,33,Male,Chennai,Bronze,Sports,Gaming,Premium,Occasional_Buyer
+CUST00419,42,Male,Pune,Silver,Beauty,Home & Kitchen,Mid,Frequent_Buyer
+CUST00420,32,Other,Hyderabad,Bronze,Books,Gaming,Budget,Frequent_Buyer
+CUST00421,50,Male,Delhi,Silver,Sports,Books,Mid,Occasional_Buyer
+CUST00422,47,Female,Mumbai,Platinum,Electronics,Gaming,Mid,Frequent_Buyer
+CUST00423,29,Female,Mumbai,Silver,Fashion,Home & Kitchen,Budget,Occasional_Buyer
+CUST00424,40,Female,Delhi,Silver,Books,Fashion,Mid,Frequent_Buyer
+CUST00425,37,Other,Delhi,Bronze,Electronics,Beauty,Mid,Value_Seeker
+CUST00426,44,Other,Ahmedabad,Gold,Home & Kitchen,Books,Budget,Frequent_Buyer
+CUST00427,23,Other,Kolkata,Bronze,Fashion,Beauty,Mid,Premium_Buyer
+CUST00428,38,Other,Mumbai,Bronze,Sports,Home & Kitchen,Mid,Value_Seeker
+CUST00429,41,Other,Bengaluru,Gold,Books,Grocery,Mid,Occasional_Buyer
+CUST00430,18,Female,Chennai,Silver,Sports,Gaming,Mid,Premium_Buyer
+CUST00431,21,Female,Mumbai,Bronze,Sports,Books,Mid,Frequent_Buyer
+CUST00432,18,Female,Delhi,Bronze,Electronics,Sports,Premium,Occasional_Buyer
+CUST00433,29,Female,Mumbai,Bronze,Home & Kitchen,Grocery,Budget,Occasional_Buyer
+CUST00434,38,Female,Jaipur,Bronze,Electronics,Fashion,Mid,Premium_Buyer
+CUST00435,45,Female,Mumbai,Silver,Gaming,Beauty,Mid,Frequent_Buyer
+CUST00436,32,Male,Jaipur,Gold,Fashion,Sports,Premium,Frequent_Buyer
+CUST00437,46,Other,Mumbai,Bronze,Beauty,Sports,Mid,Window_Shopper
+CUST00438,19,Male,Mumbai,Gold,Sports,Electronics,Budget,Value_Seeker
+CUST00439,18,Other,Delhi,Bronze,Electronics,Sports,Mid,Value_Seeker
+CUST00440,31,Female,Jaipur,Silver,Home & Kitchen,Books,Premium,Occasional_Buyer
+CUST00441,35,Other,Chennai,Silver,Beauty,Fashion,Budget,Window_Shopper
+CUST00442,31,Female,Chennai,Silver,Beauty,Grocery,Budget,Window_Shopper
+CUST00443,18,Female,Jaipur,Bronze,Fashion,Books,Mid,Occasional_Buyer
+CUST00444,31,Female,Mumbai,Gold,Beauty,Fashion,Mid,Frequent_Buyer
+CUST00445,20,Male,Hyderabad,Bronze,Electronics,Fashion,Mid,Window_Shopper
+CUST00446,38,Male,Jaipur,Gold,Home & Kitchen,Grocery,Mid,Value_Seeker
+CUST00447,35,Male,Kolkata,Gold,Sports,Home & Kitchen,Budget,Premium_Buyer
+CUST00448,23,Other,Bengaluru,Bronze,Beauty,Electronics,Premium,Window_Shopper
+CUST00449,27,Female,Chennai,Gold,Gaming,Electronics,Budget,Frequent_Buyer
+CUST00450,22,Female,Hyderabad,Bronze,Grocery,Electronics,Mid,Value_Seeker
+CUST00451,31,Female,Bhubaneswar,Platinum,Sports,Books,Premium,Premium_Buyer
+CUST00452,40,Male,Kolkata,Bronze,Sports,Fashion,Mid,Value_Seeker
+CUST00453,23,Male,Kolkata,Gold,Electronics,Sports,Mid,Frequent_Buyer
+CUST00454,36,Female,Bengaluru,Platinum,Sports,Books,Budget,Occasional_Buyer
+CUST00455,27,Other,Kolkata,Silver,Electronics,Home & Kitchen,Mid,Window_Shopper
+CUST00456,24,Male,Jaipur,Bronze,Fashion,Beauty,Premium,Frequent_Buyer
+CUST00457,31,Other,Delhi,Bronze,Electronics,Books,Budget,Occasional_Buyer
+CUST00458,22,Other,Pune,Bronze,Gaming,Beauty,Budget,Frequent_Buyer
+CUST00459,27,Other,Mumbai,Bronze,Sports,Fashion,Budget,Occasional_Buyer
+CUST00460,21,Other,Pune,Platinum,Gaming,Electronics,Budget,Occasional_Buyer
+CUST00461,49,Male,Mumbai,Bronze,Books,Grocery,Mid,Premium_Buyer
+CUST00462,32,Female,Delhi,Bronze,Electronics,Home & Kitchen,Budget,Occasional_Buyer
+CUST00463,25,Female,Chennai,Gold,Electronics,Gaming,Budget,Window_Shopper
+CUST00464,33,Other,Jaipur,Bronze,Grocery,Books,Mid,Premium_Buyer
+CUST00465,30,Male,Bengaluru,Gold,Home & Kitchen,Electronics,Premium,Frequent_Buyer
+CUST00466,30,Other,Mumbai,Silver,Gaming,Home & Kitchen,Budget,Premium_Buyer
+CUST00467,37,Male,Ahmedabad,Gold,Electronics,Fashion,Budget,Premium_Buyer
+CUST00468,38,Male,Ahmedabad,Bronze,Beauty,Electronics,Premium,Occasional_Buyer
+CUST00469,27,Male,Kolkata,Silver,Gaming,Sports,Budget,Frequent_Buyer
+CUST00470,26,Female,Ahmedabad,Gold,Home & Kitchen,Sports,Budget,Value_Seeker
+CUST00471,29,Female,Ahmedabad,Bronze,Sports,Gaming,Mid,Frequent_Buyer
+CUST00472,18,Male,Kolkata,Bronze,Books,Sports,Premium,Occasional_Buyer
+CUST00473,18,Other,Pune,Silver,Electronics,Books,Mid,Occasional_Buyer
+CUST00474,44,Female,Delhi,Bronze,Beauty,Sports,Mid,Frequent_Buyer
+CUST00475,46,Female,Jaipur,Bronze,Books,Electronics,Mid,Frequent_Buyer
+CUST00476,29,Male,Hyderabad,Bronze,Home & Kitchen,Electronics,Premium,Window_Shopper
+CUST00477,37,Male,Bhubaneswar,Gold,Electronics,Grocery,Mid,Occasional_Buyer
+CUST00478,34,Male,Bhubaneswar,Bronze,Home & Kitchen,Fashion,Mid,Occasional_Buyer
+CUST00479,59,Other,Pune,Platinum,Electronics,Gaming,Mid,Occasional_Buyer
+CUST00480,42,Female,Jaipur,Bronze,Sports,Grocery,Mid,Frequent_Buyer
+CUST00481,30,Male,Bengaluru,Silver,Sports,Beauty,Budget,Window_Shopper
+CUST00482,23,Male,Pune,Silver,Sports,Grocery,Premium,Premium_Buyer
+CUST00483,18,Male,Delhi,Silver,Beauty,Electronics,Premium,Premium_Buyer
+CUST00484,33,Female,Kolkata,Silver,Beauty,Electronics,Budget,Occasional_Buyer
+CUST00485,25,Female,Ahmedabad,Silver,Home & Kitchen,Gaming,Budget,Window_Shopper
+CUST00486,19,Other,Bhubaneswar,Gold,Beauty,Fashion,Mid,Value_Seeker
+CUST00487,26,Male,Bengaluru,Platinum,Books,Fashion,Premium,Occasional_Buyer
+CUST00488,22,Other,Pune,Gold,Electronics,Home & Kitchen,Premium,Frequent_Buyer
+CUST00489,47,Male,Pune,Silver,Fashion,Books,Budget,Window_Shopper
+CUST00490,39,Male,Pune,Bronze,Home & Kitchen,Gaming,Budget,Frequent_Buyer
+CUST00491,31,Female,Mumbai,Silver,Fashion,Sports,Budget,Occasional_Buyer
+CUST00492,45,Female,Ahmedabad,Gold,Gaming,Fashion,Mid,Occasional_Buyer
+CUST00493,32,Other,Hyderabad,Bronze,Grocery,Gaming,Budget,Premium_Buyer
+CUST00494,24,Female,Chennai,Platinum,Books,Electronics,Budget,Frequent_Buyer
+CUST00495,45,Other,Mumbai,Silver,Gaming,Fashion,Premium,Frequent_Buyer
+CUST00496,36,Male,Kolkata,Platinum,Grocery,Beauty,Budget,Window_Shopper
+CUST00497,22,Male,Pune,Bronze,Home & Kitchen,Electronics,Budget,Value_Seeker
+CUST00498,30,Female,Chennai,Bronze,Books,Gaming,Budget,Occasional_Buyer
+CUST00499,24,Male,Pune,Bronze,Grocery,Fashion,Budget,Premium_Buyer
+CUST00500,19,Male,Bengaluru,Bronze,Grocery,Fashion,Mid,Window_Shopper
+CUST00501,40,Male,Chennai,Gold,Grocery,Gaming,Mid,Window_Shopper
+CUST00502,49,Other,Jaipur,Bronze,Books,Electronics,Mid,Occasional_Buyer
+CUST00503,19,Male,Chennai,Bronze,Home & Kitchen,Books,Budget,Premium_Buyer
+CUST00504,37,Other,Mumbai,Bronze,Electronics,Home & Kitchen,Budget,Occasional_Buyer
+CUST00505,26,Male,Kolkata,Gold,Sports,Beauty,Mid,Occasional_Buyer
+CUST00506,27,Male,Ahmedabad,Bronze,Grocery,Books,Mid,Window_Shopper
+CUST00507,26,Other,Jaipur,Gold,Electronics,Beauty,Mid,Value_Seeker
+CUST00508,24,Female,Delhi,Platinum,Fashion,Grocery,Budget,Frequent_Buyer
+CUST00509,32,Male,Kolkata,Bronze,Sports,Fashion,Mid,Frequent_Buyer
+CUST00510,24,Other,Chennai,Bronze,Home & Kitchen,Grocery,Mid,Premium_Buyer
+CUST00511,34,Other,Kolkata,Silver,Fashion,Books,Premium,Occasional_Buyer
+CUST00512,31,Other,Bhubaneswar,Silver,Electronics,Grocery,Mid,Frequent_Buyer
+CUST00513,29,Other,Bhubaneswar,Silver,Home & Kitchen,Fashion,Premium,Frequent_Buyer
+CUST00514,23,Male,Chennai,Gold,Fashion,Beauty,Premium,Window_Shopper
+CUST00515,26,Other,Ahmedabad,Silver,Books,Sports,Mid,Frequent_Buyer
+CUST00516,38,Other,Bhubaneswar,Silver,Gaming,Fashion,Mid,Occasional_Buyer
+CUST00517,36,Male,Bengaluru,Silver,Beauty,Gaming,Premium,Window_Shopper
+CUST00518,23,Female,Chennai,Bronze,Electronics,Sports,Mid,Value_Seeker
+CUST00519,32,Male,Delhi,Bronze,Fashion,Grocery,Mid,Premium_Buyer
+CUST00520,38,Other,Kolkata,Silver,Beauty,Home & Kitchen,Budget,Occasional_Buyer
+CUST00521,18,Female,Jaipur,Gold,Gaming,Beauty,Premium,Occasional_Buyer
+CUST00522,36,Female,Jaipur,Bronze,Home & Kitchen,Electronics,Mid,Occasional_Buyer
+CUST00523,26,Male,Hyderabad,Gold,Electronics,Home & Kitchen,Budget,Occasional_Buyer
+CUST00524,37,Male,Chennai,Bronze,Beauty,Gaming,Mid,Occasional_Buyer
+CUST00525,25,Male,Hyderabad,Bronze,Fashion,Gaming,Mid,Frequent_Buyer
+CUST00526,18,Other,Pune,Bronze,Grocery,Books,Premium,Occasional_Buyer
+CUST00527,18,Male,Kolkata,Bronze,Fashion,Sports,Premium,Premium_Buyer
+CUST00528,32,Male,Hyderabad,Silver,Sports,Grocery,Budget,Occasional_Buyer
+CUST00529,34,Other,Bengaluru,Silver,Electronics,Grocery,Budget,Frequent_Buyer
+CUST00530,23,Female,Bhubaneswar,Gold,Electronics,Home & Kitchen,Budget,Window_Shopper
+CUST00531,37,Female,Pune,Silver,Books,Sports,Budget,Occasional_Buyer
+CUST00532,18,Male,Bengaluru,Silver,Gaming,Books,Mid,Premium_Buyer
+CUST00533,31,Other,Bhubaneswar,Silver,Beauty,Books,Budget,Frequent_Buyer
+CUST00534,21,Female,Pune,Gold,Fashion,Sports,Budget,Value_Seeker
+CUST00535,26,Male,Jaipur,Gold,Books,Fashion,Premium,Premium_Buyer
+CUST00536,32,Female,Delhi,Silver,Gaming,Beauty,Mid,Window_Shopper
+CUST00537,24,Female,Kolkata,Silver,Books,Sports,Mid,Window_Shopper
+CUST00538,28,Other,Hyderabad,Silver,Sports,Home & Kitchen,Mid,Occasional_Buyer
+CUST00539,41,Female,Delhi,Gold,Beauty,Books,Premium,Frequent_Buyer
+CUST00540,26,Male,Chennai,Silver,Fashion,Books,Mid,Window_Shopper
+CUST00541,39,Male,Hyderabad,Bronze,Beauty,Gaming,Mid,Occasional_Buyer
+CUST00542,21,Female,Bhubaneswar,Bronze,Beauty,Home & Kitchen,Premium,Occasional_Buyer
+CUST00543,36,Male,Jaipur,Bronze,Fashion,Books,Mid,Occasional_Buyer
+CUST00544,44,Male,Delhi,Platinum,Gaming,Electronics,Budget,Window_Shopper
+CUST00545,18,Female,Delhi,Gold,Grocery,Fashion,Mid,Value_Seeker
+CUST00546,24,Other,Bengaluru,Bronze,Home & Kitchen,Sports,Budget,Premium_Buyer
+CUST00547,37,Male,Ahmedabad,Gold,Home & Kitchen,Beauty,Mid,Frequent_Buyer
+CUST00548,30,Female,Kolkata,Bronze,Gaming,Beauty,Mid,Frequent_Buyer
+CUST00549,35,Female,Bengaluru,Gold,Sports,Gaming,Mid,Occasional_Buyer
+CUST00550,26,Male,Hyderabad,Bronze,Electronics,Gaming,Premium,Occasional_Buyer
+CUST00551,32,Other,Bhubaneswar,Bronze,Fashion,Books,Budget,Frequent_Buyer
+CUST00552,30,Other,Jaipur,Silver,Books,Sports,Budget,Window_Shopper
+CUST00553,42,Female,Pune,Gold,Home & Kitchen,Sports,Budget,Window_Shopper
+CUST00554,34,Male,Hyderabad,Silver,Gaming,Electronics,Budget,Value_Seeker
+CUST00555,35,Female,Bengaluru,Bronze,Home & Kitchen,Electronics,Mid,Premium_Buyer
+CUST00556,28,Male,Mumbai,Silver,Electronics,Beauty,Budget,Value_Seeker
+CUST00557,27,Female,Mumbai,Silver,Gaming,Sports,Mid,Frequent_Buyer
+CUST00558,28,Female,Mumbai,Silver,Electronics,Sports,Budget,Value_Seeker
+CUST00559,35,Male,Jaipur,Silver,Home & Kitchen,Books,Budget,Frequent_Buyer
+CUST00560,28,Male,Bhubaneswar,Bronze,Fashion,Books,Budget,Occasional_Buyer
+CUST00561,34,Other,Kolkata,Bronze,Sports,Home & Kitchen,Budget,Occasional_Buyer
+CUST00562,50,Female,Pune,Bronze,Sports,Gaming,Budget,Frequent_Buyer
+CUST00563,39,Other,Ahmedabad,Bronze,Fashion,Grocery,Budget,Occasional_Buyer
+CUST00564,29,Other,Hyderabad,Silver,Fashion,Sports,Premium,Occasional_Buyer
+CUST00565,42,Male,Bengaluru,Gold,Electronics,Fashion,Mid,Value_Seeker
+CUST00566,28,Male,Mumbai,Gold,Gaming,Beauty,Premium,Frequent_Buyer
+CUST00567,18,Other,Delhi,Bronze,Home & Kitchen,Gaming,Premium,Window_Shopper
+CUST00568,22,Male,Pune,Gold,Books,Gaming,Budget,Occasional_Buyer
+CUST00569,18,Female,Ahmedabad,Gold,Grocery,Home & Kitchen,Mid,Premium_Buyer
+CUST00570,28,Other,Bengaluru,Platinum,Fashion,Home & Kitchen,Premium,Frequent_Buyer
+CUST00571,32,Other,Ahmedabad,Bronze,Grocery,Gaming,Mid,Occasional_Buyer
+CUST00572,47,Other,Delhi,Silver,Electronics,Grocery,Mid,Window_Shopper
+CUST00573,34,Male,Chennai,Silver,Grocery,Electronics,Budget,Window_Shopper
+CUST00574,30,Female,Jaipur,Silver,Sports,Gaming,Mid,Frequent_Buyer
+CUST00575,39,Female,Kolkata,Bronze,Sports,Books,Premium,Window_Shopper
+CUST00576,18,Other,Delhi,Silver,Electronics,Fashion,Mid,Occasional_Buyer
+CUST00577,34,Female,Pune,Bronze,Home & Kitchen,Electronics,Premium,Frequent_Buyer
+CUST00578,38,Other,Kolkata,Bronze,Sports,Beauty,Budget,Occasional_Buyer
+CUST00579,18,Female,Ahmedabad,Bronze,Grocery,Electronics,Premium,Value_Seeker
+CUST00580,42,Female,Kolkata,Bronze,Electronics,Fashion,Mid,Premium_Buyer
+CUST00581,35,Other,Hyderabad,Silver,Books,Beauty,Mid,Occasional_Buyer
+CUST00582,28,Male,Ahmedabad,Bronze,Electronics,Grocery,Mid,Occasional_Buyer
+CUST00583,37,Female,Mumbai,Bronze,Beauty,Gaming,Mid,Frequent_Buyer
+CUST00584,52,Other,Chennai,Silver,Beauty,Grocery,Mid,Frequent_Buyer
+CUST00585,33,Male,Kolkata,Bronze,Home & Kitchen,Books,Mid,Frequent_Buyer
+CUST00586,34,Female,Hyderabad,Silver,Gaming,Fashion,Budget,Occasional_Buyer
+CUST00587,27,Female,Ahmedabad,Silver,Fashion,Grocery,Premium,Frequent_Buyer
+CUST00588,24,Other,Bengaluru,Silver,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00589,39,Other,Delhi,Silver,Home & Kitchen,Gaming,Budget,Occasional_Buyer
+CUST00590,24,Female,Kolkata,Platinum,Beauty,Books,Premium,Premium_Buyer
+CUST00591,32,Female,Chennai,Silver,Books,Sports,Budget,Occasional_Buyer
+CUST00592,27,Other,Jaipur,Gold,Books,Grocery,Mid,Window_Shopper
+CUST00593,36,Male,Bhubaneswar,Silver,Sports,Fashion,Mid,Window_Shopper
+CUST00594,35,Other,Delhi,Silver,Home & Kitchen,Gaming,Mid,Occasional_Buyer
+CUST00595,41,Female,Jaipur,Silver,Fashion,Grocery,Mid,Value_Seeker
+CUST00596,27,Other,Jaipur,Bronze,Gaming,Beauty,Premium,Premium_Buyer
+CUST00597,29,Female,Delhi,Bronze,Fashion,Electronics,Budget,Occasional_Buyer
+CUST00598,23,Other,Chennai,Bronze,Home & Kitchen,Sports,Budget,Premium_Buyer
+CUST00599,28,Other,Bengaluru,Bronze,Sports,Grocery,Mid,Value_Seeker
+CUST00600,35,Other,Jaipur,Bronze,Sports,Gaming,Mid,Premium_Buyer
+CUST00601,38,Other,Bengaluru,Gold,Books,Gaming,Mid,Window_Shopper
+CUST00602,23,Male,Bengaluru,Silver,Beauty,Books,Budget,Window_Shopper
+CUST00603,39,Male,Pune,Gold,Grocery,Gaming,Mid,Value_Seeker
+CUST00604,44,Female,Delhi,Platinum,Sports,Home & Kitchen,Budget,Window_Shopper
+CUST00605,35,Male,Kolkata,Bronze,Fashion,Books,Budget,Frequent_Buyer
+CUST00606,48,Female,Ahmedabad,Silver,Books,Electronics,Budget,Frequent_Buyer
+CUST00607,25,Male,Bhubaneswar,Gold,Beauty,Books,Budget,Premium_Buyer
+CUST00608,20,Other,Pune,Silver,Beauty,Electronics,Premium,Occasional_Buyer
+CUST00609,18,Other,Jaipur,Bronze,Home & Kitchen,Books,Budget,Window_Shopper
+CUST00610,45,Female,Chennai,Bronze,Beauty,Home & Kitchen,Mid,Occasional_Buyer
+CUST00611,37,Other,Pune,Bronze,Electronics,Fashion,Premium,Value_Seeker
+CUST00612,31,Other,Pune,Bronze,Sports,Electronics,Mid,Frequent_Buyer
+CUST00613,34,Other,Chennai,Bronze,Books,Beauty,Mid,Premium_Buyer
+CUST00614,21,Male,Chennai,Gold,Grocery,Sports,Budget,Occasional_Buyer
+CUST00615,54,Other,Jaipur,Bronze,Fashion,Home & Kitchen,Budget,Value_Seeker
+CUST00616,33,Other,Kolkata,Gold,Sports,Grocery,Budget,Premium_Buyer
+CUST00617,32,Male,Delhi,Bronze,Gaming,Beauty,Mid,Frequent_Buyer
+CUST00618,38,Male,Chennai,Silver,Fashion,Electronics,Mid,Frequent_Buyer
+CUST00619,36,Female,Ahmedabad,Silver,Books,Sports,Mid,Frequent_Buyer
+CUST00620,34,Male,Bhubaneswar,Bronze,Fashion,Beauty,Mid,Frequent_Buyer
+CUST00621,24,Other,Mumbai,Bronze,Fashion,Sports,Mid,Value_Seeker
+CUST00622,36,Female,Kolkata,Bronze,Books,Grocery,Mid,Occasional_Buyer
+CUST00623,48,Other,Kolkata,Gold,Sports,Fashion,Premium,Occasional_Buyer
+CUST00624,44,Other,Pune,Platinum,Home & Kitchen,Sports,Budget,Window_Shopper
+CUST00625,46,Male,Bengaluru,Silver,Home & Kitchen,Electronics,Mid,Occasional_Buyer
+CUST00626,27,Male,Pune,Bronze,Fashion,Sports,Premium,Window_Shopper
+CUST00627,23,Male,Hyderabad,Silver,Home & Kitchen,Fashion,Budget,Frequent_Buyer
+CUST00628,30,Other,Ahmedabad,Silver,Electronics,Grocery,Budget,Value_Seeker
+CUST00629,32,Male,Bhubaneswar,Silver,Books,Electronics,Budget,Frequent_Buyer
+CUST00630,41,Female,Bhubaneswar,Bronze,Sports,Electronics,Budget,Occasional_Buyer
+CUST00631,18,Other,Chennai,Silver,Beauty,Books,Budget,Occasional_Buyer
+CUST00632,45,Male,Bengaluru,Bronze,Beauty,Sports,Mid,Value_Seeker
+CUST00633,30,Female,Delhi,Silver,Gaming,Home & Kitchen,Budget,Occasional_Buyer
+CUST00634,28,Female,Ahmedabad,Silver,Grocery,Home & Kitchen,Budget,Value_Seeker
+CUST00635,22,Male,Jaipur,Bronze,Books,Grocery,Mid,Value_Seeker
+CUST00636,18,Other,Bengaluru,Gold,Fashion,Electronics,Mid,Premium_Buyer
+CUST00637,39,Other,Chennai,Silver,Sports,Electronics,Premium,Occasional_Buyer
+CUST00638,32,Female,Hyderabad,Gold,Home & Kitchen,Sports,Mid,Window_Shopper
+CUST00639,20,Other,Jaipur,Bronze,Home & Kitchen,Books,Mid,Frequent_Buyer
+CUST00640,20,Other,Delhi,Gold,Sports,Grocery,Budget,Frequent_Buyer
+CUST00641,28,Other,Ahmedabad,Platinum,Home & Kitchen,Gaming,Budget,Premium_Buyer
+CUST00642,47,Female,Pune,Bronze,Sports,Electronics,Mid,Occasional_Buyer
+CUST00643,29,Female,Ahmedabad,Gold,Beauty,Sports,Budget,Value_Seeker
+CUST00644,18,Other,Chennai,Gold,Fashion,Gaming,Budget,Occasional_Buyer
+CUST00645,29,Other,Kolkata,Bronze,Home & Kitchen,Books,Mid,Premium_Buyer
+CUST00646,29,Male,Jaipur,Bronze,Books,Sports,Premium,Occasional_Buyer
+CUST00647,18,Male,Jaipur,Gold,Grocery,Books,Mid,Frequent_Buyer
+CUST00648,31,Male,Delhi,Bronze,Books,Fashion,Mid,Premium_Buyer
+CUST00649,29,Female,Mumbai,Silver,Sports,Books,Mid,Frequent_Buyer
+CUST00650,38,Female,Bengaluru,Bronze,Home & Kitchen,Gaming,Budget,Occasional_Buyer
+CUST00651,48,Other,Bengaluru,Gold,Home & Kitchen,Gaming,Budget,Frequent_Buyer
+CUST00652,42,Female,Bhubaneswar,Platinum,Home & Kitchen,Beauty,Mid,Window_Shopper
+CUST00653,29,Male,Ahmedabad,Silver,Books,Electronics,Mid,Occasional_Buyer
+CUST00654,22,Female,Bhubaneswar,Bronze,Sports,Grocery,Mid,Premium_Buyer
+CUST00655,55,Other,Pune,Gold,Books,Fashion,Mid,Frequent_Buyer
+CUST00656,32,Male,Mumbai,Bronze,Gaming,Sports,Mid,Window_Shopper
+CUST00657,32,Male,Bhubaneswar,Bronze,Gaming,Grocery,Mid,Value_Seeker
+CUST00658,31,Other,Jaipur,Gold,Electronics,Grocery,Budget,Value_Seeker
+CUST00659,33,Other,Kolkata,Silver,Electronics,Grocery,Mid,Frequent_Buyer
+CUST00660,30,Female,Kolkata,Bronze,Gaming,Fashion,Premium,Window_Shopper
+CUST00661,26,Male,Chennai,Silver,Fashion,Books,Budget,Window_Shopper
+CUST00662,27,Other,Kolkata,Bronze,Books,Beauty,Budget,Value_Seeker
+CUST00663,31,Other,Mumbai,Silver,Electronics,Beauty,Mid,Frequent_Buyer
+CUST00664,27,Female,Mumbai,Bronze,Beauty,Sports,Mid,Occasional_Buyer
+CUST00665,25,Female,Bhubaneswar,Bronze,Gaming,Books,Mid,Premium_Buyer
+CUST00666,32,Other,Ahmedabad,Bronze,Gaming,Books,Mid,Occasional_Buyer
+CUST00667,29,Female,Kolkata,Silver,Books,Beauty,Premium,Value_Seeker
+CUST00668,45,Other,Delhi,Bronze,Sports,Books,Mid,Premium_Buyer
+CUST00669,18,Female,Bengaluru,Gold,Electronics,Home & Kitchen,Premium,Occasional_Buyer
+CUST00670,41,Male,Chennai,Bronze,Gaming,Electronics,Budget,Frequent_Buyer
+CUST00671,43,Other,Jaipur,Bronze,Gaming,Sports,Premium,Frequent_Buyer
+CUST00672,18,Female,Ahmedabad,Bronze,Home & Kitchen,Gaming,Premium,Window_Shopper
+CUST00673,28,Male,Bhubaneswar,Silver,Books,Fashion,Mid,Value_Seeker
+CUST00674,28,Male,Bengaluru,Platinum,Electronics,Sports,Budget,Occasional_Buyer
+CUST00675,19,Other,Kolkata,Bronze,Gaming,Home & Kitchen,Budget,Frequent_Buyer
+CUST00676,24,Other,Chennai,Silver,Fashion,Electronics,Mid,Occasional_Buyer
+CUST00677,22,Female,Hyderabad,Silver,Beauty,Grocery,Budget,Window_Shopper
+CUST00678,47,Male,Kolkata,Silver,Electronics,Sports,Mid,Occasional_Buyer
+CUST00679,40,Other,Chennai,Gold,Beauty,Electronics,Premium,Occasional_Buyer
+CUST00680,43,Other,Ahmedabad,Gold,Grocery,Sports,Mid,Window_Shopper
+CUST00681,38,Female,Bhubaneswar,Gold,Grocery,Beauty,Mid,Occasional_Buyer
+CUST00682,21,Male,Hyderabad,Gold,Gaming,Beauty,Mid,Occasional_Buyer
+CUST00683,27,Female,Hyderabad,Bronze,Electronics,Gaming,Mid,Value_Seeker
+CUST00684,36,Other,Delhi,Silver,Beauty,Electronics,Mid,Window_Shopper
+CUST00685,21,Other,Hyderabad,Silver,Books,Fashion,Budget,Value_Seeker
+CUST00686,38,Male,Hyderabad,Gold,Books,Fashion,Premium,Occasional_Buyer
+CUST00687,29,Male,Ahmedabad,Silver,Fashion,Electronics,Mid,Occasional_Buyer
+CUST00688,28,Female,Pune,Silver,Electronics,Grocery,Mid,Window_Shopper
+CUST00689,38,Male,Jaipur,Bronze,Books,Sports,Budget,Occasional_Buyer
+CUST00690,35,Female,Ahmedabad,Platinum,Electronics,Beauty,Budget,Occasional_Buyer
+CUST00691,28,Male,Jaipur,Silver,Home & Kitchen,Books,Mid,Frequent_Buyer
+CUST00692,42,Other,Mumbai,Bronze,Sports,Books,Mid,Occasional_Buyer
+CUST00693,22,Female,Ahmedabad,Platinum,Books,Fashion,Budget,Frequent_Buyer
+CUST00694,37,Female,Pune,Bronze,Gaming,Fashion,Mid,Occasional_Buyer
+CUST00695,37,Other,Hyderabad,Gold,Home & Kitchen,Beauty,Mid,Premium_Buyer
+CUST00696,29,Female,Hyderabad,Bronze,Gaming,Grocery,Premium,Frequent_Buyer
+CUST00697,34,Female,Ahmedabad,Bronze,Electronics,Home & Kitchen,Premium,Value_Seeker
+CUST00698,20,Female,Chennai,Bronze,Beauty,Grocery,Premium,Frequent_Buyer
+CUST00699,40,Male,Bengaluru,Bronze,Fashion,Gaming,Budget,Premium_Buyer
+CUST00700,30,Other,Pune,Bronze,Fashion,Books,Mid,Occasional_Buyer
+CUST00701,27,Male,Kolkata,Bronze,Books,Home & Kitchen,Premium,Window_Shopper
+CUST00702,41,Other,Jaipur,Bronze,Sports,Beauty,Mid,Occasional_Buyer
+CUST00703,25,Other,Ahmedabad,Gold,Grocery,Gaming,Mid,Occasional_Buyer
+CUST00704,19,Male,Pune,Bronze,Home & Kitchen,Grocery,Mid,Occasional_Buyer
+CUST00705,18,Male,Pune,Bronze,Fashion,Electronics,Budget,Occasional_Buyer
+CUST00706,37,Other,Kolkata,Bronze,Books,Beauty,Mid,Window_Shopper
+CUST00707,20,Other,Jaipur,Platinum,Beauty,Gaming,Mid,Frequent_Buyer
+CUST00708,47,Other,Hyderabad,Silver,Electronics,Home & Kitchen,Premium,Value_Seeker
+CUST00709,18,Male,Kolkata,Bronze,Fashion,Home & Kitchen,Budget,Window_Shopper
+CUST00710,47,Female,Jaipur,Gold,Electronics,Fashion,Budget,Occasional_Buyer
+CUST00711,33,Other,Kolkata,Bronze,Home & Kitchen,Electronics,Budget,Occasional_Buyer
+CUST00712,31,Other,Delhi,Bronze,Home & Kitchen,Fashion,Mid,Window_Shopper
+CUST00713,27,Female,Ahmedabad,Platinum,Beauty,Grocery,Mid,Occasional_Buyer
+CUST00714,35,Other,Jaipur,Bronze,Grocery,Fashion,Mid,Value_Seeker
+CUST00715,31,Other,Jaipur,Bronze,Gaming,Books,Budget,Occasional_Buyer
+CUST00716,41,Female,Pune,Bronze,Fashion,Books,Budget,Frequent_Buyer
+CUST00717,33,Female,Ahmedabad,Silver,Home & Kitchen,Sports,Mid,Occasional_Buyer
+CUST00718,33,Male,Kolkata,Gold,Grocery,Home & Kitchen,Mid,Premium_Buyer
+CUST00719,28,Female,Jaipur,Bronze,Beauty,Fashion,Budget,Value_Seeker
+CUST00720,31,Female,Hyderabad,Bronze,Gaming,Grocery,Mid,Frequent_Buyer
+CUST00721,34,Other,Jaipur,Gold,Books,Home & Kitchen,Mid,Window_Shopper
+CUST00722,18,Female,Mumbai,Silver,Home & Kitchen,Fashion,Mid,Occasional_Buyer
+CUST00723,19,Female,Bengaluru,Bronze,Grocery,Fashion,Premium,Frequent_Buyer
+CUST00724,38,Female,Delhi,Silver,Fashion,Sports,Mid,Frequent_Buyer
+CUST00725,33,Female,Hyderabad,Bronze,Home & Kitchen,Electronics,Budget,Premium_Buyer
+CUST00726,30,Other,Bengaluru,Bronze,Beauty,Sports,Premium,Window_Shopper
+CUST00727,32,Female,Mumbai,Silver,Electronics,Sports,Budget,Window_Shopper
+CUST00728,35,Female,Bengaluru,Bronze,Books,Grocery,Mid,Frequent_Buyer
+CUST00729,27,Other,Bengaluru,Bronze,Grocery,Fashion,Mid,Frequent_Buyer
+CUST00730,24,Female,Chennai,Platinum,Sports,Books,Budget,Value_Seeker
+CUST00731,33,Female,Chennai,Bronze,Fashion,Sports,Premium,Window_Shopper
+CUST00732,23,Male,Kolkata,Bronze,Sports,Electronics,Budget,Occasional_Buyer
+CUST00733,35,Male,Bengaluru,Platinum,Fashion,Books,Mid,Value_Seeker
+CUST00734,18,Male,Hyderabad,Bronze,Home & Kitchen,Sports,Budget,Value_Seeker
+CUST00735,41,Female,Delhi,Silver,Electronics,Fashion,Mid,Frequent_Buyer
+CUST00736,36,Other,Pune,Gold,Sports,Home & Kitchen,Mid,Frequent_Buyer
+CUST00737,34,Other,Delhi,Bronze,Gaming,Home & Kitchen,Budget,Value_Seeker
+CUST00738,40,Other,Ahmedabad,Bronze,Books,Beauty,Budget,Occasional_Buyer
+CUST00739,46,Other,Jaipur,Bronze,Grocery,Home & Kitchen,Mid,Occasional_Buyer
+CUST00740,41,Female,Ahmedabad,Bronze,Books,Beauty,Mid,Occasional_Buyer
+CUST00741,18,Other,Pune,Gold,Home & Kitchen,Electronics,Budget,Value_Seeker
+CUST00742,20,Other,Ahmedabad,Gold,Gaming,Fashion,Budget,Occasional_Buyer
+CUST00743,26,Female,Mumbai,Bronze,Gaming,Beauty,Mid,Frequent_Buyer
+CUST00744,32,Male,Hyderabad,Bronze,Home & Kitchen,Fashion,Budget,Frequent_Buyer
+CUST00745,36,Female,Jaipur,Silver,Gaming,Beauty,Mid,Frequent_Buyer
+CUST00746,25,Other,Mumbai,Bronze,Sports,Beauty,Premium,Value_Seeker
+CUST00747,33,Other,Bengaluru,Bronze,Fashion,Books,Mid,Window_Shopper
+CUST00748,25,Other,Bengaluru,Gold,Beauty,Grocery,Budget,Frequent_Buyer
+CUST00749,26,Female,Mumbai,Platinum,Fashion,Grocery,Premium,Frequent_Buyer
+CUST00750,19,Female,Hyderabad,Bronze,Sports,Beauty,Mid,Occasional_Buyer
+CUST00751,23,Other,Jaipur,Bronze,Home & Kitchen,Beauty,Budget,Value_Seeker
+CUST00752,19,Female,Kolkata,Gold,Beauty,Gaming,Budget,Frequent_Buyer
+CUST00753,23,Female,Delhi,Silver,Gaming,Books,Mid,Window_Shopper
+CUST00754,41,Female,Pune,Bronze,Beauty,Books,Mid,Premium_Buyer
+CUST00755,23,Male,Bhubaneswar,Silver,Beauty,Books,Mid,Occasional_Buyer
+CUST00756,55,Female,Ahmedabad,Platinum,Books,Home & Kitchen,Budget,Frequent_Buyer
+CUST00757,36,Male,Jaipur,Bronze,Books,Beauty,Premium,Frequent_Buyer
+CUST00758,33,Female,Bengaluru,Gold,Sports,Fashion,Premium,Premium_Buyer
+CUST00759,24,Male,Ahmedabad,Bronze,Home & Kitchen,Electronics,Budget,Occasional_Buyer
+CUST00760,38,Female,Chennai,Bronze,Sports,Fashion,Mid,Window_Shopper
+CUST00761,26,Female,Ahmedabad,Bronze,Fashion,Gaming,Premium,Value_Seeker
+CUST00762,33,Other,Chennai,Bronze,Fashion,Beauty,Premium,Occasional_Buyer
+CUST00763,55,Female,Pune,Gold,Electronics,Grocery,Mid,Window_Shopper
+CUST00764,31,Male,Bhubaneswar,Gold,Fashion,Grocery,Mid,Value_Seeker
+CUST00765,42,Other,Bengaluru,Bronze,Electronics,Sports,Mid,Occasional_Buyer
+CUST00766,25,Male,Kolkata,Platinum,Sports,Fashion,Mid,Occasional_Buyer
+CUST00767,31,Female,Chennai,Gold,Fashion,Home & Kitchen,Budget,Occasional_Buyer
+CUST00768,47,Other,Bengaluru,Silver,Grocery,Books,Budget,Occasional_Buyer
+CUST00769,26,Other,Delhi,Gold,Gaming,Grocery,Mid,Frequent_Buyer
+CUST00770,48,Other,Hyderabad,Silver,Gaming,Beauty,Premium,Occasional_Buyer
+CUST00771,38,Female,Kolkata,Bronze,Sports,Electronics,Premium,Frequent_Buyer
+CUST00772,26,Female,Pune,Bronze,Gaming,Sports,Budget,Value_Seeker
+CUST00773,37,Female,Bhubaneswar,Gold,Books,Fashion,Premium,Value_Seeker
+CUST00774,40,Male,Hyderabad,Silver,Grocery,Electronics,Budget,Value_Seeker
+CUST00775,37,Other,Bengaluru,Bronze,Fashion,Electronics,Mid,Frequent_Buyer
+CUST00776,18,Female,Mumbai,Bronze,Books,Electronics,Mid,Occasional_Buyer
+CUST00777,25,Other,Jaipur,Gold,Sports,Fashion,Mid,Value_Seeker
+CUST00778,29,Other,Bengaluru,Bronze,Home & Kitchen,Gaming,Premium,Occasional_Buyer
+CUST00779,31,Male,Chennai,Bronze,Books,Fashion,Mid,Occasional_Buyer
+CUST00780,37,Male,Mumbai,Bronze,Grocery,Beauty,Budget,Window_Shopper
+CUST00781,33,Male,Bengaluru,Bronze,Beauty,Grocery,Premium,Occasional_Buyer
+CUST00782,19,Other,Mumbai,Gold,Gaming,Books,Mid,Occasional_Buyer
+CUST00783,35,Male,Jaipur,Platinum,Fashion,Home & Kitchen,Mid,Value_Seeker
+CUST00784,37,Other,Chennai,Bronze,Electronics,Home & Kitchen,Mid,Frequent_Buyer
+CUST00785,37,Female,Pune,Silver,Beauty,Gaming,Budget,Window_Shopper
+CUST00786,41,Male,Chennai,Gold,Books,Grocery,Premium,Premium_Buyer
+CUST00787,39,Female,Hyderabad,Bronze,Electronics,Beauty,Premium,Value_Seeker
+CUST00788,36,Female,Jaipur,Platinum,Fashion,Gaming,Mid,Value_Seeker
+CUST00789,31,Male,Bhubaneswar,Bronze,Sports,Books,Premium,Window_Shopper
+CUST00790,18,Other,Delhi,Bronze,Beauty,Sports,Budget,Occasional_Buyer
+CUST00791,35,Male,Chennai,Silver,Sports,Grocery,Premium,Window_Shopper
+CUST00792,33,Male,Bhubaneswar,Gold,Gaming,Grocery,Budget,Occasional_Buyer
+CUST00793,34,Female,Delhi,Silver,Fashion,Home & Kitchen,Mid,Window_Shopper
+CUST00794,20,Female,Ahmedabad,Silver,Gaming,Sports,Premium,Value_Seeker
+CUST00795,22,Male,Mumbai,Bronze,Books,Fashion,Budget,Window_Shopper
+CUST00796,41,Other,Bhubaneswar,Bronze,Books,Beauty,Budget,Value_Seeker
+CUST00797,31,Other,Ahmedabad,Bronze,Beauty,Electronics,Premium,Occasional_Buyer
+CUST00798,38,Female,Ahmedabad,Silver,Beauty,Fashion,Budget,Frequent_Buyer
+CUST00799,32,Male,Chennai,Platinum,Gaming,Grocery,Budget,Value_Seeker
+CUST00800,32,Male,Mumbai,Bronze,Sports,Grocery,Premium,Occasional_Buyer
+CUST00801,40,Female,Ahmedabad,Gold,Grocery,Beauty,Mid,Premium_Buyer
+CUST00802,27,Female,Kolkata,Silver,Gaming,Beauty,Mid,Occasional_Buyer
+CUST00803,32,Male,Ahmedabad,Silver,Electronics,Beauty,Premium,Window_Shopper
+CUST00804,27,Other,Kolkata,Platinum,Sports,Beauty,Budget,Occasional_Buyer
+CUST00805,28,Female,Ahmedabad,Bronze,Electronics,Home & Kitchen,Budget,Premium_Buyer
+CUST00806,29,Female,Chennai,Silver,Grocery,Fashion,Budget,Occasional_Buyer
+CUST00807,33,Other,Ahmedabad,Bronze,Home & Kitchen,Books,Mid,Frequent_Buyer
+CUST00808,27,Female,Pune,Silver,Home & Kitchen,Books,Budget,Occasional_Buyer
+CUST00809,43,Male,Chennai,Bronze,Sports,Books,Mid,Value_Seeker
+CUST00810,23,Other,Mumbai,Bronze,Home & Kitchen,Gaming,Mid,Value_Seeker
+CUST00811,30,Other,Kolkata,Silver,Fashion,Beauty,Premium,Value_Seeker
+CUST00812,28,Other,Kolkata,Bronze,Home & Kitchen,Books,Budget,Occasional_Buyer
+CUST00813,45,Male,Delhi,Gold,Home & Kitchen,Fashion,Budget,Occasional_Buyer
+CUST00814,33,Other,Delhi,Bronze,Grocery,Home & Kitchen,Budget,Frequent_Buyer
+CUST00815,41,Female,Ahmedabad,Gold,Books,Electronics,Mid,Frequent_Buyer
+CUST00816,18,Male,Bhubaneswar,Silver,Grocery,Fashion,Mid,Occasional_Buyer
+CUST00817,34,Other,Chennai,Silver,Electronics,Home & Kitchen,Mid,Premium_Buyer
+CUST00818,40,Male,Bengaluru,Silver,Electronics,Home & Kitchen,Budget,Window_Shopper
+CUST00819,32,Male,Bengaluru,Bronze,Books,Home & Kitchen,Premium,Frequent_Buyer
+CUST00820,41,Other,Bhubaneswar,Silver,Books,Beauty,Mid,Window_Shopper
+CUST00821,27,Male,Chennai,Bronze,Beauty,Electronics,Premium,Premium_Buyer
+CUST00822,44,Other,Mumbai,Bronze,Gaming,Grocery,Budget,Value_Seeker
+CUST00823,52,Other,Kolkata,Silver,Books,Home & Kitchen,Mid,Value_Seeker
+CUST00824,28,Other,Jaipur,Platinum,Fashion,Beauty,Mid,Value_Seeker
+CUST00825,27,Other,Pune,Bronze,Books,Sports,Mid,Value_Seeker
+CUST00826,45,Other,Ahmedabad,Silver,Home & Kitchen,Beauty,Mid,Occasional_Buyer
+CUST00827,46,Male,Chennai,Platinum,Home & Kitchen,Beauty,Budget,Frequent_Buyer
+CUST00828,27,Male,Bhubaneswar,Platinum,Fashion,Gaming,Mid,Occasional_Buyer
+CUST00829,28,Other,Hyderabad,Silver,Sports,Electronics,Budget,Frequent_Buyer
+CUST00830,29,Other,Pune,Gold,Books,Beauty,Budget,Occasional_Buyer
+CUST00831,19,Other,Bhubaneswar,Platinum,Gaming,Beauty,Premium,Frequent_Buyer
+CUST00832,23,Female,Ahmedabad,Gold,Beauty,Gaming,Mid,Occasional_Buyer
+CUST00833,22,Other,Pune,Silver,Grocery,Gaming,Premium,Window_Shopper
+CUST00834,25,Other,Chennai,Silver,Electronics,Grocery,Mid,Occasional_Buyer
+CUST00835,31,Other,Pune,Gold,Electronics,Home & Kitchen,Premium,Occasional_Buyer
+CUST00836,34,Male,Pune,Platinum,Home & Kitchen,Sports,Mid,Premium_Buyer
+CUST00837,45,Other,Mumbai,Gold,Gaming,Fashion,Mid,Value_Seeker
+CUST00838,23,Male,Chennai,Bronze,Beauty,Gaming,Mid,Frequent_Buyer
+CUST00839,40,Female,Hyderabad,Silver,Grocery,Gaming,Budget,Occasional_Buyer
+CUST00840,30,Male,Mumbai,Bronze,Electronics,Grocery,Budget,Occasional_Buyer
+CUST00841,31,Female,Ahmedabad,Silver,Home & Kitchen,Fashion,Mid,Premium_Buyer
+CUST00842,38,Male,Jaipur,Silver,Home & Kitchen,Grocery,Budget,Value_Seeker
+CUST00843,21,Other,Jaipur,Bronze,Grocery,Sports,Budget,Frequent_Buyer
+CUST00844,35,Female,Bengaluru,Bronze,Fashion,Sports,Mid,Value_Seeker
+CUST00845,33,Female,Hyderabad,Bronze,Electronics,Beauty,Budget,Occasional_Buyer
+CUST00846,36,Female,Mumbai,Bronze,Beauty,Grocery,Budget,Frequent_Buyer
+CUST00847,34,Other,Pune,Silver,Fashion,Home & Kitchen,Budget,Window_Shopper
+CUST00848,54,Male,Delhi,Bronze,Books,Beauty,Mid,Occasional_Buyer
+CUST00849,26,Male,Bengaluru,Silver,Grocery,Electronics,Mid,Frequent_Buyer
+CUST00850,27,Female,Kolkata,Bronze,Electronics,Fashion,Mid,Occasional_Buyer
+CUST00851,26,Female,Chennai,Bronze,Grocery,Books,Budget,Premium_Buyer
+CUST00852,27,Female,Bhubaneswar,Bronze,Fashion,Grocery,Premium,Window_Shopper
+CUST00853,26,Female,Chennai,Silver,Grocery,Electronics,Mid,Occasional_Buyer
+CUST00854,42,Male,Bhubaneswar,Bronze,Sports,Fashion,Mid,Frequent_Buyer
+CUST00855,44,Female,Ahmedabad,Silver,Beauty,Grocery,Budget,Frequent_Buyer
+CUST00856,26,Male,Chennai,Gold,Grocery,Sports,Mid,Frequent_Buyer
+CUST00857,24,Other,Mumbai,Bronze,Fashion,Books,Mid,Premium_Buyer
+CUST00858,36,Other,Kolkata,Bronze,Grocery,Sports,Budget,Frequent_Buyer
+CUST00859,27,Male,Pune,Bronze,Grocery,Sports,Mid,Occasional_Buyer
+CUST00860,37,Female,Jaipur,Silver,Gaming,Books,Budget,Value_Seeker
+CUST00861,33,Other,Bhubaneswar,Silver,Grocery,Electronics,Mid,Premium_Buyer
+CUST00862,18,Female,Mumbai,Silver,Home & Kitchen,Sports,Mid,Occasional_Buyer
+CUST00863,45,Female,Bengaluru,Bronze,Gaming,Home & Kitchen,Premium,Window_Shopper
+CUST00864,48,Male,Delhi,Silver,Electronics,Grocery,Budget,Value_Seeker
+CUST00865,26,Male,Pune,Bronze,Grocery,Fashion,Mid,Value_Seeker
+CUST00866,28,Female,Mumbai,Silver,Gaming,Beauty,Mid,Occasional_Buyer
+CUST00867,34,Female,Bengaluru,Bronze,Home & Kitchen,Grocery,Mid,Frequent_Buyer
+CUST00868,35,Female,Bengaluru,Bronze,Beauty,Electronics,Mid,Occasional_Buyer
+CUST00869,37,Female,Kolkata,Bronze,Beauty,Gaming,Mid,Value_Seeker
+CUST00870,50,Male,Jaipur,Bronze,Grocery,Fashion,Premium,Premium_Buyer
+CUST00871,30,Other,Delhi,Bronze,Home & Kitchen,Sports,Budget,Frequent_Buyer
+CUST00872,24,Female,Delhi,Bronze,Grocery,Beauty,Mid,Occasional_Buyer
+CUST00873,19,Other,Bhubaneswar,Platinum,Grocery,Gaming,Mid,Occasional_Buyer
+CUST00874,25,Female,Kolkata,Bronze,Gaming,Books,Budget,Value_Seeker
+CUST00875,31,Other,Hyderabad,Silver,Grocery,Gaming,Budget,Window_Shopper
+CUST00876,48,Male,Bhubaneswar,Silver,Beauty,Electronics,Mid,Occasional_Buyer
+CUST00877,27,Other,Jaipur,Platinum,Fashion,Home & Kitchen,Premium,Premium_Buyer
+CUST00878,34,Male,Jaipur,Gold,Grocery,Books,Budget,Occasional_Buyer
+CUST00879,31,Other,Jaipur,Gold,Fashion,Gaming,Budget,Frequent_Buyer
+CUST00880,42,Male,Ahmedabad,Silver,Beauty,Books,Premium,Occasional_Buyer
+CUST00881,54,Female,Chennai,Bronze,Beauty,Sports,Budget,Window_Shopper
+CUST00882,27,Other,Chennai,Bronze,Books,Gaming,Mid,Frequent_Buyer
+CUST00883,27,Female,Bhubaneswar,Bronze,Electronics,Gaming,Mid,Frequent_Buyer
+CUST00884,41,Female,Chennai,Bronze,Fashion,Grocery,Budget,Window_Shopper
+CUST00885,38,Male,Bhubaneswar,Bronze,Electronics,Gaming,Mid,Frequent_Buyer
+CUST00886,48,Male,Chennai,Gold,Grocery,Home & Kitchen,Budget,Frequent_Buyer
+CUST00887,37,Male,Delhi,Silver,Electronics,Sports,Premium,Premium_Buyer
+CUST00888,28,Female,Hyderabad,Silver,Gaming,Grocery,Mid,Frequent_Buyer
+CUST00889,37,Other,Chennai,Gold,Beauty,Electronics,Budget,Frequent_Buyer
+CUST00890,41,Female,Ahmedabad,Silver,Gaming,Sports,Mid,Occasional_Buyer
+CUST00891,39,Other,Kolkata,Silver,Gaming,Beauty,Budget,Window_Shopper
+CUST00892,36,Female,Kolkata,Silver,Electronics,Sports,Premium,Value_Seeker
+CUST00893,41,Other,Pune,Platinum,Electronics,Fashion,Mid,Window_Shopper
+CUST00894,42,Female,Chennai,Gold,Books,Home & Kitchen,Budget,Occasional_Buyer
+CUST00895,44,Other,Hyderabad,Silver,Grocery,Gaming,Mid,Frequent_Buyer
+CUST00896,37,Other,Delhi,Bronze,Beauty,Gaming,Budget,Frequent_Buyer
+CUST00897,30,Female,Mumbai,Silver,Fashion,Electronics,Mid,Occasional_Buyer
+CUST00898,33,Male,Bengaluru,Bronze,Books,Home & Kitchen,Budget,Window_Shopper
+CUST00899,42,Other,Mumbai,Silver,Sports,Beauty,Budget,Window_Shopper
+CUST00900,24,Other,Bhubaneswar,Gold,Home & Kitchen,Books,Budget,Frequent_Buyer
+CUST00901,35,Female,Ahmedabad,Silver,Home & Kitchen,Sports,Budget,Occasional_Buyer
+CUST00902,28,Female,Pune,Bronze,Books,Grocery,Mid,Occasional_Buyer
+CUST00903,32,Female,Pune,Platinum,Electronics,Books,Budget,Premium_Buyer
+CUST00904,43,Male,Ahmedabad,Platinum,Home & Kitchen,Books,Budget,Occasional_Buyer
+CUST00905,33,Male,Jaipur,Gold,Grocery,Electronics,Budget,Value_Seeker
+CUST00906,32,Female,Mumbai,Bronze,Grocery,Beauty,Budget,Value_Seeker
+CUST00907,19,Female,Delhi,Silver,Grocery,Electronics,Budget,Frequent_Buyer
+CUST00908,38,Male,Pune,Gold,Gaming,Home & Kitchen,Mid,Occasional_Buyer
+CUST00909,37,Female,Kolkata,Gold,Grocery,Sports,Mid,Premium_Buyer
+CUST00910,51,Female,Ahmedabad,Bronze,Sports,Electronics,Mid,Window_Shopper
+CUST00911,29,Female,Kolkata,Bronze,Beauty,Gaming,Premium,Value_Seeker
+CUST00912,33,Female,Mumbai,Gold,Beauty,Books,Mid,Occasional_Buyer
+CUST00913,34,Other,Bengaluru,Platinum,Sports,Fashion,Mid,Occasional_Buyer
+CUST00914,46,Other,Pune,Silver,Gaming,Electronics,Premium,Occasional_Buyer
+CUST00915,31,Male,Hyderabad,Bronze,Sports,Fashion,Premium,Frequent_Buyer
+CUST00916,34,Other,Chennai,Silver,Gaming,Electronics,Premium,Premium_Buyer
+CUST00917,37,Female,Bengaluru,Bronze,Electronics,Fashion,Mid,Occasional_Buyer
+CUST00918,33,Other,Jaipur,Silver,Sports,Grocery,Mid,Window_Shopper
+CUST00919,27,Other,Hyderabad,Gold,Home & Kitchen,Gaming,Budget,Frequent_Buyer
+CUST00920,33,Other,Bengaluru,Bronze,Electronics,Books,Mid,Frequent_Buyer
+CUST00921,41,Male,Ahmedabad,Silver,Electronics,Sports,Premium,Frequent_Buyer
+CUST00922,22,Female,Bhubaneswar,Gold,Fashion,Electronics,Budget,Premium_Buyer
+CUST00923,33,Other,Kolkata,Bronze,Gaming,Home & Kitchen,Premium,Occasional_Buyer
+CUST00924,25,Male,Bengaluru,Silver,Home & Kitchen,Sports,Budget,Frequent_Buyer
+CUST00925,42,Female,Delhi,Silver,Home & Kitchen,Grocery,Mid,Occasional_Buyer
+CUST00926,18,Male,Bhubaneswar,Bronze,Electronics,Home & Kitchen,Budget,Window_Shopper
+CUST00927,26,Male,Delhi,Gold,Fashion,Electronics,Mid,Occasional_Buyer
+CUST00928,35,Other,Ahmedabad,Silver,Books,Sports,Budget,Value_Seeker
+CUST00929,46,Male,Delhi,Silver,Grocery,Sports,Budget,Frequent_Buyer
+CUST00930,31,Male,Chennai,Bronze,Grocery,Books,Budget,Frequent_Buyer
+CUST00931,27,Male,Bhubaneswar,Bronze,Fashion,Beauty,Mid,Occasional_Buyer
+CUST00932,48,Other,Hyderabad,Bronze,Sports,Books,Budget,Premium_Buyer
+CUST00933,18,Male,Delhi,Silver,Grocery,Sports,Budget,Value_Seeker
+CUST00934,18,Female,Chennai,Bronze,Books,Fashion,Premium,Premium_Buyer
+CUST00935,35,Other,Bengaluru,Gold,Electronics,Fashion,Budget,Premium_Buyer
+CUST00936,27,Male,Mumbai,Gold,Grocery,Books,Mid,Occasional_Buyer
+CUST00937,22,Male,Pune,Bronze,Beauty,Sports,Budget,Frequent_Buyer
+CUST00938,38,Female,Hyderabad,Bronze,Sports,Gaming,Budget,Occasional_Buyer
+CUST00939,34,Female,Delhi,Bronze,Grocery,Electronics,Mid,Frequent_Buyer
+CUST00940,26,Female,Hyderabad,Silver,Beauty,Fashion,Premium,Frequent_Buyer
+CUST00941,20,Other,Bhubaneswar,Bronze,Home & Kitchen,Electronics,Budget,Window_Shopper
+CUST00942,39,Male,Pune,Bronze,Grocery,Sports,Budget,Frequent_Buyer
+CUST00943,37,Other,Hyderabad,Bronze,Home & Kitchen,Beauty,Premium,Occasional_Buyer
+CUST00944,31,Female,Ahmedabad,Bronze,Sports,Beauty,Mid,Value_Seeker
+CUST00945,48,Female,Kolkata,Silver,Sports,Fashion,Premium,Occasional_Buyer
+CUST00946,22,Male,Kolkata,Platinum,Home & Kitchen,Beauty,Budget,Occasional_Buyer
+CUST00947,18,Other,Kolkata,Silver,Electronics,Books,Mid,Premium_Buyer
+CUST00948,25,Male,Mumbai,Silver,Grocery,Sports,Budget,Value_Seeker
+CUST00949,31,Female,Chennai,Bronze,Sports,Fashion,Premium,Frequent_Buyer
+CUST00950,34,Other,Ahmedabad,Gold,Books,Fashion,Mid,Frequent_Buyer
+CUST00951,29,Male,Kolkata,Bronze,Grocery,Sports,Premium,Value_Seeker
+CUST00952,35,Other,Mumbai,Bronze,Electronics,Grocery,Mid,Occasional_Buyer
+CUST00953,20,Female,Bhubaneswar,Silver,Books,Sports,Mid,Premium_Buyer
+CUST00954,44,Female,Bengaluru,Silver,Fashion,Beauty,Premium,Occasional_Buyer
+CUST00955,31,Female,Pune,Silver,Electronics,Fashion,Budget,Occasional_Buyer
+CUST00956,42,Other,Hyderabad,Bronze,Fashion,Beauty,Budget,Occasional_Buyer
+CUST00957,35,Other,Hyderabad,Gold,Grocery,Beauty,Mid,Occasional_Buyer
+CUST00958,36,Other,Kolkata,Bronze,Books,Beauty,Budget,Occasional_Buyer
+CUST00959,37,Other,Mumbai,Silver,Grocery,Books,Mid,Premium_Buyer
+CUST00960,36,Other,Pune,Gold,Books,Sports,Premium,Premium_Buyer
+CUST00961,37,Female,Mumbai,Bronze,Fashion,Home & Kitchen,Premium,Occasional_Buyer
+CUST00962,43,Male,Chennai,Bronze,Fashion,Electronics,Budget,Frequent_Buyer
+CUST00963,33,Other,Bengaluru,Bronze,Sports,Beauty,Premium,Occasional_Buyer
+CUST00964,38,Female,Kolkata,Bronze,Home & Kitchen,Books,Mid,Occasional_Buyer
+CUST00965,31,Male,Jaipur,Silver,Fashion,Electronics,Mid,Occasional_Buyer
+CUST00966,44,Other,Jaipur,Gold,Beauty,Sports,Mid,Occasional_Buyer
+CUST00967,25,Female,Delhi,Gold,Home & Kitchen,Grocery,Budget,Occasional_Buyer
+CUST00968,48,Male,Delhi,Bronze,Books,Grocery,Mid,Frequent_Buyer
+CUST00969,31,Other,Chennai,Bronze,Home & Kitchen,Gaming,Budget,Value_Seeker
+CUST00970,19,Male,Mumbai,Bronze,Home & Kitchen,Fashion,Budget,Frequent_Buyer
+CUST00971,33,Male,Hyderabad,Silver,Books,Home & Kitchen,Budget,Occasional_Buyer
+CUST00972,25,Female,Ahmedabad,Silver,Beauty,Fashion,Budget,Occasional_Buyer
+CUST00973,39,Female,Delhi,Platinum,Electronics,Books,Premium,Frequent_Buyer
+CUST00974,26,Other,Chennai,Silver,Beauty,Gaming,Budget,Window_Shopper
+CUST00975,27,Other,Ahmedabad,Bronze,Home & Kitchen,Grocery,Budget,Occasional_Buyer
+CUST00976,18,Other,Jaipur,Bronze,Electronics,Home & Kitchen,Budget,Value_Seeker
+CUST00977,27,Female,Mumbai,Bronze,Sports,Books,Mid,Frequent_Buyer
+CUST00978,18,Female,Hyderabad,Bronze,Sports,Grocery,Mid,Occasional_Buyer
+CUST00979,18,Female,Hyderabad,Silver,Fashion,Beauty,Mid,Occasional_Buyer
+CUST00980,38,Female,Kolkata,Bronze,Electronics,Gaming,Premium,Occasional_Buyer
+CUST00981,39,Female,Pune,Bronze,Beauty,Electronics,Premium,Window_Shopper
+CUST00982,35,Other,Ahmedabad,Silver,Fashion,Home & Kitchen,Mid,Occasional_Buyer
+CUST00983,23,Other,Kolkata,Silver,Home & Kitchen,Grocery,Mid,Premium_Buyer
+CUST00984,31,Male,Chennai,Silver,Fashion,Home & Kitchen,Premium,Window_Shopper
+CUST00985,31,Female,Mumbai,Bronze,Fashion,Beauty,Mid,Occasional_Buyer
+CUST00986,21,Female,Bhubaneswar,Gold,Home & Kitchen,Beauty,Budget,Frequent_Buyer
+CUST00987,45,Other,Ahmedabad,Bronze,Gaming,Home & Kitchen,Premium,Premium_Buyer
+CUST00988,39,Other,Ahmedabad,Bronze,Books,Sports,Mid,Frequent_Buyer
+CUST00989,30,Other,Ahmedabad,Bronze,Books,Gaming,Mid,Occasional_Buyer
+CUST00990,32,Other,Hyderabad,Bronze,Home & Kitchen,Books,Mid,Occasional_Buyer
+CUST00991,33,Other,Pune,Silver,Fashion,Beauty,Mid,Window_Shopper
+CUST00992,18,Male,Pune,Silver,Grocery,Beauty,Mid,Premium_Buyer
+CUST00993,29,Male,Delhi,Bronze,Home & Kitchen,Beauty,Premium,Frequent_Buyer
+CUST00994,25,Female,Pune,Bronze,Home & Kitchen,Electronics,Premium,Occasional_Buyer
+CUST00995,22,Other,Mumbai,Silver,Books,Home & Kitchen,Mid,Frequent_Buyer
+CUST00996,29,Male,Jaipur,Bronze,Fashion,Beauty,Budget,Premium_Buyer
+CUST00997,48,Other,Pune,Bronze,Books,Home & Kitchen,Mid,Premium_Buyer
+CUST00998,37,Other,Chennai,Bronze,Electronics,Home & Kitchen,Mid,Occasional_Buyer
+CUST00999,26,Male,Delhi,Silver,Home & Kitchen,Electronics,Premium,Premium_Buyer
+CUST01000,37,Female,Mumbai,Bronze,Fashion,Books,Budget,Frequent_Buyer
