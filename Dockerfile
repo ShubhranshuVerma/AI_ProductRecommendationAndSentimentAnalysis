@@ -6,6 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 COPY requirements.txt .
+COPY models ./models
 
 RUN pip install --no-cache-dir --default-timeout=300 -r requirements.txt
 

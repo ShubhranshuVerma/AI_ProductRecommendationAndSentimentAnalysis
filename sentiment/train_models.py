@@ -1,6 +1,8 @@
 import sys
 from pathlib import Path
 from sklearn.pipeline import FeatureUnion
+from natural_evaluation import evaluate_natural_language
+from sklearn.pipeline import Pipeline
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -59,7 +61,7 @@ def load_data():
 
 def create_tfidf_features(X_train, X_test):
     vectorizer = FeatureUnion([
-        ("word", TfidfVectorizer(lowercase=True, analyzer="word", ngram_range=(1, 2), min_df=2, max_df=0.95, sublinear_tf=True)),
+        ("word", TfidfVectorizer(lowercase=True, analyzer="word", ngram_range=(1, 3), min_df=2, max_df=0.95, sublinear_tf=True)),
         ("char", TfidfVectorizer(lowercase=True, analyzer="char_wb", ngram_range=(3, 5), min_df=2, max_df=0.98, sublinear_tf=True)),
     ])
     X_train_tfidf = vectorizer.fit_transform(X_train)
@@ -109,7 +111,7 @@ def log_mlflow_run(
 
         mlflow.log_param("model",model_name,)
         mlflow.log_param("feature_method", "word_char_tfidf")
-        mlflow.log_param("word_ngram_range", "(1, 2)")
+        mlflow.log_param("word_ngram_range", "(1, 3)")
         mlflow.log_param("char_ngram_range", "(3, 5)")
         mlflow.log_param("word_min_df", 2)
         mlflow.log_param("char_min_df", 2)
@@ -198,6 +200,7 @@ def log_mlflow_run(
 
 def train_and_evaluate(
     models,
+    vectorizer,
     X_train,
     X_test,
     y_train,
@@ -240,6 +243,39 @@ def train_and_evaluate(
             model_name,
             y_test,
             predictions,
+        )
+
+        # --------------------------------------------------------
+        # Natural-language evaluation
+        # --------------------------------------------------------
+
+        natural_metrics = evaluate_natural_language(
+            model,
+            vectorizer,
+        )
+
+        metrics.update(
+            natural_metrics
+        )
+
+        print()
+        print(
+            "Natural-language evaluation:"
+        )
+
+        print(
+            f"natural_eval_accuracy       : "
+            f"{natural_metrics['natural_eval_accuracy']:.4f}"
+        )
+
+        print(
+            f"natural_eval_macro_f1       : "
+            f"{natural_metrics['natural_eval_macro_f1']:.4f}"
+        )
+
+        print(
+            f"natural_eval_weighted_f1    : "
+            f"{natural_metrics['natural_eval_weighted_f1']:.4f}"
         )
 
         save_confusion_matrix(
@@ -289,10 +325,20 @@ def save_comparison(results):
     )
 
     results_df = results_df.sort_values(
-        by="weighted_f1",
+        by=[
+            "natural_eval_accuracy",
+            "natural_eval_macro_f1",
+            "natural_eval_weighted_f1",
+            "weighted_f1",
+        ],
         ascending=False,
     )
+    best_model_name = results_df.iloc[0]["model"]
 
+    print()
+    print(
+        f"Selected production model: {best_model_name}"
+    )
     output_path = (
         ARTIFACT_DIR
         / "model_comparison.csv"
@@ -321,11 +367,13 @@ def save_comparison(results):
         "accuracy",
         "weighted_f1",
         "macro_f1",
+        "natural_eval_accuracy",
+        "natural_eval_macro_f1",
+        "natural_eval_weighted_f1",
         "negative_f1",
         "negative_recall",
         "training_time_seconds",
     ]
-
     print(
         results_df[
             display_columns
@@ -342,6 +390,123 @@ def save_comparison(results):
 
     return results_df
 
+
+def build_production_pipeline():
+    """
+    Build the complete production sentiment pipeline.
+
+    Raw review text
+        -> TF-IDF features
+        -> Naive Bayes
+        -> sentiment label
+    """
+
+    vectorizer = FeatureUnion([
+        (
+            "word",
+            TfidfVectorizer(
+                lowercase=True,
+                analyzer="word",
+                ngram_range=(1, 3),
+                min_df=2,
+                max_df=0.95,
+                sublinear_tf=True,
+            ),
+        ),
+        (
+            "char",
+            TfidfVectorizer(
+                lowercase=True,
+                analyzer="char_wb",
+                ngram_range=(3, 5),
+                min_df=2,
+                max_df=0.98,
+                sublinear_tf=True,
+            ),
+        ),
+    ])
+
+    return Pipeline([
+        ("tfidf", vectorizer),
+        ("classifier", MultinomialNB()),
+    ])
+
+def train_production_model():
+    """
+    Train the selected production model on the complete
+    sentiment dataset and save it as a single pipeline.
+    """
+
+    print()
+    print("=" * 70)
+    print("TRAINING PRODUCTION SENTIMENT MODEL")
+    print("=" * 70)
+
+    train_df = pd.read_csv(
+        DATA_DIR / "train.csv"
+    )
+
+    test_df = pd.read_csv(
+        DATA_DIR / "test.csv"
+    )
+
+    full_df = pd.concat(
+        [train_df, test_df],
+        ignore_index=True,
+    )
+
+    X = full_df["review_text"]
+    y = full_df["sentiment"]
+
+    model = build_production_pipeline()
+
+    start_time = time.perf_counter()
+
+    model.fit(
+        X,
+        y,
+    )
+
+    training_time = (
+        time.perf_counter()
+        - start_time
+    )
+
+    print(
+        f"Production model: naive_bayes"
+    )
+
+    print(
+        f"Training samples: {len(X):,}"
+    )
+
+    print(
+        f"Training time: {training_time:.4f} seconds"
+    )
+
+    output_dir = Path("models")
+    output_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    output_path = (
+        output_dir
+        / "sentiment_model.joblib"
+    )
+
+    import joblib
+
+    joblib.dump(
+        model,
+        output_path,
+    )
+
+    print(
+        f"Production model saved to: {output_path}"
+    )
+
+    return model
 
 # ============================================================
 # Main
@@ -412,6 +577,7 @@ def main():
     models, results = (
         train_and_evaluate(
             models,
+            vectorizer,
             X_train_tfidf,
             X_test_tfidf,
             y_train,
@@ -433,3 +599,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    train_production_model()

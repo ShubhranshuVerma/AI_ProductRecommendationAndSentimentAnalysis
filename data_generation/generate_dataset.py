@@ -456,19 +456,29 @@ def sentiment_from_rating(rating):
 
 def build_review_text(product, experience_score):
     """
-    Generate linguistically diverse review text from a latent
+    Generate diverse, natural product reviews from a latent
     customer experience score.
 
-    The text is generated from multiple independent semantic
-    components so the model cannot simply memorize a small set
-    of sentiment phrases.
+    The generator intentionally includes:
+    - direct sentiment
+    - implicit sentiment
+    - negation
+    - contrast
+    - expectation mismatch
+    - recommendation language
+    - temporal changes
+    - mixed opinions
+    - varied sentence structures
+
+    This is designed to improve generalization to natural
+    user-written reviews rather than only synthetic templates.
     """
 
     category = product["subcategory"].lower()
     brand = product["brand"]
 
     # --------------------------------------------------------
-    # Neutral/contextual openings
+    # Neutral contextual openings
     # --------------------------------------------------------
 
     openings = [
@@ -487,162 +497,207 @@ def build_review_text(product, experience_score):
     ]
 
     # --------------------------------------------------------
-    # Positive semantic expressions
+    # Positive observations
     # --------------------------------------------------------
 
-    positive_aspects = [
-        "It has worked consistently without unexpected problems.",
-        "The performance has remained dependable during regular use.",
-        "I have found it easy and comfortable to use.",
-        "The product handles its main tasks very well.",
-        "The controls feel natural and easy to understand.",
-        "The quality is better than I expected.",
-        "It has made my routine noticeably easier.",
-        "The product has remained reliable even after repeated use.",
-        "I have not had any meaningful problems with it.",
-        "The overall experience has been better than I anticipated.",
-        "It performs reliably when I need it.",
-        "The product feels thoughtfully designed.",
-        "The setup was quick and straightforward.",
-        "Everything has continued working as expected.",
-        "I can depend on it for regular use.",
-        "The product has been a pleasant surprise.",
-        "Its main features have worked smoothly.",
-        "The product feels well made.",
+    positive = [
+        "It works exactly as I hoped it would.",
+        "The overall experience has been excellent.",
+        "I am very happy with how it performs.",
+        "The product has exceeded my expectations.",
+        "Everything has worked smoothly so far.",
+        "The quality feels better than I expected.",
+        "It has made my daily routine easier.",
+        "I have had a very positive experience with it.",
+        "The performance has been consistently reliable.",
+        "I would happily recommend this product.",
+        "I am genuinely satisfied with the purchase.",
+        "It has turned out to be a great choice.",
+        "The product feels well made and dependable.",
+        "I have been impressed by how well it performs.",
+        "It has handled everything I have asked it to do.",
+        "I would definitely consider buying it again.",
     ]
 
     # --------------------------------------------------------
-    # Negative semantic expressions
+    # Negative observations
     # --------------------------------------------------------
 
-    negative_aspects = [
-        "The product has become unreliable during normal use.",
-        "I have encountered several problems that were difficult to ignore.",
-        "The performance becomes inconsistent over longer periods.",
-        "Some important functions have not worked properly.",
-        "The materials do not feel particularly durable.",
-        "The product has caused more frustration than I expected.",
-        "I have experienced problems that should not occur during ordinary use.",
-        "The quality does not match what I expected for the price.",
-        "The product has failed to perform consistently.",
-        "Several aspects of the experience could be substantially better.",
-        "I have had trouble depending on it for regular use.",
-        "The product started showing problems after repeated use.",
-        "The actual performance falls short of its apparent potential.",
-        "Some components already show signs of wear.",
-        "The product has not been as dependable as I needed.",
-        "I would hesitate to rely on this product for important tasks.",
-        "The experience has been more disappointing than satisfying.",
-        "There are several issues that make the product difficult to recommend.",
+    negative = [
+        "The product has been disappointing overall.",
+        "The performance has not lived up to my expectations.",
+        "I have experienced several problems during normal use.",
+        "The product has become unreliable over time.",
+        "It has been more frustrating than useful.",
+        "The quality is worse than I expected.",
+        "I have had problems that should not occur during normal use.",
+        "The product does not perform consistently.",
+        "I regret choosing this product.",
+        "I would not recommend it to other buyers.",
+        "The experience has been noticeably worse than expected.",
+        "Several important features have not worked properly.",
+        "I expected much better performance for the price.",
+        "The product has caused more problems than it solved.",
+        "I would choose a different option next time.",
+        "I am not satisfied with the purchase.",
     ]
 
     # --------------------------------------------------------
-    # Neutral semantic expressions
+    # Negation / linguistic nuance patterns
     # --------------------------------------------------------
 
-    neutral_aspects = [
-        "It handles the basic job adequately.",
-        "The product works, although it does not stand out.",
-        "The overall performance is acceptable for ordinary use.",
+    positive_nuance = [
+        "The product is not bad at all.",
+        "I cannot say anything negative about it.",
+        "I did not expect to like it this much.",
+        "I was not expecting such good performance.",
+        "It is much better than I expected.",
+        "I am extremely satisfied with the purchase.",
+        "I am genuinely impressed with the overall experience.",
+        "I absolutely love how well this product works.",
+        "I could not be happier with the purchase.",
+        "There is very little I would change about it.",
+    ]
+
+    negative_nuance = [
+        "The product is not good enough for my needs.",
+        "I cannot recommend this product.",
+        "I did not expect the quality to be this poor.",
+        "It is much worse than I expected.",
+        "I am extremely disappointed with the purchase.",
+        "I am genuinely unhappy with the overall experience.",
+        "I regret buying this product.",
+        "I would not recommend this product to anyone.",
+        "I could not justify buying this again.",
+        "There is very little I like about the product.",
+    ]
+
+    neutral_nuance = [
+        "The product is not bad, but it is not impressive either.",
+        "The product is not particularly good or bad.",
+        "I cannot say that it is either excellent or terrible.",
+        "It is neither impressive nor disappointing.",
+        "I expected it to be average, and that is exactly what it is.",
+        "It is acceptable, although I would not call it excellent.",
+        "The product is okay, but nothing special.",
+        "It is not outstanding, but it gets the job done.",
+        "There are things I like and things I would change.",
+        "The experience is difficult to describe as either very good or very bad.",
+    ]
+
+    # --------------------------------------------------------
+    # Neutral observations
+    # --------------------------------------------------------
+
+    neutral = [
+        "The product works adequately for normal use.",
+        "It does what it is supposed to do, but nothing more.",
+        "The overall experience has been fairly ordinary.",
+        "It is acceptable, although there is room for improvement.",
+        "Some parts work well while others are average.",
+        "The product meets the basic requirements.",
         "I have not found anything particularly impressive about it.",
-        "There are useful aspects, but there are also some limitations.",
-        "The product is functional without being exceptional.",
-        "It performs roughly as I expected.",
-        "The experience has been fairly ordinary overall.",
-        "It gets the job done, but there is room for improvement.",
-        "Some parts work well while others are fairly average.",
-        "The product is suitable if expectations remain reasonable.",
-        "I would describe the experience as acceptable rather than impressive.",
-        "It meets the basic requirements without offering much beyond them.",
-        "The product has both strengths and weaknesses.",
-        "Nothing is seriously wrong, but I would not call it outstanding.",
-        "The overall quality is reasonable for the price.",
-        "It has been usable so far, although some details could be refined.",
-        "The product is neither particularly impressive nor disappointing.",
+        "It performs reasonably well for everyday tasks.",
+        "There are both useful features and noticeable limitations.",
+        "The experience is neither especially good nor especially bad.",
+        "It is functional without being exceptional.",
+        "I would describe the overall quality as average.",
+        "The product is fine if expectations remain reasonable.",
+        "It has been usable so far, but I am not particularly impressed.",
     ]
 
     # --------------------------------------------------------
-    # Positive supporting observations
+    # Natural linguistic patterns
     # --------------------------------------------------------
 
-    positive_support = [
-        "The setup was painless.",
-        "I barely needed any time to get used to it.",
-        "It has been dependable from the beginning.",
-        "The day-to-day experience has been smooth.",
-        "I have had no reason to complain about its reliability.",
-        "It has handled regular use without difficulty.",
-        "The overall design feels practical.",
-        "It does what I need without unnecessary complications.",
+    positive_patterns = [
+        "The battery is excellent and the overall performance is impressive.",
+        "I expected this to be average, but it turned out to be much better.",
+        "I was initially unsure about it, but I have become very satisfied with it.",
+        "There is very little I would change about the product.",
+        "Even after repeated use, it has continued to perform reliably.",
+        "I was pleasantly surprised by how good the product is.",
+        "I cannot complain about the performance so far.",
+    ]
+
+    negative_patterns = [
+        "The product looked promising at first, but the problems became obvious later.",
+        "I expected much better from a product in this price range.",
+        "It is not something I would recommend to a friend.",
+        "The product is not good enough for my needs.",
+        "At first everything seemed fine, but the performance deteriorated over time.",
+        "The problems are difficult to overlook.",
+        "I wanted to like this product, but the issues have changed my opinion.",
+    ]
+
+    neutral_patterns = [
+        "It is not bad, but it is not particularly impressive either.",
+        "The product works, although I would not describe the experience as exceptional.",
+        "There are some positives, but nothing that makes it stand out.",
+        "It is neither a great product nor a terrible one.",
+        "The main functions work, while some smaller details could be improved.",
+        "It does the basic job without offering anything remarkable.",
+    ]
+
+    mixed_patterns = [
+        "The battery is excellent, but the camera is disappointing.",
+        "The display is excellent, although the performance could be better.",
+        "The product is well designed, but its reliability is disappointing.",
+        "The performance is impressive, but the battery life is poor.",
+        "The build quality is excellent, although some features are unreliable.",
+        "I like several things about this product, but there are also some significant drawbacks.",
+        "The product has some excellent features, but the weaknesses are difficult to ignore.",
+        "Some aspects are genuinely impressive, while others are disappointing.",
     ]
 
     # --------------------------------------------------------
-    # Negative supporting observations
+    # Contrast / mixed sentiment
     # --------------------------------------------------------
 
-    negative_support = [
-        "The problems became more noticeable with continued use.",
-        "I expected something more dependable.",
-        "The setup was more difficult than it needed to be.",
-        "The issues are especially noticeable during longer sessions.",
-        "I have had to work around several shortcomings.",
-        "The product does not inspire much confidence.",
-        "The problems affect the overall experience.",
-        "I would prefer a more reliable alternative.",
+    positive_contrast = [
+        "The battery is excellent, although the design could be improved.",
+        "The product has a few minor flaws, but overall I am very satisfied.",
+        "The setup took some effort, but the product has performed very well since then.",
+        "There are small limitations, but they do not affect my overall satisfaction.",
+    ]
+
+    negative_contrast = [
+        "The design looks good, but the actual performance is disappointing.",
+        "The product has some useful features, but the reliability is poor.",
+        "The battery is decent, but the device becomes frustrating to use under heavy workloads.",
+        "There are things I like about it, but the problems outweigh the benefits.",
     ]
 
     # --------------------------------------------------------
-    # Neutral supporting observations
+    # Temporal patterns
     # --------------------------------------------------------
 
-    neutral_support = [
-        "The differences are noticeable but not severe.",
-        "The limitations are manageable for normal use.",
-        "It depends somewhat on what you expect from the product.",
-        "There are a few areas where refinement would help.",
-        "The product is adequate for straightforward use.",
-        "The strengths and weaknesses are fairly balanced.",
-        "It is difficult to call the experience either excellent or poor.",
-        "The result is reasonably predictable.",
+    positive_temporal = [
+        "It has remained reliable even after several weeks of use.",
+        "The performance has stayed consistent over time.",
+        "After using it regularly, I am even more satisfied with it.",
+    ]
+
+    negative_temporal = [
+        "It started developing problems after only a few weeks.",
+        "The performance became worse after repeated use.",
+        "It worked well initially, but the problems appeared over time.",
     ]
 
     # --------------------------------------------------------
-    # Positive endings
+    # Recommendation patterns
     # --------------------------------------------------------
 
-    positive_endings = [
-        "I would be comfortable recommending it.",
-        "I would consider buying it again.",
-        "Overall, I am satisfied with the purchase.",
-        "It has turned out to be a worthwhile purchase.",
-        "I am happy with how it has performed.",
-        "I would choose this again over several alternatives.",
+    positive_recommendations = [
+        "I would recommend it without hesitation.",
+        "I would happily buy this product again.",
+        "I would choose this over several alternatives.",
     ]
 
-    # --------------------------------------------------------
-    # Neutral endings
-    # --------------------------------------------------------
-
-    neutral_endings = [
-        "I would describe the experience as average.",
-        "It is fine as long as expectations are realistic.",
-        "I would consider other options before making another purchase.",
-        "Overall, it is acceptable but not exceptional.",
-        "There is still some room for improvement.",
-        "It is a reasonable choice for basic requirements.",
-    ]
-
-    # --------------------------------------------------------
-    # Negative endings
-    # --------------------------------------------------------
-
-    negative_endings = [
-        "I would probably choose another option next time.",
-        "I would hesitate to recommend it.",
-        "I expected better overall reliability.",
-        "I do not think I would purchase it again.",
-        "There is considerable room for improvement.",
-        "I would look at alternatives before buying it again.",
+    negative_recommendations = [
+        "I would not recommend this product.",
+        "I would look for another option next time.",
+        "I would not buy this product again.",
     ]
 
     # --------------------------------------------------------
@@ -650,66 +705,126 @@ def build_review_text(product, experience_score):
     # --------------------------------------------------------
 
     if experience_score >= 0.65:
-        aspect_pool = positive_aspects
-        support_pool = positive_support
-        ending_pool = positive_endings
+        primary_pool = positive
+        pattern_pool = positive_patterns
+        contrast_pool = positive_contrast
+        temporal_pool = positive_temporal
+        recommendation_pool = positive_recommendations
 
     elif experience_score <= 0.35:
-        aspect_pool = negative_aspects
-        support_pool = negative_support
-        ending_pool = negative_endings
+        primary_pool = negative
+        pattern_pool = negative_patterns
+        contrast_pool = negative_contrast
+        temporal_pool = negative_temporal
+        recommendation_pool = negative_recommendations
 
     else:
-        aspect_pool = neutral_aspects
-        support_pool = neutral_support
-        ending_pool = neutral_endings
+        primary_pool = neutral
+        pattern_pool = neutral_patterns
+        contrast_pool = [
+            "It has some useful features, although there is still room for improvement.",
+            "The main functions work well enough, but some smaller details could be refined.",
+            "It is reasonably capable, although I would not describe it as exceptional.",
+            "The product has advantages and limitations, and neither stands out strongly.",
+            "The basic experience is fine, but there are no particularly impressive features.",
+        ]
+        temporal_pool = (
+            positive_temporal
+            + negative_temporal
+        )
+        recommendation_pool = [
+            "I would consider a few alternatives before buying it again.",
+            "It is a reasonable option for basic requirements.",
+            "I would keep my expectations realistic if choosing this product.",
+        ]
 
     # --------------------------------------------------------
-    # Build review
+    # Choose review structure
     # --------------------------------------------------------
 
-    sentences = [
-        random.choice(openings),
-        random.choice(aspect_pool),
-    ]
+    structure = random.random()
 
-    # Add supporting sentence most of the time.
-    if random.random() < 0.70:
+    if structure < 0.20:
+        # Short natural review
+        sentences = [
+            random.choice(primary_pool)
+        ]
+
+    elif structure < 0.40:
+        # Context + opinion
+        sentences = [
+            random.choice(openings),
+            random.choice(primary_pool),
+        ]
+
+    elif structure < 0.60:
+        # Opinion + supporting observation
+        sentences = [
+            random.choice(primary_pool),
+            random.choice(pattern_pool),
+        ]
+
+    elif structure < 0.80:
+        # Context + contrast
+        sentences = [
+            random.choice(openings),
+            random.choice(contrast_pool),
+        ]
+
+    else:
+        # Longer natural review
+        sentences = [
+            random.choice(openings),
+            random.choice(primary_pool),
+            random.choice(temporal_pool),
+        ]
+
+    # --------------------------------------------------------
+    # Add recommendation language sometimes
+    # --------------------------------------------------------
+
+    if random.random() < 0.30:
         sentences.append(
-            random.choice(support_pool)
+            random.choice(recommendation_pool)
         )
 
-    # Add a second semantic observation sometimes.
-    if random.random() < 0.45:
-        sentences.append(
-            random.choice(aspect_pool)
-        )
 
-    # Add an ending sometimes.
-    if random.random() < 0.55:
+    if random.random() < 0.12:
         sentences.append(
-            random.choice(ending_pool)
+            random.choice(mixed_patterns)
         )
 
     # --------------------------------------------------------
-    # Occasionally create controlled mixed reviews.
+    # Add controlled mixed sentiment
     # --------------------------------------------------------
 
     if random.random() < 0.15:
 
         if experience_score >= 0.65:
             sentences.append(
-                "There are still a few minor details that could be improved."
+                random.choice([
+                    "There are still a few minor details that could be improved.",
+                    "It is not completely perfect, but the positives clearly outweigh the negatives.",
+                    "A few small limitations do not change my overall positive impression.",
+                ])
             )
 
         elif experience_score <= 0.35:
             sentences.append(
-                "One or two aspects of the product are still useful."
+                random.choice([
+                    "One or two aspects are useful, but the main problems remain.",
+                    "There are a few good qualities, but they do not outweigh the problems.",
+                    "Some parts are acceptable, although the overall experience is disappointing.",
+                ])
             )
 
         else:
             sentences.append(
-                "Some parts are better than others."
+                random.choice([
+                    "Some parts are better than others.",
+                    "I can see both advantages and disadvantages.",
+                    "Overall, the experience is fairly balanced.",
+                ])
             )
 
     return " ".join(sentences)
@@ -1327,59 +1442,37 @@ def generate_reviews(
         # generating text from the sentiment label.
         # --------------------------------------------------------
 
-        rating_signal = (
-            rating - 1
-        ) / 4.0
+        # --------------------------------------------------------
+        # Generate a balanced sentiment label independently
+        # from the product rating.
+        #
+        # Rating remains a realistic product attribute, while
+        # sentiment is deliberately balanced for ML training.
+        # --------------------------------------------------------
 
-        experience_score = (
-            0.55 * rating_signal
-            + 0.45 * random.random()
+        sentiment = random.choice(
+            [
+                "positive",
+                "neutral",
+                "negative",
+            ]
         )
 
-        experience_score = max(
-            0.0,
-            min(
-                1.0,
-                experience_score,
-            ),
+        # Map the sentiment to an experience region so that
+        # review text generation and sentiment labels remain
+        # semantically aligned.
+        experience_ranges = {
+            "positive": (0.70, 1.00),
+            "neutral": (0.40, 0.60),
+            "negative": (0.00, 0.30),
+        }
+
+        low, high = experience_ranges[sentiment]
+
+        experience_score = random.uniform(
+            low,
+            high,
         )
-
-        # Small amount of natural variation.
-        experience_score += random.uniform(
-            -0.10,
-            0.10,
-        )
-
-        experience_score = max(
-            0.0,
-            min(
-                1.0,
-                experience_score,
-            ),
-        )
-
-        # Generate review text from the underlying experience,
-        # NOT from the final sentiment label.
-
-        for _ in range(20):
-            review_text = build_review_text(product, experience_score)
-            if review_text not in used_review_texts:
-                break
-        else:
-            review_text += f" Product reference {i}."
-        used_review_texts.add(review_text)
-
-        # Sentiment is derived separately from the
-        # underlying experience.
-
-        if experience_score >= 0.65:
-            sentiment = "positive"
-
-        elif experience_score <= 0.35:
-            sentiment = "negative"
-
-        else:
-            sentiment = "neutral"
 
         title_map = {
             "positive": [
@@ -1404,6 +1497,21 @@ def generate_reviews(
                 "Several issues",
             ],
         }
+        # Generate review text from the sentiment-aligned
+        # experience score.
+
+        for _ in range(20):
+            review_text = build_review_text(
+                product,
+                experience_score,
+            )
+
+            if review_text not in used_review_texts:
+                break
+        else:
+            review_text += f" Product reference {i}."
+
+        used_review_texts.add(review_text)
 
         reviews.append(
             {
