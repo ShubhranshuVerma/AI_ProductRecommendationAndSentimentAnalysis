@@ -8,11 +8,11 @@ router = APIRouter(prefix="/sentiment", tags=["Sentiment"])
 
 import os
 
+import os
+
 MODEL_URI = os.getenv(
     "SENTIMENT_MODEL_URI",
-    "/app/mlruns/1/models/"
-    "m-6d846e15ec80497ebac6df74e880238f/"
-    "artifacts",
+    "models:/ProductSentimentModel/2",
 )
 
 _model = None
