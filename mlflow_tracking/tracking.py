@@ -3,30 +3,25 @@ from pathlib import Path
 import mlflow
 
 
-# ============================================================
-# MLflow configuration
-# ============================================================
+EXPERIMENT_NAME = "AI_Product_Recommendation_Sentiment"
 
-EXPERIMENT_NAME = (
-    "AI_Product_Recommendation_Sentiment"
-)
-
-ARTIFACT_DIR = Path("mlruns")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+MLFLOW_DB = PROJECT_ROOT / "mlflow.db"
+MLRUNS_DIR = PROJECT_ROOT / "mlruns"
 
 
 def configure_mlflow():
     """
-    Configure the local MLflow tracking store
-    and select the project experiment.
+    Configure the local MLflow tracking store.
     """
 
-    ARTIFACT_DIR.mkdir(
+    MLRUNS_DIR.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     mlflow.set_tracking_uri(
-        "sqlite:///mlflow.db"
+        f"sqlite:///{MLFLOW_DB}"
     )
 
     mlflow.set_experiment(
@@ -35,10 +30,6 @@ def configure_mlflow():
 
 
 def start_run(model_name):
-    """
-    Start an MLflow run for a candidate model.
-    """
-
     return mlflow.start_run(
         run_name=model_name
     )

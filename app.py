@@ -1,26 +1,15 @@
-"""
-==========================================================
-STREAMLIT UI (v2) — AI Product Recommendation & Review Analysis
-==========================================================
-
-WHAT'S NEW IN THIS VERSION:
+"""HOW TO RUN:
 -----------------------------------------
-- Professional header with custom styling (not default Streamlit look)
-- No manual typing of customer IDs or product names — everything is
-  loaded from the real project data (customers.csv, products.csv,
-  reviews.csv) and picked from searchable dropdowns.
-- Review Analysis tab auto-loads REAL reviews for the selected
-  product from data/raw/reviews.csv instead of asking you to paste
-  review text yourself.
+1. Start the FastAPI Docker container:
+docker run -d \
+  -p 8001:8000 \
+  --env-file .env \
+  --name ai-product-recommendation \
+  ai-product-recommendation
 
-HOW TO RUN:
------------------------------------------
-1. Start the backend first (separate terminal):
-       uvicorn api.main:app --reload
-2. Then run this file (another terminal):
-       streamlit run ui/app.py
-"""
-
+2. Start the Streamlit UI:
+       streamlit run app.py"""
+import os
 
 import streamlit as st
 import requests
@@ -30,7 +19,7 @@ from pathlib import Path
 # ----------------------------------------------------------
 # CONFIG
 # ----------------------------------------------------------
-API_BASE_URL = "http://localhost:8000"
+API_BASE_URL = os.getenv("API_BASE_URL","http://127.0.0.1:8001",).rstrip("/")
 
 # Project root = the folder that contains "data/", regardless of
 # whether this file sits at project root or inside a ui/ folder.
@@ -170,7 +159,7 @@ if data_load_error:
 if not api_status:
     st.warning(
         f"Backend API is not reachable at {API_BASE_URL}. "
-        "Run `uvicorn api.main:app --reload` in another terminal first."
+        "Make sure the FastAPI Docker container is running."
     )
 
 
@@ -414,7 +403,7 @@ with tab3:
                             "product_name": selected_product_name,
                             "reviews": reviews_payload,
                         },
-                        timeout=30,
+                        timeout=120,
                     )
 
                     if analysis_response.status_code == 200:
