@@ -455,146 +455,264 @@ def sentiment_from_rating(rating):
 
 
 def build_review_text(product, experience_score):
-    feature = product["subcategory"].lower()
+    """
+    Generate linguistically diverse review text from a latent
+    customer experience score.
+
+    The text is generated from multiple independent semantic
+    components so the model cannot simply memorize a small set
+    of sentiment phrases.
+    """
+
+    category = product["subcategory"].lower()
     brand = product["brand"]
 
+    # --------------------------------------------------------
+    # Neutral/contextual openings
+    # --------------------------------------------------------
+
     openings = [
-        f"I have been using this {feature} product for a while.",
-        f"I bought this {feature} product recently.",
-        f"My experience with this {feature} product has been mixed.",
-        f"I have used this {feature} item several times.",
-        f"This {brand} product has been part of my regular use.",
-        f"I tried this product mainly for its {feature} features.",
-        f"I have had enough time to get a feel for this product.",
-        f"This product seemed interesting, so I decided to try it.",
-        f"I picked up this product after comparing a few options.",
-        f"I have been testing this product in my daily routine.",
-        f"I decided to give this product a try.",
-        f"This was one of the products I considered in this category.",
+        f"I bought this {category} recently and have used it regularly.",
+        f"I decided to try this {brand} product after comparing several options.",
+        f"I have been using this {category} product for a few weeks.",
+        f"After spending some time with this product, I have formed a fairly clear opinion.",
+        f"I purchased this product mainly for its {category} features.",
+        f"This product has been part of my regular routine for a while.",
+        f"I have used this product in several everyday situations.",
+        f"I gave this product a reasonable amount of use before writing this review.",
+        f"I picked this product after looking at a few alternatives.",
+        f"I have been testing this product under normal conditions.",
+        f"After using the product for some time, I can comment on how it performs.",
+        f"I bought this product to see how well it would fit my everyday needs.",
     ]
 
-    common_aspects = [
-        "The design is practical.",
-        "The product is fairly easy to use.",
-        "The quality is reasonable.",
-        "The main features work as expected.",
-        "The product looks well designed.",
-        "The overall experience is acceptable.",
-        "The performance is noticeable during regular use.",
-        "The product has some useful features.",
-        "The controls are straightforward.",
-        "The size works well for normal use.",
-        "The materials feel fairly standard.",
-        "The setup process was manageable.",
-        "The product fits its intended purpose.",
-        "The overall design is fairly simple.",
-    ]
+    # --------------------------------------------------------
+    # Positive semantic expressions
+    # --------------------------------------------------------
 
     positive_aspects = [
-        "The performance has been reliable.",
+        "It has worked consistently without unexpected problems.",
+        "The performance has remained dependable during regular use.",
+        "I have found it easy and comfortable to use.",
+        "The product handles its main tasks very well.",
+        "The controls feel natural and easy to understand.",
         "The quality is better than I expected.",
-        "It has been convenient for everyday use.",
-        "The main features work smoothly.",
-        "The overall value is good.",
-        "The build quality feels solid.",
+        "It has made my routine noticeably easier.",
+        "The product has remained reliable even after repeated use.",
+        "I have not had any meaningful problems with it.",
+        "The overall experience has been better than I anticipated.",
+        "It performs reliably when I need it.",
+        "The product feels thoughtfully designed.",
+        "The setup was quick and straightforward.",
+        "Everything has continued working as expected.",
+        "I can depend on it for regular use.",
+        "The product has been a pleasant surprise.",
+        "Its main features have worked smoothly.",
+        "The product feels well made.",
     ]
+
+    # --------------------------------------------------------
+    # Negative semantic expressions
+    # --------------------------------------------------------
 
     negative_aspects = [
-        "The performance has been inconsistent.",
-        "The quality could be improved.",
-        "Some features are less useful than expected.",
-        "The product could offer better value.",
-        "There are a few noticeable issues.",
-        "The experience has not been completely reliable.",
+        "The product has become unreliable during normal use.",
+        "I have encountered several problems that were difficult to ignore.",
+        "The performance becomes inconsistent over longer periods.",
+        "Some important functions have not worked properly.",
+        "The materials do not feel particularly durable.",
+        "The product has caused more frustration than I expected.",
+        "I have experienced problems that should not occur during ordinary use.",
+        "The quality does not match what I expected for the price.",
+        "The product has failed to perform consistently.",
+        "Several aspects of the experience could be substantially better.",
+        "I have had trouble depending on it for regular use.",
+        "The product started showing problems after repeated use.",
+        "The actual performance falls short of its apparent potential.",
+        "Some components already show signs of wear.",
+        "The product has not been as dependable as I needed.",
+        "I would hesitate to rely on this product for important tasks.",
+        "The experience has been more disappointing than satisfying.",
+        "There are several issues that make the product difficult to recommend.",
     ]
 
-    mild_positive = [
-        "The product works reasonably well.",
-        "Some parts of the experience are quite good.",
-        "The main functionality is useful.",
-        "The product has performed fairly well.",
+    # --------------------------------------------------------
+    # Neutral semantic expressions
+    # --------------------------------------------------------
+
+    neutral_aspects = [
+        "It handles the basic job adequately.",
+        "The product works, although it does not stand out.",
+        "The overall performance is acceptable for ordinary use.",
+        "I have not found anything particularly impressive about it.",
+        "There are useful aspects, but there are also some limitations.",
+        "The product is functional without being exceptional.",
+        "It performs roughly as I expected.",
+        "The experience has been fairly ordinary overall.",
+        "It gets the job done, but there is room for improvement.",
+        "Some parts work well while others are fairly average.",
+        "The product is suitable if expectations remain reasonable.",
+        "I would describe the experience as acceptable rather than impressive.",
+        "It meets the basic requirements without offering much beyond them.",
+        "The product has both strengths and weaknesses.",
+        "Nothing is seriously wrong, but I would not call it outstanding.",
+        "The overall quality is reasonable for the price.",
+        "It has been usable so far, although some details could be refined.",
+        "The product is neither particularly impressive nor disappointing.",
     ]
 
-    mild_negative = [
-        "Some parts could work better.",
-        "There are a few things I would change.",
-        "The product has some limitations.",
-        "A few details could be improved.",
+    # --------------------------------------------------------
+    # Positive supporting observations
+    # --------------------------------------------------------
+
+    positive_support = [
+        "The setup was painless.",
+        "I barely needed any time to get used to it.",
+        "It has been dependable from the beginning.",
+        "The day-to-day experience has been smooth.",
+        "I have had no reason to complain about its reliability.",
+        "It has handled regular use without difficulty.",
+        "The overall design feels practical.",
+        "It does what I need without unnecessary complications.",
     ]
 
-    opening = random.choice(openings)
+    # --------------------------------------------------------
+    # Negative supporting observations
+    # --------------------------------------------------------
 
-    # The review generator receives experience_score,
-    # not the final sentiment label.
+    negative_support = [
+        "The problems became more noticeable with continued use.",
+        "I expected something more dependable.",
+        "The setup was more difficult than it needed to be.",
+        "The issues are especially noticeable during longer sessions.",
+        "I have had to work around several shortcomings.",
+        "The product does not inspire much confidence.",
+        "The problems affect the overall experience.",
+        "I would prefer a more reliable alternative.",
+    ]
 
-    if experience_score >= 0.75:
-        aspect = random.choice(
-            positive_aspects
-        )
+    # --------------------------------------------------------
+    # Neutral supporting observations
+    # --------------------------------------------------------
 
-    elif experience_score >= 0.55:
-        aspect = random.choice(
-            mild_positive
-        )
+    neutral_support = [
+        "The differences are noticeable but not severe.",
+        "The limitations are manageable for normal use.",
+        "It depends somewhat on what you expect from the product.",
+        "There are a few areas where refinement would help.",
+        "The product is adequate for straightforward use.",
+        "The strengths and weaknesses are fairly balanced.",
+        "It is difficult to call the experience either excellent or poor.",
+        "The result is reasonably predictable.",
+    ]
 
-    elif experience_score >= 0.45:
-        aspect = random.choice(
-            common_aspects
-        )
+    # --------------------------------------------------------
+    # Positive endings
+    # --------------------------------------------------------
 
-    elif experience_score >= 0.25:
-        aspect = random.choice(
-            mild_negative
-        )
+    positive_endings = [
+        "I would be comfortable recommending it.",
+        "I would consider buying it again.",
+        "Overall, I am satisfied with the purchase.",
+        "It has turned out to be a worthwhile purchase.",
+        "I am happy with how it has performed.",
+        "I would choose this again over several alternatives.",
+    ]
+
+    # --------------------------------------------------------
+    # Neutral endings
+    # --------------------------------------------------------
+
+    neutral_endings = [
+        "I would describe the experience as average.",
+        "It is fine as long as expectations are realistic.",
+        "I would consider other options before making another purchase.",
+        "Overall, it is acceptable but not exceptional.",
+        "There is still some room for improvement.",
+        "It is a reasonable choice for basic requirements.",
+    ]
+
+    # --------------------------------------------------------
+    # Negative endings
+    # --------------------------------------------------------
+
+    negative_endings = [
+        "I would probably choose another option next time.",
+        "I would hesitate to recommend it.",
+        "I expected better overall reliability.",
+        "I do not think I would purchase it again.",
+        "There is considerable room for improvement.",
+        "I would look at alternatives before buying it again.",
+    ]
+
+    # --------------------------------------------------------
+    # Determine semantic region
+    # --------------------------------------------------------
+
+    if experience_score >= 0.65:
+        aspect_pool = positive_aspects
+        support_pool = positive_support
+        ending_pool = positive_endings
+
+    elif experience_score <= 0.35:
+        aspect_pool = negative_aspects
+        support_pool = negative_support
+        ending_pool = negative_endings
 
     else:
-        aspect = random.choice(
-            negative_aspects
+        aspect_pool = neutral_aspects
+        support_pool = neutral_support
+        ending_pool = neutral_endings
+
+    # --------------------------------------------------------
+    # Build review
+    # --------------------------------------------------------
+
+    sentences = [
+        random.choice(openings),
+        random.choice(aspect_pool),
+    ]
+
+    # Add supporting sentence most of the time.
+    if random.random() < 0.70:
+        sentences.append(
+            random.choice(support_pool)
         )
 
-    # Add a second aspect sometimes.
-    if random.random() < 0.65:
-
-        second_aspect = random.choice(
-            common_aspects
-            + mild_positive
-            + mild_negative
+    # Add a second semantic observation sometimes.
+    if random.random() < 0.45:
+        sentences.append(
+            random.choice(aspect_pool)
         )
 
-    else:
-        second_aspect = ""
+    # Add an ending sometimes.
+    if random.random() < 0.55:
+        sentences.append(
+            random.choice(ending_pool)
+        )
 
-    # Occasionally create a mixed opinion.
-    if random.random() < 0.35:
+    # --------------------------------------------------------
+    # Occasionally create controlled mixed reviews.
+    # --------------------------------------------------------
 
-        if experience_score >= 0.50:
-            contrast = random.choice(
-                mild_negative
+    if random.random() < 0.15:
+
+        if experience_score >= 0.65:
+            sentences.append(
+                "There are still a few minor details that could be improved."
             )
+
+        elif experience_score <= 0.35:
+            sentences.append(
+                "One or two aspects of the product are still useful."
+            )
+
         else:
-            contrast = random.choice(
-                mild_positive
+            sentences.append(
+                "Some parts are better than others."
             )
 
-    else:
-        contrast = ""
-
-    parts = [
-        opening,
-        aspect,
-    ]
-
-    if second_aspect:
-        parts.append(
-            second_aspect
-        )
-
-    if contrast:
-        parts.append(
-            "However, " + contrast.lower()
-        )
-
-    return " ".join(parts)
+    return " ".join(sentences)
 # ============================================================
 # Customer generation
 # ============================================================
@@ -1170,6 +1288,8 @@ def generate_reviews(
 
     reviews = []
 
+    used_review_texts = set()
+
     for i, row in enumerate(
         review_source.itertuples(
             index=False
@@ -1241,24 +1361,24 @@ def generate_reviews(
         # Generate review text from the underlying experience,
         # NOT from the final sentiment label.
 
-        review_text = build_review_text(
-            product,
-            experience_score,
-        )
+        for _ in range(20):
+            review_text = build_review_text(product, experience_score)
+            if review_text not in used_review_texts:
+                break
+        else:
+            review_text += f" Product reference {i}."
+        used_review_texts.add(review_text)
 
         # Sentiment is derived separately from the
         # underlying experience.
 
-        if experience_score >= 0.58:
-
+        if experience_score >= 0.65:
             sentiment = "positive"
 
         elif experience_score <= 0.35:
-
             sentiment = "negative"
 
         else:
-
             sentiment = "neutral"
 
         title_map = {

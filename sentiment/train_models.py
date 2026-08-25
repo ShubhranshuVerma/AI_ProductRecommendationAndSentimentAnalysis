@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+from sklearn.pipeline import FeatureUnion
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -56,35 +57,14 @@ def load_data():
 # TF-IDF
 # ============================================================
 
-def create_tfidf_features(
-    X_train,
-    X_test,
-):
-    vectorizer = TfidfVectorizer(
-        lowercase=True,
-        ngram_range=(1, 2),
-        min_df=2,
-        max_df=0.95,
-        sublinear_tf=True,
-    )
-
-    X_train_tfidf = (
-        vectorizer.fit_transform(
-            X_train
-        )
-    )
-
-    X_test_tfidf = (
-        vectorizer.transform(
-            X_test
-        )
-    )
-
-    return (
-        vectorizer,
-        X_train_tfidf,
-        X_test_tfidf,
-    )
+def create_tfidf_features(X_train, X_test):
+    vectorizer = FeatureUnion([
+        ("word", TfidfVectorizer(lowercase=True, analyzer="word", ngram_range=(1, 2), min_df=2, max_df=0.95, sublinear_tf=True)),
+        ("char", TfidfVectorizer(lowercase=True, analyzer="char_wb", ngram_range=(3, 5), min_df=2, max_df=0.98, sublinear_tf=True)),
+    ])
+    X_train_tfidf = vectorizer.fit_transform(X_train)
+    X_test_tfidf = vectorizer.transform(X_test)
+    return vectorizer, X_train_tfidf, X_test_tfidf
 
 
 # ============================================================
@@ -127,30 +107,12 @@ def log_mlflow_run(
         run_name=model_name
     ):
 
-        mlflow.log_param(
-            "model",
-            model_name,
-        )
-
-        mlflow.log_param(
-            "tfidf_ngram_range",
-            "(1, 2)",
-        )
-
-        mlflow.log_param(
-            "tfidf_min_df",
-            2,
-        )
-
-        mlflow.log_param(
-            "tfidf_max_df",
-            0.95,
-        )
-
-        mlflow.log_param(
-            "tfidf_sublinear_tf",
-            True,
-        )
+        mlflow.log_param("model",model_name,)
+        mlflow.log_param("feature_method", "word_char_tfidf")
+        mlflow.log_param("word_ngram_range", "(1, 2)")
+        mlflow.log_param("char_ngram_range", "(3, 5)")
+        mlflow.log_param("word_min_df", 2)
+        mlflow.log_param("char_min_df", 2)
 
         if hasattr(
             model,
@@ -194,10 +156,7 @@ def log_mlflow_run(
             "sentiment_classification",
         )
 
-        mlflow.set_tag(
-            "feature_method",
-            "TF-IDF",
-        )
+        mlflow.set_tag("feature_method", "word + character TF-IDF")
 
         mlflow.set_tag(
             "dataset",

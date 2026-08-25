@@ -11,9 +11,7 @@ EXPERIMENT_NAME = (
     "AI_Product_Recommendation_Sentiment"
 )
 
-ARTIFACT_DIR = Path(
-    "artifacts/mlflow"
-)
+ARTIFACT_DIR = Path("mlruns")
 
 
 def configure_mlflow():
@@ -36,9 +34,7 @@ def configure_mlflow():
     )
 
 
-def start_run(
-    model_name,
-):
+def start_run(model_name):
     """
     Start an MLflow run for a candidate model.
     """
