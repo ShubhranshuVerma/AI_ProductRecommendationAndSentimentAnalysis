@@ -1,14 +1,3 @@
-"""HOW TO RUN:
------------------------------------------
-1. Start the FastAPI Docker container:
-docker run -d \
-  -p 8001:8000 \
-  --env-file .env \
-  --name ai-product-recommendation \
-  ai-product-recommendation
-
-2. Start the Streamlit UI:
-       streamlit run app.py"""
 """
 ==========================================================
 STREAMLIT UI (v4) — Customer-Facing Version
@@ -41,16 +30,17 @@ NOTE: this version uses Plotly for charts. If not already installed:
     pip install plotly
 """
 
+import os
+
 import streamlit as st
 import requests
 import pandas as pd
-import plotly.graph_objects as go
 from pathlib import Path
-
+import base64
 # ----------------------------------------------------------
 # CONFIG
 # ----------------------------------------------------------
-API_BASE_URL = "http://localhost:9000"
+API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8001").rstrip("/")
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 if not (PROJECT_ROOT / "data").exists():
@@ -59,10 +49,32 @@ if not (PROJECT_ROOT / "data").exists():
 CUSTOMERS_PATH = PROJECT_ROOT / "data" / "processed" / "recommendation" / "customers.csv"
 PRODUCTS_PATH = PROJECT_ROOT / "data" / "processed" / "recommendation" / "products.csv"
 REVIEWS_PATH = PROJECT_ROOT / "data" / "raw" / "reviews.csv"
+IMAGE_PATH = PROJECT_ROOT / "image.png"
+LOGO_PATH = PROJECT_ROOT / "logo1.png"
+
+if not IMAGE_PATH.exists():
+    raise FileNotFoundError(
+        f"Background image not found: {IMAGE_PATH}. "
+        "Put image.png in the same folder as app.py."
+    )
+
+if not LOGO_PATH.exists():
+    raise FileNotFoundError(
+        f"Logo image not found: {LOGO_PATH}. "
+        "Put logo1.png in the same folder as app.py."
+    )
+
+with open(IMAGE_PATH, "rb") as f:
+    image_base64 = base64.b64encode(f.read()).decode("utf-8")
+
+with open(LOGO_PATH, "rb") as f:
+    logo_base64 = base64.b64encode(f.read()).decode("utf-8")
+
+PAGE_ICON = str(LOGO_PATH) if LOGO_PATH.exists() else str(IMAGE_PATH)
 
 st.set_page_config(
     page_title="Product Recommendations & Reviews",
-    page_icon="🛍️",
+    page_icon=PAGE_ICON,
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -77,112 +89,561 @@ COLORS = {
 # ----------------------------------------------------------
 # STYLING
 # ----------------------------------------------------------
+css="""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #070910;
+    --ink: #f8fafc;
+    --muted: #94a3b8;
+    --line: rgba(148,163,184,.15);
+    --purple: #7c6cff;
+}
+
+html, body, [class*="css"], .stApp {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.stApp {
+    background: #070910 !important;
+    color: var(--ink) !important;
+    position: relative;
+    min-height: 100vh;
+    isolation: isolate;
+}
+
+/* Keep every Streamlit surface transparent so the image can actually show. */
+[data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] > .main,
+[data-testid="stAppViewContainer"] > .main > div {
+    background: transparent !important;
+}
+
+/* Full-screen faded background image. */
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(4, 6, 12, .22),
+            rgba(4, 6, 12, .42)
+        ),
+        url("data:image/png;base64,image.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: .82;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Very subtle dark tint: keeps text readable without washing out the image. */
+.stApp::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(99, 102, 241, .05),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 7, 14, .12),
+            rgba(5, 7, 14, .28)
+        );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.block-container {
+    max-width: 1180px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 4rem !important;
+    position: relative;
+    z-index: 3;
+}
+
+#MainMenu,
+footer {
+    visibility: hidden;
+}
+
+header[data-testid="stHeader"] {
+    visibility: visible !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+header[data-testid="stHeader"] > div {
+    background: transparent !important;
+}
+header[data-testid="stHeader"] button {
+    background: transparent !important;
+    color: #f8fafc !important;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+section[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        rgba(7, 12, 23, 0.97),
+        rgba(9, 17, 31, 0.96)
+    ) !important;
+
+    border-right: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+/* Keep Streamlit's sidebar controls clickable */
+section[data-testid="stSidebar"] > div {
+    background: transparent !important;
+}
+
+/* Sidebar content */
+section[data-testid="stSidebar"] * {
+    color: #e8edf7;
+}
+
+/* IMPORTANT:
+   Do not force z-index on the sidebar itself.
+   Streamlit controls need to remain above/beside it.
+*/
+[data-testid="stSidebarCollapsedControl"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+}
+
+/* Sidebar expand button */
+button[data-testid="stSidebarCollapsedControl"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Sidebar close button */
+button[data-testid="stSidebarCollapseButton"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.sidebar-brand { padding: .15rem 0 1.3rem; }
+section[data-testid="stSidebar"] [data-testid="stImage"] {
+    margin-bottom: .35rem !important;
+}
+section[data-testid="stSidebar"] [data-testid="stImage"] img {
+    width: 55px !important;
+    height: 55px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.sidebar-brand h3 {
+    color: #fff !important;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 750;
+}
+
+.sidebar-brand p {
+    color: #94a3b8 !important;
+    font-size: .78rem;
+    margin: .25rem 0 0;
+    line-height: 1.45;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .42rem .7rem;
+    border-radius: 999px;
+    background: rgba(34,197,94,.10);
+    border: 1px solid rgba(74,222,128,.25);
+    color: #bbf7d0 !important;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Top bar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    box-shadow: 0 8px 28px rgba(99,102,241,.28);
+    font-size: 1.35rem;
+}
+
+.brand-name {
+    color: #f8fafc !important;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.brand-sub {
+    color: #94a3b8 !important;
+    font-size: .74rem;
+    margin-top: .08rem;
+}
+
+.top-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    background: rgba(10,15,28,.72);
+    border: 1px solid rgba(148,163,184,.18);
+    border-radius: 999px;
+    padding: .45rem .75rem;
+    color: #bbf7d0 !important;
+    font-size: .73rem;
+    font-weight: 700;
+    backdrop-filter: blur(12px);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 2.2rem 2.5rem;
+    border-radius: 22px;
+    margin: .35rem 0 1.4rem;
+    background:
+        radial-gradient(circle at 90% 15%, rgba(124,108,255,.22), transparent 28%),
+        linear-gradient(135deg, rgba(11,27,48,.72), rgba(19,51,82,.62));
+    border: 1px solid rgba(96,165,250,.18);
+    box-shadow: 0 22px 55px rgba(0,0,0,.25);
+}
+
+.hero:after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -90px;
+    bottom: -110px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+.hero-kicker, .section-label {
+    color: #818cf8 !important;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .68rem;
+    font-weight: 800;
+}
+
+.hero-kicker { margin-bottom: .55rem; }
+
+.hero h1 {
+    color: #fff !important;
+    font-size: 2.15rem;
+    line-height: 1.08;
+    font-weight: 800;
+    margin: 0 0 .7rem;
+}
+
+.hero p {
+    color: #dbeafe !important;
+    font-size: .96rem;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 720px;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: .25rem;
+    background: rgba(8,12,22,.66);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(148,163,184,.14);
+    padding: .25rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 42px !important;
+    padding: 0 1.1rem !important;
+    border-radius: 10px !important;
+    color: #cbd5e1 !important;
+    font-size: .84rem !important;
+    font-weight: 700 !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: #fff !important;
+    background: rgba(124,108,255,.10) !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #fff !important;
+    background: rgba(124,108,255,.13) !important;
+}
+
+.stTabs [data-baseweb="tab-highlight"] {
+    background: linear-gradient(90deg,#7c6cff,#38bdf8) !important;
+    height: 3px !important;
+    border-radius: 999px !important;
+}
+
+.section-label { margin: 1.55rem 0 .7rem; }
+
+.section-title {
+    color: #f8fafc !important;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.section-subtitle {
+    color: #94a3b8 !important;
+    font-size: .82rem;
+    margin: .2rem 0 1rem;
+}
+
+/* Controls */
+div[data-testid="stSelectbox"] label,
+div[data-testid="stTextArea"] label,
+div[data-testid="stRadio"] label {
+    color: #94a3b8 !important;
+    font-weight: 700 !important;
+    font-size: .8rem !important;
+}
+
+div[data-baseweb="select"] > div {
+    background: rgba(18,22,35,.66) !important;
+    border: 1px solid rgba(148,163,184,.16) !important;
+    border-radius: 10px !important;
+    min-height: 44px !important;
+}
+
+div[data-baseweb="select"] * { color: #f8fafc !important; }
+
+textarea {
+    background: rgba(18,22,35,.66) !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(148,163,184,.16) !important;
+    border-radius: 12px !important;
+}
+
+textarea::placeholder { color: #64748b !important; }
+
+.stButton > button {
+    border-radius: 10px !important;
+    font-weight: 750 !important;
+    min-height: 42px !important;
+    border: 1px solid rgba(148,163,184,.16) !important;
+    background: rgba(18,22,35,.82) !important;
+    color: #f8fafc !important;
+}
+
+.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg,#635bff,#7c3aed) !important;
+    border-color: #7c6cff !important;
+    color: #fff !important;
+    box-shadow: 0 9px 25px rgba(99,91,255,.28);
+}
+
+/* Glass cards */
+.profile-card {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: .65rem;
+    margin: .8rem 0 1.15rem;
+}
+
+.profile-pill, .product-card, .summary-card {
+    background: rgba(10,14,25,.56) !important;
+    border: 1px solid rgba(148,163,184,.14) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.profile-pill {
+    border-radius: 13px;
+    padding: .8rem .9rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.14);
+}
+
+.profile-pill .label {
+    color: #7f91aa !important;
+    font-size: .63rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.profile-pill .value {
+    color: #f8fafc !important;
+    font-size: .87rem;
+    font-weight: 750;
+    margin-top: .18rem;
+}
+
+.product-card {
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    margin-bottom: .65rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.14);
+}
+
+.product-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.product-rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: rgba(99,91,255,.14);
+    color: #a5b4fc !important;
+    font-weight: 800;
+    border-radius: 8px;
+    margin-right: .55rem;
+}
+
+.product-name { color: #f8fafc !important; font-size: .96rem; font-weight: 800; }
+.product-meta { color: #64748b !important; font-size: .76rem; margin-top: .18rem; }
+
+.category-tag {
+    background: rgba(56,189,248,.10);
+    color: #7dd3fc !important;
+    font-size: .68rem;
+    font-weight: 750;
+    padding: .25rem .6rem;
+    border-radius: 999px;
+}
+
+.score-bar-track {
+    background: rgba(148,163,184,.12);
+    border-radius: 999px;
+    height: 7px;
+    margin-top: .75rem;
+    overflow: hidden;
+}
+
+.score-bar-fill {
+    background: linear-gradient(90deg,#635bff,#38bdf8);
+    height: 100%;
+    border-radius: 999px;
+}
+
+.score-label { color: #64748b !important; font-size: .7rem; margin-top: .3rem; }
+
+/* Sentiment and review cards */
+.sentiment-card {
+    border-radius: 16px;
+    padding: 1.25rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: .8rem;
+}
+
+.sentiment-card.positive { background: rgba(22,163,74,.10); border: 1px solid rgba(74,222,128,.22); }
+.sentiment-card.neutral { background: rgba(245,158,11,.10); border: 1px solid rgba(251,191,36,.22); }
+.sentiment-card.negative { background: rgba(244,63,94,.10); border: 1px solid rgba(251,113,133,.22); }
+
+.sentiment-icon { font-size: 2rem; }
+.sentiment-title { font-size: 1.05rem; font-weight: 850; margin: 0; }
+.sentiment-title.positive { color: #4ade80 !important; }
+.sentiment-title.neutral { color: #fbbf24 !important; }
+.sentiment-title.negative { color: #fb7185 !important; }
+.sentiment-sub { color: #94a3b8 !important; font-size: .8rem; }
+
+.summary-card {
+    border-left: 4px solid #6366f1 !important;
+    border-radius: 12px;
+    padding: 1.15rem 1.3rem;
+    margin: .5rem 0 1rem;
+}
+
+.summary-card p { color: #cbd5e1 !important; margin: 0; font-size: .88rem; line-height: 1.6; }
+
+.insight-card {
+    border-radius: 13px;
+    padding: 1.15rem 1.25rem;
+    height: 100%;
+}
+
+.insight-card.praise { background: rgba(22,163,74,.09); border: 1px solid rgba(74,222,128,.18); }
+.insight-card.complaint { background: rgba(244,63,94,.09); border: 1px solid rgba(251,113,133,.18); }
+.insight-card.praise h4 { color: #4ade80 !important; }
+.insight-card.complaint h4 { color: #fb7185 !important; }
+.insight-list li { color: #cbd5e1 !important; font-size: .8rem; }
+
+.business-card {
+    background: linear-gradient(135deg,rgba(30,27,75,.88),rgba(17,45,75,.88));
+    border: 1px solid rgba(124,108,255,.18);
+    border-radius: 14px;
+    padding: 1.15rem 1.3rem;
+    margin-top: .8rem;
+}
+
+.business-card h4 { color: #a5b4fc !important; }
+.business-card li { color: #e2e8f0 !important; font-size: .8rem; }
+.chart-caption { color: #64748b !important; font-size: .7rem; text-align: center; }
+
+[data-testid="stDataFrame"] {
+    border: 1px solid rgba(148,163,184,.14) !important;
+}
+
+@media (max-width: 800px) {
+    .block-container { padding-left: 1rem !important; padding-right: 1rem !important; }
+    .hero { padding: 1.6rem; }
+    .hero h1 { font-size: 1.7rem; }
+    .profile-card { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+</style>
+"""
+css = css.replace("image.png", image_base64)
+
 st.markdown(
-    """
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-
-    :root {
-        --navy: #0B1F3A;
-        --navy-light: #16305C;
-        --accent: #2563EB;
-        --accent-light: #EFF4FF;
-        --green: #16A34A;
-        --green-light: #F0FDF4;
-        --amber: #D97706;
-        --amber-light: #FFFBEB;
-        --red: #DC2626;
-        --red-light: #FEF2F2;
-        --gray-50: #F8FAFC;
-        --gray-100: #F1F5F9;
-        --gray-500: #64748B;
-        --gray-700: #334155;
-        --gray-900: #0F172A;
-    }
-    .stApp { background-color: var(--gray-50); }
-
-    .hero {
-        padding: 2.25rem 2.5rem;
-        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-        border-radius: 16px;
-        margin-bottom: 1.75rem;
-        box-shadow: 0 10px 30px -10px rgba(11, 31, 58, 0.4);
-    }
-    .hero h1 { color: #ffffff; font-size: 2rem; font-weight: 800; margin: 0 0 0.4rem 0; letter-spacing: -0.02em; }
-    .hero p { color: #CBD5E1; font-size: 1rem; margin: 0; max-width: 640px; }
-
-    .section-label {
-        font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
-        text-transform: uppercase; color: var(--gray-500); margin: 1.4rem 0 0.6rem 0;
-    }
-
-    .profile-card { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 0.75rem 0 1.25rem 0; }
-    .profile-pill { background: var(--gray-100); border-radius: 10px; padding: 0.6rem 1rem; min-width: 130px; }
-    .profile-pill .label { font-size: 0.7rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-    .profile-pill .value { font-size: 0.95rem; color: var(--gray-900); font-weight: 600; margin-top: 0.1rem; }
-
-    .product-card {
-        background: #ffffff; border: 1px solid var(--gray-100); border-radius: 14px;
-        padding: 1.1rem 1.3rem; margin-bottom: 0.7rem; box-shadow: 0 1px 3px rgba(15,23,42,0.04);
-    }
-    .product-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
-    .product-rank {
-        display: inline-flex; align-items: center; justify-content: center;
-        width: 26px; height: 26px; background: var(--accent-light); color: var(--accent);
-        font-weight: 700; font-size: 0.8rem; border-radius: 8px; margin-right: 0.6rem;
-    }
-    .product-name { font-size: 1.02rem; font-weight: 700; color: var(--gray-900); }
-    .product-meta { color: var(--gray-500); font-size: 0.83rem; margin-top: 0.15rem; }
-    .category-tag { background: var(--accent-light); color: var(--accent); font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; }
-    .score-bar-track { background: var(--gray-100); border-radius: 999px; height: 7px; margin-top: 0.7rem; overflow: hidden; }
-    .score-bar-fill { background: linear-gradient(90deg, var(--accent) 0%, #60A5FA 100%); height: 100%; border-radius: 999px; }
-    .score-label { font-size: 0.75rem; color: var(--gray-500); margin-top: 0.35rem; }
-
-    .sentiment-card { border-radius: 16px; padding: 1.6rem 1.8rem; display: flex; align-items: center; gap: 1.1rem; margin-top: 0.5rem; }
-    .sentiment-card.positive { background: var(--green-light); border: 1px solid #BBF7D0; }
-    .sentiment-card.neutral { background: var(--amber-light); border: 1px solid #FDE68A; }
-    .sentiment-card.negative { background: var(--red-light); border: 1px solid #FECACA; }
-    .sentiment-icon { font-size: 2.2rem; }
-    .sentiment-title { font-size: 1.3rem; font-weight: 800; margin: 0; }
-    .sentiment-title.positive { color: var(--green); }
-    .sentiment-title.neutral { color: var(--amber); }
-    .sentiment-title.negative { color: var(--red); }
-    .sentiment-sub { color: var(--gray-500); font-size: 0.87rem; margin-top: 0.1rem; }
-
-    .insight-card { border-radius: 14px; padding: 1.3rem 1.4rem; height: 100%; }
-    .insight-card.praise { background: var(--green-light); border: 1px solid #BBF7D0; }
-    .insight-card.complaint { background: var(--red-light); border: 1px solid #FECACA; }
-    .insight-card h4 { margin: 0 0 0.7rem 0; font-size: 0.95rem; font-weight: 700; }
-    .insight-card.praise h4 { color: #15803D; }
-    .insight-card.complaint h4 { color: #B91C1C; }
-    .insight-list { margin: 0; padding-left: 1.1rem; }
-    .insight-list li { font-size: 0.88rem; color: var(--gray-700); margin-bottom: 0.35rem; line-height: 1.4; }
-
-    .summary-card { background: var(--accent-light); border: 1px solid #BFDBFE; border-radius: 14px; padding: 1.3rem 1.5rem; margin: 0.5rem 0 1rem 0; }
-    .summary-card p { margin: 0; color: var(--gray-900); font-size: 0.95rem; line-height: 1.55; }
-
-    .business-card { background: var(--navy); border-radius: 14px; padding: 1.3rem 1.5rem; margin-top: 0.9rem; }
-    .business-card h4 { color: #93C5FD; margin: 0 0 0.7rem 0; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-    .business-card ol { margin: 0; padding-left: 1.2rem; }
-    .business-card li { color: #E2E8F0; font-size: 0.9rem; margin-bottom: 0.4rem; line-height: 1.5; }
-
-    .stTabs [data-baseweb="tab-list"] { gap: 0.4rem; }
-    .stTabs [data-baseweb="tab"] { font-size: 0.95rem; font-weight: 600; padding: 0.6rem 1.3rem; border-radius: 10px 10px 0 0; }
-    .stButton button { border-radius: 10px; font-weight: 600; padding: 0.55rem 1.4rem; }
-
-    div[data-testid="stRadio"] > label { font-weight: 600; }
-
-    section[data-testid="stSidebar"] { background-color: #ffffff; border-right: 1px solid var(--gray-100); }
-    .chart-caption { color: var(--gray-500); font-size: 0.82rem; text-align: center; margin-top: -0.5rem; }
-    </style>
-    """,
+    css,
     unsafe_allow_html=True,
 )
-
 
 # ----------------------------------------------------------
 # DATA LOADING
@@ -226,11 +687,27 @@ except FileNotFoundError as e:
 # HERO HEADER — customer-facing, no tech jargon
 # ----------------------------------------------------------
 st.markdown(
-    """
+    f"""
+    <div class="topbar">
+        <div class="brand">
+            <div class="brand-mark">
+                <img src="data:image/png;base64,{logo_base64}" alt="Product Intelligence">
+            </div>
+            <div>
+                <div class="brand-name">VOID - Your Personal Shopping Intelligence</div>
+                <div class="brand-sub">Recommendations · Sentiment · Review Insights</div>
+            </div>
+        </div>
+        <div class="top-status"><span>●</span> API ready</div>
+    </div>
+
     <div class="hero">
-        <h1>🛍️ Discover Products You'll Love</h1>
-        <p>Personalized recommendations picked for you, plus real insights from
-        thousands of customer reviews — so you always know what to expect.</p>
+        <div class="hero-kicker">Personalized shopping intelligence</div>
+        <h1>Discover products you'll love.</h1>
+        <p>
+            Get personalized recommendations, understand customer sentiment,
+            and turn product reviews into clear, actionable insights.
+        </p>
     </div>
     """,
     unsafe_allow_html=True,
@@ -239,6 +716,8 @@ st.markdown(
 if data_load_error:
     st.error(f"Could not load product data. Missing: {data_load_error}")
     st.stop()
+
+
 
 api_status = check_api_health()
 if not api_status:
@@ -249,7 +728,23 @@ if not api_status:
 # SIDEBAR — kept light, non-technical
 # ----------------------------------------------------------
 with st.sidebar:
-    st.markdown("#### 🛒 Store Snapshot")
+    st.image(str(LOGO_PATH), width=55)
+
+    st.markdown(
+        """
+        <div class="sidebar-brand">
+            <h3>Product Intelligence</h3>
+            <p>Customer recommendations and review intelligence in one place.</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f'<div class="status-pill"><span class="status-dot"></span> {"API connected" if api_status else "API unavailable"}</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("##### Store snapshot")
     m1, m2 = st.columns(2)
     m1.metric("Products", f"{len(products_df):,}")
     m2.metric("Categories", f"{products_df['category'].nunique()}")
@@ -257,12 +752,15 @@ with st.sidebar:
     m2.metric("Happy Customers", f"{(reviews_df['sentiment'] == 'positive').sum():,}")
 
     st.markdown("---")
-    st.caption("Product Recommendations & Review Insights")
-    st.caption(f"System status: {'🟢 Available' if api_status else '🔴 Unavailable'}")
+    st.markdown(
+        f'<div style="color:#9fb4c9;font-size:.72rem;margin-top:.6rem;">'
+        f'System status: {"available" if api_status else "not available"}</div>',
+        unsafe_allow_html=True,
+    )
 
 
 tab1, tab2, tab3 = st.tabs(
-    ["🎯  Recommendations", "💬  Sentiment Checker", "📊  Review Analysis"]
+    ["  Recommendations", "  Sentiment Checker", "  Review Analysis"]
 )
 
 
@@ -270,7 +768,9 @@ tab1, tab2, tab3 = st.tabs(
 # TAB 1 — RECOMMENDATIONS
 # ============================================================
 with tab1:
-    st.markdown('<div class="section-label">Find recommendations for a shopper</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">Personalized recommendations</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Find the right products</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-subtitle">Filter shoppers by profile, then generate their strongest product matches.</div>', unsafe_allow_html=True)
 
     f1, f2 = st.columns(2)
     with f1:
@@ -373,14 +873,20 @@ with tab1:
 # TAB 2 — SENTIMENT CHECKER
 # ============================================================
 with tab2:
-    st.markdown('<div class="section-label">Check how a review sounds</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">AI sentiment checker</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">How does this review feel?</div>', unsafe_allow_html=True)
     st.caption("Type any review below and we'll tell you whether it reads as positive, neutral, or negative.")
+
+    if "review_text_value" not in st.session_state:
+        st.session_state["review_text_value"] = ""
 
     review_text = st.text_area(
         "Your review",
         placeholder="e.g. The product quality is excellent and delivery was fast.",
         height=110,
         label_visibility="collapsed",
+        value=st.session_state["review_text_value"],
+        key="review_text_input",
     )
 
     with st.expander("Not sure what to try? Load a real example review instead"):
@@ -396,14 +902,10 @@ with tab2:
         if not ex_reviews.empty:
             ex_review_choice = st.selectbox("Example review", options=ex_reviews["review_text"], key="sentiment_review_pick")
             if st.button("Use this example"):
-                st.session_state["prefill_review"] = ex_review_choice
+                st.session_state["review_text_value"] = ex_review_choice
                 st.rerun()
         else:
             st.caption("No reviews available for this product yet.")
-
-    if "prefill_review" in st.session_state and not review_text:
-        review_text = st.session_state["prefill_review"]
-        st.info(f"Loaded example: \u201c{review_text[:120]}{'...' if len(review_text) > 120 else ''}\u201d")
 
     if st.button("Predict Sentiment", type="primary"):
         if not review_text.strip():
@@ -450,7 +952,9 @@ with tab2:
 # TAB 3 — REVIEW ANALYSIS (LLM)
 # ============================================================
 with tab3:
-    st.markdown('<div class="section-label">Understand what customers think about a product</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">Review intelligence</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">Understand what customers think</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-subtitle">Choose a product and let the review analysis engine surface the themes that matter.</div>', unsafe_allow_html=True)
 
     cat_options = sorted(products_df["category"].unique().tolist())
     selected_category = st.selectbox("1. Choose a category", options=cat_options, key="analysis_cat")
@@ -515,52 +1019,31 @@ with tab3:
                         chart_col1, chart_col2 = st.columns(2)
 
                         with chart_col1:
-                            sentiment_counts = analysis_slice["sentiment"].value_counts()
-                            labels = sentiment_counts.index.tolist()
-                            values = sentiment_counts.values.tolist()
-                            colors = [COLORS.get(l, "#94A3B8") for l in labels]
-
-                            fig_donut = go.Figure(
-                                data=[
-                                    go.Pie(
-                                        labels=[l.capitalize() for l in labels],
-                                        values=values,
-                                        hole=0.6,
-                                        marker=dict(colors=colors),
-                                        textinfo="percent",
-                                        textfont=dict(size=14),
-                                    )
-                                ]
+                            sentiment_counts = (
+                                analysis_slice["sentiment"]
+                                .value_counts()
+                                .reindex(["positive", "neutral", "negative"])
+                                .dropna()
+                                .astype(int)
                             )
-                            fig_donut.update_layout(
-                                showlegend=True,
-                                legend=dict(orientation="h", yanchor="bottom", y=-0.15),
-                                margin=dict(t=10, b=10, l=10, r=10),
-                                height=280,
-                                annotations=[dict(text="Sentiment", x=0.5, y=0.5, font_size=14, showarrow=False)],
+                            st.bar_chart(sentiment_counts)
+                            st.markdown(
+                                '<p class="chart-caption">How customers feel overall</p>',
+                                unsafe_allow_html=True,
                             )
-                            st.plotly_chart(fig_donut, use_container_width=True)
-                            st.markdown('<p class="chart-caption">How customers feel overall</p>', unsafe_allow_html=True)
 
                         with chart_col2:
-                            rating_counts = analysis_slice["rating"].value_counts().sort_index()
-                            fig_bar = go.Figure(
-                                data=[
-                                    go.Bar(
-                                        x=[f"{r} \u2605" for r in rating_counts.index],
-                                        y=rating_counts.values,
-                                        marker_color="#2563EB",
-                                    )
-                                ]
+                            rating_counts = (
+                                analysis_slice["rating"]
+                                .value_counts()
+                                .sort_index()
+                                .astype(int)
                             )
-                            fig_bar.update_layout(
-                                margin=dict(t=10, b=10, l=10, r=10),
-                                height=280,
-                                yaxis_title=None,
-                                xaxis_title=None,
+                            st.bar_chart(rating_counts)
+                            st.markdown(
+                                '<p class="chart-caption">Star rating breakdown</p>',
+                                unsafe_allow_html=True,
                             )
-                            st.plotly_chart(fig_bar, use_container_width=True)
-                            st.markdown('<p class="chart-caption">Star rating breakdown</p>', unsafe_allow_html=True)
 
                         st.markdown('<div class="section-label">Summary</div>', unsafe_allow_html=True)
                         st.markdown(f'<div class="summary-card"><p>{result["summary"]}</p></div>', unsafe_allow_html=True)
