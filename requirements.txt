@@ -8,5 +8,6 @@ pydantic
 python-dotenv
 pytest
 httpx
-python-dotenv 
 google-genai
+transformers
+torch

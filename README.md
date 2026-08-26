@@ -1,362 +1,127 @@
 # AI-Powered Product Recommendation & Review Analysis System
 
-An end-to-end AI/ML system for **personalized product recommendation, customer interaction analysis, sentiment classification, and intelligent review insights**.
+An end-to-end AI/ML capstone project that combines:
 
-The project combines traditional machine learning, recommendation techniques, experiment tracking, model management, LLM-based analysis, REST APIs, and containerized deployment into a complete production-oriented pipeline.
+- Personalized product recommendations
+- Machine-learning-based sentiment classification
+- Transformer-based sentiment analysis using CardiffNLP RoBERTa
+- LLM-powered customer review analysis
+- MLflow experiment tracking and model registration
+- FastAPI REST APIs
+- Streamlit user interface
+- Docker deployment
+- Automated testing
 
----
-
-## 1. Project Overview
-
-E-commerce platforms generate large volumes of customer interaction and review data. Analyzing this data can help businesses understand customer preferences, identify product sentiment, and provide more relevant product recommendations.
-
-This project builds an AI-powered system that:
-
-* Recommends products based on customer preferences and interactions.
-* Analyzes customer reviews using machine learning.
-* Classifies reviews by sentiment.
-* Compares multiple machine learning models.
-* Tracks experiments using **MLflow**.
-* Registers the best-performing model using the **MLflow Model Registry**.
-* Uses an LLM to generate higher-level insights from customer reviews.
-* Provides REST APIs using **FastAPI**.
-* Runs as a containerized application using **Docker**.
-* Includes automated testing for core components.
+The system is designed as a compact, explainable, and production-oriented demonstration of how multiple AI components can work together in an e-commerce application.
 
 ---
 
-## 2. Problem Statement
+# 1. Project Overview
 
-Modern e-commerce platforms collect information from multiple sources, including:
+E-commerce platforms generate large amounts of customer interaction and review data.
 
-* Customer profiles
-* Product catalogs
-* Product interactions
-* Purchases
-* Ratings
-* Reviews
-* Browsing behavior
+This project addresses two related problems:
 
-Simply storing this data does not provide personalized value to customers or actionable insights to businesses.
+1. **What products should be recommended to a customer?**
+2. **What can we learn from customer reviews?**
 
-The objective of this project is to develop an integrated AI/ML solution that uses customer interaction history and review data to:
+The system combines recommendation algorithms, sentiment classification, and LLM-based review analysis into a single application.
 
-1. Recommend relevant products.
-2. Understand customer sentiment.
-3. Extract meaningful insights from reviews.
-4. Track and manage ML experiments.
-5. Provide the functionality through production-style APIs.
+The final system provides:
 
----
-
-## 3. Objectives
-
-### Primary Objectives
-
-* Build a product recommendation engine.
-* Build a customer review sentiment classification system.
-* Compare multiple ML algorithms.
-* Evaluate models using appropriate performance metrics.
-* Track experiments using MLflow.
-* Register the selected production model.
-* Generate LLM-based summaries and insights from reviews.
-* Develop FastAPI endpoints for application access.
-* Containerize the application using Docker.
-* Build automated tests for important system components.
-
-### Secondary Objectives
-
-* Maintain a modular and maintainable project structure.
-* Separate data processing, ML training, inference, and API logic.
-* Make the system reproducible.
-* Provide clear documentation.
-* Follow production-oriented ML engineering practices where practical.
+- Personalized product recommendations
+- Positive, neutral, or negative sentiment classification
+- Sentiment confidence scores
+- AI-generated review summaries
+- Common customer complaints
+- Praised product features
+- Business insights derived from reviews
 
 ---
 
-# 4. System Architecture
+# 2. Problem Statement
 
-The system follows a modular pipeline:
+Modern e-commerce platforms need to understand both:
 
-```text
-                    ┌──────────────────────┐
-                    │      Raw Dataset     │
-                    │ Customers / Products │
-                    │ Interactions/Reviews │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Data Processing    │
-                    │ Cleaning & Validation │
-                    │ Feature Engineering  │
-                    └──────────┬───────────┘
-                               │
-                 ┌─────────────┴─────────────┐
-                 │                           │
-                 ▼                           ▼
-       ┌──────────────────┐       ┌──────────────────┐
-       │ Recommendation   │       │ Sentiment        │
-       │ System           │       │ Classification   │
-       └────────┬─────────┘       └────────┬─────────┘
-                │                          │
-                │                          ▼
-                │                 ┌──────────────────┐
-                │                 │ ML Model Training│
-                │                 │ & Evaluation     │
-                │                 └────────┬─────────┘
-                │                          │
-                │                          ▼
-                │                 ┌──────────────────┐
-                │                 │      MLflow      │
-                │                 │ Tracking/Registry│
-                │                 └────────┬─────────┘
-                │                          │
-                └─────────────┬────────────┘
-                              │
-                              ▼
-                    ┌──────────────────────┐
-                    │     FastAPI Layer    │
-                    │ REST API Endpoints   │
-                    └──────────┬───────────┘
-                               │
-                ┌──────────────┴──────────────┐
-                │                             │
-                ▼                             ▼
-       ┌──────────────────┐         ┌──────────────────┐
-       │ Recommendation   │         │ Review Analysis  │
-       │ API              │         │ API              │
-       └──────────────────┘         └────────┬─────────┘
-                                             │
-                                             ▼
-                                   ┌──────────────────┐
-                                   │       LLM        │
-                                   │ Review Insights  │
-                                   └──────────────────┘
+- Customer behavior
+- Customer feedback
 
-                         Docker Container
-```
+Traditional recommendation systems can identify products a customer may be interested in, but they do not explain how customers feel about products.
+
+Similarly, sentiment analysis can classify reviews but does not directly provide personalized recommendations.
+
+This project integrates both capabilities into a single system.
+
+### Main objectives
+
+- Build a recommendation system using customer-product interactions.
+- Compare the recommendation system against a popularity baseline.
+- Implement sentiment classification using a transformer model.
+- Evaluate sentiment predictions on labeled data.
+- Register the production sentiment model with MLflow.
+- Analyze customer reviews using an LLM.
+- Expose the functionality through REST APIs.
+- Provide a simple Streamlit interface.
+- Containerize the backend using Docker.
+- Validate the application with automated tests.
 
 ---
 
-# 5. Project Structure
-
-The project is organized into separate modules for data generation, machine learning, API development, testing, and deployment.
+# 3. System Architecture
 
 ```text
-AI_Product_Recommendation/
-│
-├── api/
-│   ├── __init__.py
-│   └── main.py
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── data_generation/
-│   └── generate_dataset.py
-│
-├── models/
-│   ├── recommendation/
-│   └── sentiment/
-│
-├── notebooks/
-│   └── exploratory_analysis.ipynb
-│
-├── src/
-│   ├── data_processing/
-│   ├── recommendation/
-│   ├── sentiment/
-│   ├── llm/
-│   └── utils/
-│
-├── tests/
-│   ├── test_api.py
-│   ├── test_recommendation.py
-│   └── test_sentiment.py
-│
-├── mlruns/
-│
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── .env.example
-├── .gitignore
-└── README.md
-```
-
-> The final structure may evolve during implementation if a structural change provides a significant improvement in maintainability, reproducibility, or functionality.
+                         ┌──────────────────────┐
+                         │      Streamlit UI    │
+                         │       app.py         │
+                         └──────────┬───────────┘
+                                    │
+                                    │ HTTP
+                                    ▼
+                         ┌──────────────────────┐
+                         │      FastAPI API     │
+                         │      api/main.py     │
+                         └──────────┬───────────┘
+                                    │
+                 ┌──────────────────┼──────────────────┐
+                 │                  │                  │
+                 ▼                  ▼                  ▼
+        ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
+        │ Recommendation │ │   Sentiment    │ │ Review Analysis│
+        │    Service     │ │    Service     │ │      LLM       │
+        └───────┬────────┘ └───────┬────────┘ └───────┬────────┘
+                │                  │                  │
+                ▼                  ▼                  ▼
+        Customer/Product     CardiffNLP RoBERTa   Google GenAI
+          Interactions        Transformer Model       API
+                │                  │
+                │                  │
+                ▼                  ▼
+        Recommendation       Sentiment Result
+            Results          + Confidence
+                         ┌──────────────────────┐
+                         │       MLflow         │
+                         │ Tracking + Registry  │
+                         └──────────────────────┘
+````
 
 ---
 
-# 6. Dataset
+# 4. Main Components
 
-The system uses a structured e-commerce dataset containing information about customers, products, interactions, and reviews.
+## 4.1 Recommendation System
 
-## Dataset Components
+The recommendation component uses customer interaction history and product information to generate personalized recommendations.
 
-### Customers
+The system also includes a popularity-based baseline for comparison.
 
-Contains customer-level information used to identify customer preferences.
+### Recommendation output
 
-Example fields:
+Each recommendation contains:
 
-```text
-customer_id
-age
-gender
-location
-```
-
-### Products
-
-Contains product catalog information.
-
-Example fields:
-
-```text
-product_id
-product_name
-category
-brand
-price
-description
-```
-
-### Interactions
-
-Contains customer-product interaction history.
-
-Example interactions include:
-
-```text
-view
-click
-cart
-wishlist
-purchase
-rating
-```
-
-Example fields:
-
-```text
-customer_id
-product_id
-interaction_type
-timestamp
-```
-
-### Reviews
-
-Contains customer reviews and associated ratings.
-
-Example fields:
-
-```text
-review_id
-customer_id
-product_id
-rating
-review_text
-timestamp
-```
-
-## Dataset Generation
-
-A synthetic dataset can be generated using:
-
-```bash
-python data_generation/generate_dataset.py
-```
-
-The generated data is stored under:
-
-```text
-data/raw/
-```
-
-Processed datasets are stored under:
-
-```text
-data/processed/
-```
-
----
-
-# 7. Data Processing
-
-Before model training, the raw data goes through a preprocessing pipeline.
-
-### Main processing steps
-
-1. Load raw datasets.
-2. Validate required columns.
-3. Handle missing values.
-4. Remove duplicate records.
-5. Normalize categorical values.
-6. Validate customer and product IDs.
-7. Process timestamps.
-8. Encode categorical variables where required.
-9. Generate recommendation features.
-10. Prepare text data for sentiment analysis.
-11. Split data into training and evaluation datasets.
-
-The preprocessing pipeline is designed to be reproducible and reusable.
-
----
-
-# 8. Recommendation System
-
-The recommendation engine provides personalized product recommendations based on customer behavior and product information.
-
-## Recommendation Approach
-
-The system can combine multiple recommendation strategies:
-
-### Collaborative Filtering
-
-Uses customer-product interaction history to identify products that similar customers interacted with.
-
-```text
-Customer → Interaction History → Similar Customers → Recommended Products
-```
-
-### Content-Based Recommendation
-
-Uses product attributes such as:
-
-* Category
-* Brand
-* Description
-* Price
-* Product features
-
-to identify products similar to those previously preferred by a customer.
-
-### Hybrid Recommendation
-
-The final system can combine collaborative and content-based signals to improve recommendation quality.
-
-```text
-Customer History
-       │
-       ├───────────────┐
-       ▼               ▼
-Collaborative      Content-Based
-Filtering          Recommendation
-       │               │
-       └───────┬───────┘
-               ▼
-       Recommendation
-          Ranking
-               │
-               ▼
-       Top-N Products
-```
-
-## Recommendation Output
+* Product ID
+* Product name
+* Product category
+* Recommendation score
 
 Example:
 
@@ -365,409 +130,579 @@ Example:
   "customer_id": "CUST00001",
   "recommendations": [
     {
-      "product_id": "PROD00125",
-      "score": 0.92
-    },
-    {
-      "product_id": "PROD00341",
-      "score": 0.87
+      "product_id": "PROD00225",
+      "product_name": "Zenith Laptop Product 225",
+      "category": "Electronics",
+      "recommendation_score": 0.5519
     }
+  ]
+}
+```
+
+### Recommendation evaluation
+
+The recommendation system is evaluated using:
+
+* Precision@10
+* Recall@10
+* Hit Rate@10
+* Coverage
+
+The current evaluation produced:
+
+| Model               | Precision@10 | Recall@10 | Hit Rate@10 | Coverage |
+| ------------------- | -----------: | --------: | ----------: | -------: |
+| Hybrid Recommender  |       0.0191 |    0.1042 |      0.1760 |    0.580 |
+| Popularity Baseline |       0.0087 |    0.0472 |      0.0859 |    0.068 |
+
+The hybrid recommender outperformed the popularity baseline on all reported evaluation metrics.
+
+---
+
+# 5. Sentiment Analysis
+
+The production sentiment classifier uses:
+
+```text
+cardiffnlp/twitter-roberta-base-sentiment-latest
+```
+
+The model predicts three sentiment classes:
+
+```text
+negative
+neutral
+positive
+```
+
+The transformer model is loaded through:
+
+```text
+sentiment/transformer_service.py
+```
+
+The FastAPI sentiment endpoint uses this service directly.
+
+### Example
+
+Input:
+
+```text
+I am extremely satisfied with this purchase.
+```
+
+Output:
+
+```json
+{
+  "sentiment": "positive",
+  "confidence": 0.9884,
+  "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
+}
+```
+
+Another example:
+
+```text
+The device overheats constantly and I regret buying it.
+```
+
+Output:
+
+```text
+negative
+```
+
+And:
+
+```text
+The product is okay, nothing special.
+```
+
+Output:
+
+```text
+neutral
+```
+
+---
+
+# 6. Sentiment Model Evaluation
+
+The sentiment dataset is stored under:
+
+```text
+data/processed/sentiment/
+```
+
+with:
+
+```text
+train.csv
+test.csv
+```
+
+The model evaluation includes:
+
+* Accuracy
+* Macro F1
+* Weighted F1
+* Precision
+* Recall
+* Per-class metrics
+* Classification report
+
+The production transformer model achieved the following evaluation results on 3,000 test samples:
+
+```text
+Accuracy       : 0.7427
+Macro F1       : 0.7325
+Weighted F1    : 0.7325
+Negative Recall: 0.8160
+```
+
+Per-class results:
+
+| Sentiment | Precision | Recall |   F1 |
+| --------- | --------: | -----: | ---: |
+| Negative  |      0.75 |   0.82 | 0.78 |
+| Neutral   |      0.73 |   0.51 | 0.60 |
+| Positive  |      0.74 |   0.90 | 0.81 |
+
+The model provides a reasonable three-class sentiment classification baseline while remaining compact enough for the capstone application.
+
+---
+
+# 7. MLflow
+
+MLflow is used to support the machine-learning lifecycle.
+
+The project uses MLflow for:
+
+* Experiment tracking
+* Model logging
+* Model registration
+* Model version management
+
+The registered model is:
+
+```text
+ProductSentimentModel
+```
+
+The project uses a local SQLite MLflow tracking database:
+
+```text
+mlflow.db
+```
+
+The MLflow tracking utilities are located in:
+
+```text
+mlflow_tracking/
+```
+
+The training workflow is implemented in:
+
+```text
+sentiment/train_models.py
+```
+
+Model registration is handled by:
+
+```text
+sentiment/register_model.py
+```
+
+The production API does not depend on the old serialized `joblib` sentiment model. Sentiment inference is handled directly by the transformer service.
+
+---
+
+# 8. LLM-Based Review Analysis
+
+The review-analysis component uses a generative AI model to transform customer reviews into useful business insights.
+
+The LLM component is located in:
+
+```text
+llm/
+├── client.py
+└── review_analysis.py
+```
+
+The system analyzes:
+
+* Review sentiment
+* Review text
+* Product information
+
+and generates:
+
+### Summary
+
+A concise summary of overall customer feedback.
+
+### Common complaints
+
+Issues frequently mentioned by customers.
+
+### Praised features
+
+Features customers respond positively to.
+
+### Business insights
+
+Actionable recommendations for the business.
+
+Example output:
+
+```json
+{
+  "summary": "Customers appreciate the laptop's performance and battery life, but express concern over thermal management during prolonged use.",
+  "common_complaints": [
+    "Laptop gets hot during extended use"
+  ],
+  "praised_features": [
+    "Excellent performance",
+    "Battery life"
+  ],
+  "business_insights": [
+    "Highlight performance and battery efficiency as key selling points in marketing.",
+    "Address thermal management issues to improve customer satisfaction during long usage sessions."
   ]
 }
 ```
 
 ---
 
-# 9. Sentiment Analysis
+# 9. FastAPI
 
-The sentiment analysis component classifies customer reviews into sentiment categories.
+The backend exposes the main functionality through REST APIs.
 
-Possible classes:
+The API application is located at:
 
 ```text
-Positive
-Neutral
-Negative
+api/main.py
 ```
 
-## Machine Learning Pipeline
+Routes are organized under:
 
 ```text
-Review Text
-     │
-     ▼
-Text Cleaning
-     │
-     ▼
-Feature Extraction
-     │
-     ▼
-ML Model
-     │
-     ▼
-Sentiment Prediction
+api/routes/
 ```
 
-Possible feature extraction approaches include:
-
-* TF-IDF
-* N-grams
-* Other suitable text representations
-
-## Models
-
-Multiple classification models can be evaluated, such as:
-
-* Logistic Regression
-* Naive Bayes
-* Linear SVM
-* Other suitable baseline models
-
-The final model will be selected based on actual validation results rather than assumptions.
-
----
-
-# 10. Model Evaluation
-
-The sentiment models will be evaluated using appropriate classification metrics.
-
-Primary metrics include:
-
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* Confusion Matrix
-
-For imbalanced datasets, additional emphasis will be placed on:
-
-* Macro F1-score
-* Class-level precision and recall
-
-Example evaluation:
+Available endpoints include:
 
 ```text
-Model                  Accuracy    F1 Score
-------------------------------------------------
-Logistic Regression       --         --
-Naive Bayes               --         --
-Linear SVM                --         --
-```
-
-Actual values will be populated after model training.
-
----
-
-# 11. MLflow Experiment Tracking
-
-MLflow is used to track machine learning experiments and manage model versions.
-
-The system records information such as:
-
-* Model name
-* Hyperparameters
-* Training metrics
-* Validation metrics
-* Dataset/version information
-* Model artifacts
-
-Example workflow:
-
-```text
-Model Training
-      │
-      ▼
-MLflow Experiment
-      │
-      ├── Parameters
-      ├── Metrics
-      ├── Artifacts
-      └── Model
-             │
-             ▼
-       Model Registry
-             │
-             ▼
-     Selected Model Version
-```
-
-## MLflow Components
-
-### Experiment Tracking
-
-Each training run records parameters and metrics.
-
-### Model Registry
-
-The selected model is registered and versioned.
-
-### Model Lifecycle
-
-A typical lifecycle is:
-
-```text
-Training
-   ↓
-Evaluation
-   ↓
-MLflow Run
-   ↓
-Model Registration
-   ↓
-Validation
-   ↓
-Production Model
+GET  /health
+POST /recommend
+POST /sentiment
+POST /review-analysis
 ```
 
 ---
 
-# 12. LLM-Based Review Analysis
+# 10. API Examples
 
-In addition to traditional sentiment classification, an LLM is used to generate higher-level insights from customer reviews.
+## Health Check
 
-The LLM component can provide:
-
-* Review summaries
-* Main customer complaints
-* Frequently mentioned positive aspects
-* Product strengths
-* Product weaknesses
-* Feature requests
-* Common customer concerns
-* Overall review insights
-
-Example:
-
-```text
-Input:
-Multiple customer reviews for a product
-
-        ↓
-
-LLM Analysis
-
-        ↓
-
-Output:
-• Customers like the product quality.
-• Battery life is frequently praised.
-• Several customers report charging issues.
-• Customers are requesting improved durability.
+```bash
+curl -s http://127.0.0.1:8001/health
 ```
 
-The LLM is intended to complement the ML sentiment classifier rather than replace it.
-
----
-
-# 13. FastAPI
-
-FastAPI provides the REST API layer for accessing the system.
-
-## Planned Endpoints
-
-### Health Check
-
-```http
-GET /health
-```
-
-Returns the API status.
-
-### Product Recommendations
-
-```http
-GET /recommend/{customer_id}
-```
-
-Returns personalized recommendations.
-
-### Sentiment Prediction
-
-```http
-POST /predict-sentiment
-```
-
-Accepts review text and returns sentiment.
-
-Example request:
+Expected:
 
 ```json
 {
-  "review": "The product quality is excellent and I really enjoyed using it."
+  "status": "healthy"
 }
+```
+
+---
+
+## Sentiment Prediction
+
+```bash
+curl -s -X POST \
+  http://127.0.0.1:8001/sentiment \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "review_text": "Excellent product, I am very happy with it."
+  }'
 ```
 
 Example response:
 
 ```json
 {
-  "sentiment": "positive"
+  "sentiment": "positive",
+  "confidence": 0.9884,
+  "model": "cardiffnlp/twitter-roberta-base-sentiment-latest"
 }
 ```
 
+---
+
+## Product Recommendation
+
+```bash
+curl -s -X POST \
+  http://127.0.0.1:8001/recommend \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "customer_id": "CUST00001",
+    "top_n": 5
+  }'
+```
+
+---
+
+## Review Analysis
+
+```bash
+curl -s -X POST \
+  http://127.0.0.1:8001/review-analysis \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "product_name": "Sample Laptop",
+    "reviews": [
+      {
+        "sentiment": "positive",
+        "review_text": "Excellent performance and battery life."
+      },
+      {
+        "sentiment": "negative",
+        "review_text": "The laptop gets hot during long usage."
+      }
+    ]
+  }'
+```
+
+---
+
+# 11. Streamlit Interface
+
+The project includes a Streamlit frontend:
+
+```text
+app.py
+```
+
+The interface provides three main sections:
+
+### Recommendations
+
+Select a customer and retrieve personalized product recommendations.
+
+### Sentiment Checker
+
+Enter a review and receive:
+
+* Sentiment
+* Confidence
+* Model information
+
 ### Review Analysis
 
-```http
-POST /analyze-review
-```
+Submit product reviews and receive:
 
-Uses the LLM component to generate higher-level review insights.
+* Summary
+* Common complaints
+* Praised features
+* Business insights
 
-### API Documentation
-
-FastAPI automatically provides interactive documentation through:
-
-```text
-/docs
-```
-
-and:
-
-```text
-/redoc
-```
-
-when the application is running.
+The Streamlit application communicates with the FastAPI backend.
 
 ---
 
-# 14. Docker
+# 12. Dataset
 
-The application is containerized using Docker to provide a consistent runtime environment.
+The project uses synthetic e-commerce data generated for the capstone.
 
-The Docker container packages:
+## Raw data
 
-* Python runtime
-* Application code
-* Dependencies
-* API
-* ML inference components
-
-Example workflow:
+Located under:
 
 ```text
-Source Code
-     │
-     ▼
-Docker Build
-     │
-     ▼
-Docker Image
-     │
-     ▼
-Docker Container
-     │
-     ▼
-FastAPI Application
+data/raw/
 ```
 
-Build the image:
-
-```bash
-docker build -t ai-product-recommendation .
-```
-
-Run the container:
-
-```bash
-docker run -p 8000:8000 ai-product-recommendation
-```
-
-The API can then be accessed through:
+Files:
 
 ```text
-http://localhost:8000
+customers.csv
+interactions.csv
+products.csv
+reviews.csv
+```
+
+## Processed recommendation data
+
+Located under:
+
+```text
+data/processed/recommendation/
+```
+
+Files:
+
+```text
+customers.csv
+interactions.csv
+products.csv
+```
+
+## Processed sentiment data
+
+Located under:
+
+```text
+data/processed/sentiment/
+```
+
+Files:
+
+```text
+train.csv
+test.csv
 ```
 
 ---
 
-# 15. Testing
+# 13. Data Generation
 
-The project uses automated testing to validate important components.
+Synthetic e-commerce data can be generated using:
 
-Testing areas include:
-
-* Data processing
-* Recommendation logic
-* Sentiment prediction
-* API endpoints
-* Input validation
-* Model loading
-* Health checks
-
-Run the test suite with:
-
-```bash
-pytest -v
+```text
+data_generation/generate_dataset.py
 ```
 
-Example:
+Dataset validation is provided by:
 
-```bash
-pytest tests/ -v
+```text
+data_generation/validate_dataset.py
 ```
 
-The goal is to ensure that changes to one component do not unintentionally break another component.
+The generated data supports:
+
+* Customer profiles
+* Product catalog
+* Customer-product interactions
+* Customer reviews
+* Sentiment labels
 
 ---
 
-# 16. Environment Configuration
+# 14. Project Structure
 
-Sensitive configuration values should not be hard-coded into the source code.
-
-Create a local environment file based on:
+The current project structure is:
 
 ```text
-.env.example
+AI_Product_Recommendation/
+│
+├── api/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── schemas.py
+│   └── routes/
+│       ├── __init__.py
+│       ├── recommendation.py
+│       ├── review_analysis.py
+│       └── sentiment.py
+│
+├── data/
+│   ├── raw/
+│   │   ├── customers.csv
+│   │   ├── interactions.csv
+│   │   ├── products.csv
+│   │   └── reviews.csv
+│   │
+│   └── processed/
+│       ├── recommendation/
+│       │   ├── customers.csv
+│       │   ├── interactions.csv
+│       │   └── products.csv
+│       │
+│       └── sentiment/
+│           ├── train.csv
+│           └── test.csv
+│
+├── data_generation/
+│   ├── generate_dataset.py
+│   └── validate_dataset.py
+│
+├── llm/
+│   ├── __init__.py
+│   ├── client.py
+│   └── review_analysis.py
+│
+├── mlflow_tracking/
+│   ├── __init__.py
+│   └── tracking.py
+│
+├── recommendation/
+│   ├── __init__.py
+│   ├── evaluate_recommender.py
+│   ├── recommender.py
+│   └── service.py
+│
+├── sentiment/
+│   ├── __init__.py
+│   ├── natural_eval.csv
+│   ├── natural_evaluation.py
+│   ├── register_model.py
+│   ├── train_models.py
+│   └── transformer_service.py
+│
+├── tests/
+│   ├── test_api.py
+│   └── test_setup.py
+│
+├── app.py
+├── Dockerfile
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── mlflow.db
+├── pytest.ini
+├── requirements.txt
+├── requirements-lock.txt
+└── README.md
 ```
 
-Example:
-
-```env
-GEMINI_API_KEY=your_api_key
-MLFLOW_TRACKING_URI=http://localhost:5000
-```
-
-The actual `.env` file should **not** be committed to Git.
-
-Make sure `.gitignore` contains:
+Generated runtime directories such as:
 
 ```text
-.env
 .venv/
 __pycache__/
+.pytest_cache/
 mlruns/
-*.pyc
+artifacts/
 ```
+
+are not part of the core source structure.
 
 ---
 
-# 17. Installation
+# 15. Installation
 
-## Prerequisites
+## Requirements
 
-The following software is required:
+Recommended environment:
 
-* Python 3.11+
-* pip
-* Git
-* Docker
-* MLflow
-
-Clone the repository:
-
-```bash
-git clone <repository-url>
-cd AI_Product_Recommendation
+```text
+Python 3.11
 ```
 
 Create a virtual environment:
 
 ```bash
-python3 -m venv .venv
+python3.11 -m venv .venv
 ```
 
-Activate it on macOS/Linux:
+Activate it:
+
+### macOS/Linux
 
 ```bash
 source .venv/bin/activate
@@ -781,324 +716,578 @@ pip install -r requirements.txt
 
 ---
 
-# 18. Running the Project
+# 16. Environment Variables
 
-## Step 1 — Generate Dataset
-
-```bash
-python data_generation/generate_dataset.py
-```
-
-## Step 2 — Process Data
-
-Run the appropriate preprocessing pipeline.
-
-```bash
-python <data-processing-script>
-```
-
-## Step 3 — Train Models
-
-Train the recommendation and sentiment models.
-
-```bash
-python <training-script>
-```
-
-## Step 4 — Start MLflow
-
-```bash
-mlflow ui
-```
-
-MLflow will normally be available at:
+Create a `.env` file based on:
 
 ```text
-http://localhost:5000
+.env.example
 ```
 
-## Step 5 — Start FastAPI
+The project uses environment variables for configuration such as the LLM API key and application settings.
+
+Example:
+
+```text
+LLM_API_KEY=your_api_key
+```
+
+Do not commit `.env` to Git.
+
+---
+
+# 17. Run the FastAPI Application Locally
+
+Start the backend using:
 
 ```bash
-uvicorn api.main:app --reload
+uvicorn api.main:app --reload --port 8001
 ```
 
-API:
+The API will be available at:
 
 ```text
-http://localhost:8000
+http://127.0.0.1:8001
 ```
 
-Interactive API documentation:
+FastAPI documentation:
 
 ```text
-http://localhost:8000/docs
-```
-
----
-
-# 19. End-to-End Workflow
-
-The complete system follows this workflow:
-
-```text
-                ┌───────────────┐
-                │ Raw E-Commerce│
-                │     Data      │
-                └───────┬───────┘
-                        │
-                        ▼
-                ┌───────────────┐
-                │ Data Cleaning │
-                │ & Processing  │
-                └───────┬───────┘
-                        │
-            ┌───────────┴───────────┐
-            │                       │
-            ▼                       ▼
-   ┌────────────────┐      ┌────────────────┐
-   │ Recommendation │      │ Review         │
-   │ Pipeline       │      │ Pipeline       │
-   └───────┬────────┘      └───────┬────────┘
-           │                       │
-           │                       ▼
-           │               ┌────────────────┐
-           │               │ Sentiment ML   │
-           │               │ Classification │
-           │               └───────┬────────┘
-           │                       │
-           │                       ▼
-           │               ┌────────────────┐
-           │               │ MLflow         │
-           │               │ Tracking       │
-           │               └───────┬────────┘
-           │                       │
-           └───────────┬───────────┘
-                       │
-                       ▼
-              ┌──────────────────┐
-              │ FastAPI REST API │
-              └────────┬─────────┘
-                       │
-             ┌─────────┴──────────┐
-             │                    │
-             ▼                    ▼
-      Recommendations      Review Analysis
-                                  │
-                                  ▼
-                           ┌──────────────┐
-                           │     LLM      │
-                           │   Insights   │
-                           └──────────────┘
+http://127.0.0.1:8001/docs
 ```
 
 ---
 
-# 20. Results
+# 18. Run the Streamlit Application
 
-Results will be added after the complete implementation and evaluation.
+With the FastAPI backend running:
 
-The final report will include:
+```bash
+streamlit run app.py
+```
 
-### Recommendation Results
-
-* Precision@K
-* Recall@K
-* Hit Rate
-* Recommendation examples
-
-### Sentiment Results
-
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* Confusion matrix
-
-### MLflow Results
-
-* Experiment comparison
-* Best-performing model
-* Registered model version
-
-### LLM Results
-
-* Review summaries
-* Key customer concerns
-* Product strengths
-* Product weaknesses
-
-Actual metrics will be reported from experiments and will not be manually estimated.
-
----
-
-# 21. Limitations
-
-Potential limitations include:
-
-* Synthetic data may not fully represent real-world customer behavior.
-* Recommendation quality depends on the amount and quality of interaction data.
-* New customers may suffer from the cold-start problem.
-* New products may suffer from limited interaction history.
-* Sentiment classification may struggle with sarcasm or ambiguous language.
-* LLM-generated insights may occasionally contain inaccurate interpretations.
-* LLM usage may introduce API costs and latency.
-* MLflow and API deployment may require additional infrastructure for production-scale usage.
-
----
-
-# 22. Future Improvements
-
-Potential future improvements include:
-
-* Deep-learning-based recommendation models.
-* Neural collaborative filtering.
-* Transformer-based sentiment classification.
-* Retrieval-Augmented Generation (RAG) for review analysis.
-* Real-time recommendation updates.
-* User-specific recommendation explanations.
-* Advanced ranking models.
-* Online model monitoring.
-* Data drift detection.
-* Model performance monitoring.
-* A production database instead of file-based datasets.
-* Cloud deployment.
-* Authentication and authorization for APIs.
-* CI/CD automation.
-* Kubernetes-based deployment for large-scale production environments.
-
----
-
-# 23. Technology Stack
-
-| Component            | Technology                             |
-| -------------------- | -------------------------------------- |
-| Programming Language | Python                                 |
-| Data Processing      | Pandas, NumPy                          |
-| Machine Learning     | Scikit-learn                           |
-| Recommendation       | Collaborative / Content-Based / Hybrid |
-| Experiment Tracking  | MLflow                                 |
-| Model Registry       | MLflow Model Registry                  |
-| LLM                  | Gemini / Compatible LLM                |
-| API                  | FastAPI                                |
-| API Server           | Uvicorn                                |
-| Testing              | Pytest                                 |
-| Containerization     | Docker                                 |
-| Version Control      | Git                                    |
-| Repository           | GitHub                                 |
-
-The final technology stack may be adjusted if experimentation demonstrates that another approach provides a substantial improvement.
-
----
-
-# 24. Project Status
-
-| Component                | Status         |
-| ------------------------ | -------------- |
-| Project Architecture     | 🟡 In Progress |
-| Dataset Generation       | 🟡 In Progress |
-| Data Processing          | 🟡 In Progress |
-| Recommendation System    | ⬜ Planned      |
-| Sentiment Classification | ⬜ Planned      |
-| Model Comparison         | ⬜ Planned      |
-| MLflow Tracking          | ⬜ Planned      |
-| MLflow Model Registry    | ⬜ Planned      |
-| LLM Review Analysis      | ⬜ Planned      |
-| FastAPI                  | ⬜ Planned      |
-| Docker                   | ⬜ Planned      |
-| Testing                  | 🟡 In Progress |
-| Documentation            | 🟡 In Progress |
-| Final Results            | ⬜ Pending      |
-
-Status will be updated as each component is completed.
-
----
-
-# 25. Key Features
-
-### 🤖 AI/ML
-
-* Personalized product recommendations
-* Sentiment classification
-* Multiple ML model comparison
-* LLM-powered review insights
-
-### 📊 MLOps
-
-* MLflow experiment tracking
-* Model versioning
-* Model Registry
-* Reproducible experiments
-
-### 🚀 Backend
-
-* FastAPI REST APIs
-* Automatic API documentation
-* Modular application architecture
-
-### 🐳 Deployment
-
-* Docker containerization
-* Reproducible runtime environment
-
-### 🧪 Quality
-
-* Automated testing
-* Input validation
-* Modular components
-
----
-
-# 26. Security Considerations
-
-The project follows basic security practices:
-
-* API keys are stored using environment variables.
-* `.env` files are excluded from version control.
-* Secrets are not hard-coded.
-* API inputs are validated.
-* Dependencies are maintained through `requirements.txt`.
-
-For production deployment, additional measures such as authentication, authorization, HTTPS, rate limiting, secret management, and API monitoring should be implemented.
-
----
-
-# 27. Conclusion
-
-The **AI-Powered Product Recommendation & Review Analysis System** demonstrates how multiple AI/ML and software engineering components can be integrated into a single end-to-end application.
-
-The project combines:
+The Streamlit application communicates with:
 
 ```text
-Data
- ↓
-Machine Learning
- ↓
-Recommendation
- ↓
-Sentiment Analysis
- ↓
-MLflow
- ↓
-LLM Analysis
- ↓
+http://127.0.0.1:8001
+```
+
+The API URL can be configured using:
+
+```text
+API_BASE_URL
+```
+
+---
+
+# 19. Docker Deployment
+
+The backend can be containerized using Docker.
+
+Build the image:
+
+```bash
+docker build -t ai-product-recommendation .
+```
+
+Run the container:
+
+```bash
+docker rm -f ai-product-recommendation 2>/dev/null || true
+
+docker run -d \
+  -p 8001:8000 \
+  --env-file .env \
+  --name ai-product-recommendation \
+  ai-product-recommendation
+```
+
+Check the container:
+
+```bash
+docker ps
+```
+
+Check logs:
+
+```bash
+docker logs --tail 100 ai-product-recommendation
+```
+
+Test the API:
+
+```bash
+curl -s http://127.0.0.1:8001/health
+```
+
+Expected:
+
+```json
+{
+  "status": "healthy"
+}
+```
+
+---
+
+# 20. Docker Architecture
+
+The Docker image contains:
+
+* FastAPI application
+* Recommendation system
+* Transformer sentiment service
+* LLM integration
+* MLflow tracking utilities
+* Processed application data
+* MLflow database
+
+The transformer model is downloaded through Hugging Face when required.
+
+The Docker configuration uses CPU-based PyTorch for compatibility with lightweight Linux containers.
+
+---
+
+# 21. Testing
+
+The project uses pytest.
+
+Run the complete test suite:
+
+```bash
+pytest -v
+```
+
+Current validation:
+
+```text
+11 passed
+```
+
+Tests cover:
+
+* Root endpoint
+* Health endpoint
+* Valid recommendation request
+* Invalid customer handling
+* Invalid recommendation parameters
+* Sentiment prediction
+* Empty sentiment input
+* Review analysis
+* Empty review analysis
+* Python version
+* Python environment
+
+---
+
+# 22. Recommendation Evaluation
+
+The recommendation evaluation script can be executed with:
+
+```bash
+python recommendation/evaluate_recommender.py
+```
+
+It performs a customer-level train/test split and compares:
+
+```text
+Hybrid Recommender
+vs.
+Popularity Baseline
+```
+
+Metrics:
+
+```text
+Precision@10
+Recall@10
+Hit Rate@10
+Coverage
+```
+
+Results are saved to:
+
+```text
+artifacts/recommendation/recommendation_comparison.csv
+```
+
+The `artifacts/` directory is generated during evaluation and does not need to be committed as source code.
+
+---
+
+# 23. Sentiment Training and Model Registration
+
+The sentiment training workflow is implemented in:
+
+```text
+sentiment/train_models.py
+```
+
+The model registration workflow is implemented in:
+
+```text
+sentiment/register_model.py
+```
+
+The production sentiment model is:
+
+```text
+cardiffnlp/twitter-roberta-base-sentiment-latest
+```
+
+The registered MLflow model name is:
+
+```text
+ProductSentimentModel
+```
+
+Model registration should be performed when creating or updating a model version, rather than during normal API inference.
+
+---
+
+# 24. Natural Evaluation
+
+The project also includes:
+
+```text
+sentiment/natural_evaluation.py
+```
+
+and:
+
+```text
+sentiment/natural_eval.csv
+```
+
+These support evaluation against naturally written review examples.
+
+They are maintained as evaluation/supporting artifacts and are separate from the production API inference path.
+
+---
+
+# 25. Model Selection
+
+The sentiment component follows a practical model-development approach.
+
+Traditional classification approaches such as:
+
+* Logistic Regression
+* Linear SVM
+* Other classification baselines
+
+can be evaluated during model development.
+
+The final production sentiment model is:
+
+```text
+cardiffnlp/twitter-roberta-base-sentiment-latest
+```
+
+This provides contextual language understanding that is better suited to short, informal customer-review-style text.
+
+The project therefore separates:
+
+```text
+Model experimentation
+        ↓
+Model evaluation
+        ↓
+Final model selection
+        ↓
+Production inference
+```
+
+---
+
+# 26. Production Sentiment Inference
+
+The production API does not use the previously serialized:
+
+```text
+models/sentiment_model.joblib
+```
+
+That legacy artifact has been removed.
+
+Current inference is handled through:
+
+```text
+sentiment/transformer_service.py
+```
+
+This provides a single clear production path:
+
+```text
 FastAPI
- ↓
-Docker
+   ↓
+sentiment route
+   ↓
+transformer_service
+   ↓
+CardiffNLP RoBERTa
+   ↓
+sentiment + confidence
 ```
 
-The final system is intended to demonstrate not only individual machine learning models, but also the complete workflow required to transform ML models into an accessible, testable, and deployable application.
+---
+
+# 27. Error Handling
+
+The API validates incoming requests using Pydantic schemas.
+
+Examples of handled cases include:
+
+* Empty review text
+* Invalid customer IDs
+* Invalid recommendation counts
+* Empty review collections
+
+The API returns appropriate HTTP responses instead of allowing invalid requests to silently fail.
 
 ---
 
-## Author
+# 28. Reproducibility
 
-**Shubhranshu Verma**
+The project uses fixed random seeds where appropriate.
 
-AI/ML | Software Engineering | Python | Machine Learning
+For example:
+
+```text
+RANDOM_STATE = 42
+```
+
+This helps keep dataset splitting and evaluation behavior reproducible.
 
 ---
 
-## License
+# 29. Project Validation
 
-This project is developed for educational and portfolio purposes.
+The final application has been validated through multiple layers.
+
+## API validation
+
+```text
+GET  /health              → PASS
+POST /sentiment           → PASS
+POST /recommend           → PASS
+POST /review-analysis     → PASS
+```
+
+## Automated tests
+
+```text
+11 / 11 tests passed
+```
+
+## Docker
+
+```text
+Docker image build        → PASS
+Container startup         → PASS
+Health endpoint           → PASS
+Sentiment endpoint        → PASS
+Recommendation endpoint   → PASS
+Review analysis endpoint  → PASS
+```
+
+## Recommendation evaluation
+
+```text
+Hybrid recommender        → PASS
+Popularity baseline       → PASS
+Metric comparison         → PASS
+```
+
+---
+
+# 30. Limitations
+
+The project is designed as a capstone demonstration rather than a large-scale production e-commerce platform.
+
+Important limitations include:
+
+* The dataset is synthetic.
+* Recommendation quality depends on the generated interaction patterns.
+* Transformer inference can be computationally expensive on CPU.
+* The Hugging Face model may require an internet connection when not cached.
+* LLM review analysis requires an external API and valid API credentials.
+* MLflow is configured as a local tracking setup rather than a production tracking server.
+* The recommendation model is intentionally compact and explainable rather than highly complex.
+* The system does not implement distributed serving or large-scale feature stores.
+
+---
+
+# 31. Future Improvements
+
+Possible future improvements include:
+
+* Larger real-world datasets
+* More advanced collaborative filtering
+* Neural recommendation models
+* Better cold-start strategies
+* Model monitoring
+* Automated model retraining
+* Feature stores
+* Production MLflow server
+* Authentication and authorization
+* API rate limiting
+* Distributed deployment
+* GPU-based transformer inference
+* More comprehensive sentiment evaluation
+* Multilingual sentiment analysis
+* More advanced review summarization
+
+These improvements are outside the scope of the current compact capstone implementation.
+
+---
+
+# 32. Key Technologies
+
+| Technology         | Purpose                                |
+| ------------------ | -------------------------------------- |
+| Python 3.11        | Main programming language              |
+| Pandas             | Data processing                        |
+| NumPy              | Numerical operations                   |
+| Scikit-learn       | ML algorithms and evaluation           |
+| Transformers       | Transformer-based sentiment analysis   |
+| PyTorch            | Transformer model execution            |
+| CardiffNLP RoBERTa | Final sentiment model                  |
+| FastAPI            | REST API                               |
+| Pydantic           | API validation                         |
+| Streamlit          | Frontend UI                            |
+| MLflow             | Experiment tracking and model registry |
+| Google GenAI       | LLM review analysis                    |
+| Docker             | Containerization                       |
+| Pytest             | Automated testing                      |
+
+---
+
+# 33. Quick Start
+
+For the quickest way to run the project:
+
+### Step 1 — Activate environment
+
+```bash
+source .venv/bin/activate
+```
+
+### Step 2 — Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3 — Configure environment
+
+Create `.env`:
+
+```text
+LLM_API_KEY=your_api_key
+```
+
+### Step 4 — Run backend
+
+```bash
+uvicorn api.main:app --reload --port 8001
+```
+
+### Step 5 — Run frontend
+
+In another terminal:
+
+```bash
+streamlit run app.py
+```
+
+### Step 6 — Or run with Docker
+
+```bash
+docker build -t ai-product-recommendation .
+
+docker run -d \
+  -p 8001:8000 \
+  --env-file .env \
+  --name ai-product-recommendation \
+  ai-product-recommendation
+```
+
+### Step 7 — Verify
+
+```bash
+curl -s http://127.0.0.1:8001/health
+```
+
+Expected:
+
+```json
+{
+  "status": "healthy"
+}
+```
+
+---
+
+# 34. Conclusion
+
+This project demonstrates a complete AI-powered e-commerce workflow combining:
+
+```text
+Customer Data
+     │
+     ▼
+Recommendation Engine
+     │
+     ▼
+Personalized Products
+```
+
+and:
+
+```text
+Customer Reviews
+     │
+     ▼
+Transformer Sentiment Analysis
+     │
+     ▼
+Positive / Neutral / Negative
+     │
+     ▼
+LLM Review Analysis
+     │
+     ▼
+Business Insights
+```
+
+The components are exposed through a FastAPI backend, presented through a Streamlit interface, tracked using MLflow, and packaged for deployment using Docker.
+
+The resulting system provides a compact and explainable demonstration of an end-to-end AI/ML product recommendation and customer feedback analysis platform.
+
+````
+
+### One important correction before you paste it
+
+Your current Docker image **does not copy `models/` anymore**, which is correct because the old `models/sentiment_model.joblib` was deleted. The README above intentionally reflects that.
+
+Also, don't manually create any of the old directories just to match the README. The README is now based on the **actual cleaned project structure** we validated.
+
+After replacing it, run:
+
+```bash
+git diff --check
+````
+
+then:
+
+```bash
+pytest -v
+```
+
+and finally:
+
+```bash
+git status --short
+```
+
+At that point we'll have the codebase, documentation, tests, and Docker flow aligned.

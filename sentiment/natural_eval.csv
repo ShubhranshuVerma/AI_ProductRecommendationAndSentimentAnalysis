@@ -1,51 +1,205 @@
 sentiment,review_text
-positive,I absolutely love this product.
-positive,This is easily one of the best purchases I've made.
-positive,The battery lasted all day and I couldn't be happier.
-positive,Setup was painless and everything has worked perfectly.
-positive,I expected it to be mediocre but it completely exceeded my expectations.
-positive,There is honestly very little I would change.
-positive,The device has been reliable every single day.
-positive,I would definitely recommend this to anyone looking for a good product.
-positive,This turned out to be much better than I expected.
-positive,I have had nothing but a great experience with this.
-negative,I absolutely hate using this product.
-negative,This was a complete waste of money.
-negative,The device keeps freezing and shutting down.
-negative,I regret buying this and would not recommend it.
-negative,The quality is nowhere near what I expected.
-negative,It started failing after only a few days.
-negative,The battery barely lasts long enough to be useful.
-negative,This product has been a constant source of frustration.
-negative,I expected much better for the price.
-negative,I would never buy this product again.
-neutral,It works but there is nothing particularly special about it.
-neutral,The product is fine for basic everyday use.
-neutral,It does what it needs to do.
-neutral,I have mixed feelings about this product.
-neutral,Some things are good while others could be improved.
-neutral,It is acceptable for the price.
-neutral,I wouldn't call it great but I wouldn't call it terrible either.
-neutral,The product performs as expected.
-neutral,There are advantages and disadvantages to this product.
-neutral,It gets the job done without standing out.
-positive,It isn't perfect but I am very happy with it.
-positive,I can't complain about the quality.
-positive,I wasn't expecting much but this impressed me.
-negative,It isn't good enough for what I need.
-negative,I can't recommend this product.
-negative,I wasn't impressed by the quality.
-neutral,It isn't bad but it isn't amazing either.
-neutral,I can't say that it is particularly impressive.
-neutral,It isn't terrible but there is plenty of room for improvement.
-positive,The camera is good and the battery life is excellent.
-positive,The setup was difficult but the product works very well.
-negative,The design looks nice but the performance is terrible.
-negative,The display is good but the device overheats constantly.
-neutral,The battery is great but the camera is only average.
-neutral,The design is attractive although the performance is ordinary.
-positive,I would happily buy this again.
-positive,I have already recommended it to several friends.
-negative,I would look elsewhere if I were buying again.
-negative,Save your money and choose something else.
-neutral,I would probably compare a few alternatives before buying.
+positive,"I absolutely love this product. It has exceeded my expectations."
+positive,"The battery lasted all day and I never had to worry about charging."
+positive,"Setup was quick, simple, and completely hassle free."
+positive,"The product feels premium and works exactly as I hoped."
+positive,"I have been using it every day and it has performed flawlessly."
+positive,"The performance is excellent and much better than I expected."
+positive,"Everything works smoothly and the controls are easy to understand."
+positive,"This was one of the best purchases I have made recently."
+positive,"The device is fast, reliable, and pleasant to use."
+positive,"I am extremely happy with this purchase."
+positive,"The quality is impressive for the price."
+positive,"I would definitely recommend this product to other buyers."
+positive,"The screen is bright, clear, and looks fantastic."
+positive,"Battery life is excellent and easily gets me through the day."
+positive,"The product has made my daily routine much easier."
+positive,"I have had no problems with it since I bought it."
+positive,"The design is beautiful and the build quality feels solid."
+positive,"It performs consistently even during heavy use."
+positive,"I expected an average product but this turned out to be excellent."
+positive,"The experience has been better than I anticipated."
+positive,"I would happily buy this product again."
+positive,"The controls are intuitive and everything feels well designed."
+positive,"It has remained dependable after several weeks of use."
+positive,"The product is responsive and works without any noticeable issues."
+positive,"I am very satisfied with how well this product performs."
+positive,"The overall experience has been excellent from day one."
+positive,"It does everything I need and does it very well."
+positive,"The product feels durable and thoughtfully constructed."
+positive,"I have already recommended it to several friends."
+positive,"This purchase turned out to be completely worthwhile."
+positive,"The performance has stayed stable over time."
+positive,"I could not be happier with the results."
+positive,"The product is easy to use and saves me a lot of time."
+positive,"It is reliable enough that I never have to think twice about using it."
+positive,"The sound quality is fantastic and much clearer than my previous device."
+positive,"The camera produces surprisingly good photos in different lighting."
+positive,"The display looks excellent and the colors are vibrant."
+positive,"The software is smooth and I have not experienced any crashes."
+positive,"Charging is fast and the battery lasts longer than expected."
+positive,"The product feels even better in person than it looked online."
+positive,"It has handled everything I have asked it to do."
+positive,"The results have been consistently impressive."
+positive,"I am glad I chose this one instead of the alternatives."
+positive,"The product is well worth the money."
+positive,"It works perfectly for my everyday needs."
+positive,"The build quality is much better than I expected at this price."
+positive,"I have used several alternatives and this one is clearly better."
+positive,"The experience has been smooth and enjoyable."
+positive,"It started working immediately with almost no setup required."
+positive,"I have nothing major to complain about and would buy it again."
+positive,"This product has been a pleasant surprise."
+positive,"The product is not perfect, but I am very pleased with it overall."
+positive,"Even though setup took some time, the final result is excellent."
+positive,"The camera is good and the battery life is excellent."
+positive,"The product occasionally needs attention, but its performance is outstanding."
+positive,"I had a small issue initially, but customer support resolved it quickly."
+positive,"The design is simple, but the product works remarkably well."
+positive,"There are minor flaws, but they do not take away from the excellent experience."
+positive,"The product has a few limitations, yet I would still recommend it."
+positive,"I expected better battery life, but everything else has been fantastic."
+positive,"The interface took some getting used to, but now I really enjoy using it."
+positive,"It is slightly expensive, but the quality makes it worthwhile."
+positive,"The setup was difficult at first, but the product now works extremely well."
+positive,"The camera is average in low light, but daytime photos are excellent."
+positive,"The battery is good and the overall performance is outstanding."
+positive,"I was initially unsure about it, but after using it I am very satisfied."
+positive,"The product is not cheap, but it feels like a quality purchase."
+positive,"I have encountered a couple of minor issues, but overall it has been excellent."
+
+negative,"The product is terrible and I regret buying it."
+negative,"The device overheats constantly and shuts down unexpectedly."
+negative,"Battery life is far worse than advertised."
+negative,"The product stopped working properly after only a few weeks."
+negative,"The build quality feels cheap and fragile."
+negative,"I have experienced several problems during normal use."
+negative,"Performance becomes unreliable whenever I use it for longer periods."
+negative,"The product has caused more frustration than I expected."
+negative,"I would not recommend this product to anyone."
+negative,"This was a disappointing purchase from the beginning."
+negative,"The device is slow and frequently becomes unresponsive."
+negative,"The screen looks dull and the colors are inaccurate."
+negative,"The battery drains far too quickly."
+negative,"Several important features do not work consistently."
+negative,"I expected much better quality for the price."
+negative,"The product feels poorly designed and difficult to use."
+negative,"It worked initially but started developing problems over time."
+negative,"I regret spending money on this product."
+negative,"The performance is nowhere near what was promised."
+negative,"I would definitely choose another product next time."
+negative,"The materials already show signs of wear."
+negative,"The product is unreliable when I need it most."
+negative,"The software crashes frequently and makes the device frustrating to use."
+negative,"Charging takes far too long and the battery still does not last."
+negative,"The product does not perform consistently enough for me to depend on it."
+negative,"I have had to work around several issues that should not exist."
+negative,"The overall experience has been disappointing."
+negative,"The product looked promising but failed to meet my expectations."
+negative,"Customer support was unable to resolve the problem."
+negative,"The controls are confusing and unnecessarily difficult."
+negative,"The camera quality is poor, especially in low light."
+negative,"The device becomes extremely hot during ordinary use."
+negative,"I would look elsewhere if I were buying again."
+negative,"Save your money and choose something else."
+negative,"The product is not worth the price."
+negative,"I have had nothing but problems since purchasing it."
+negative,"The performance drops badly after extended use."
+negative,"The product feels much cheaper than it looks."
+negative,"It frequently freezes and requires restarting."
+negative,"The battery barely lasts half a day."
+negative,"The product does not match the description."
+negative,"The experience has been more frustrating than useful."
+negative,"I expected something dependable but received the opposite."
+negative,"The device has become increasingly unreliable."
+negative,"Important functions have stopped working properly."
+negative,"The product is difficult to recommend given these problems."
+negative,"I would not purchase this again."
+negative,"The quality is disappointing for what I paid."
+negative,"It is difficult to use and the instructions are not helpful."
+negative,"The product has failed me multiple times."
+negative,"The actual performance falls far short of its potential."
+negative,"The design looks nice but the performance is terrible."
+negative,"The display is good but the device overheats constantly."
+negative,"The battery is decent, but the product becomes frustrating under heavy use."
+negative,"The product has useful features, but the reliability is unacceptable."
+negative,"Setup was frustrating and the product still does not work properly."
+negative,"The product occasionally works well, but the problems are too frequent."
+negative,"The camera is good in daylight, but the overall device is unreliable."
+negative,"I like the design, but the poor performance makes it hard to recommend."
+negative,"The product is not completely unusable, but it is far below my expectations."
+negative,"I wanted to like it, but too many things went wrong."
+negative,"The product has some strengths, but the major problems outweigh them."
+negative,"The device is acceptable for short use but becomes unusable during longer sessions."
+negative,"I was impressed at first, but the problems appeared quickly."
+negative,"There are good features here, but the product is ultimately disappointing."
+negative,"It works sometimes, which is not good enough for something this expensive."
+
+neutral,"The product is okay, nothing special."
+neutral,"It performs its main function adequately, but it does not stand out."
+neutral,"The overall experience is acceptable for the price."
+neutral,"There are both strengths and weaknesses to this product."
+neutral,"It works as advertised, but I am not particularly impressed."
+neutral,"The product gets the basic job done."
+neutral,"I would describe the experience as average."
+neutral,"The quality is reasonable, although there is room for improvement."
+neutral,"Some parts work well while others are fairly ordinary."
+neutral,"It is functional without offering anything remarkable."
+neutral,"The product meets my basic requirements."
+neutral,"I have not encountered any major problems so far."
+neutral,"It is neither particularly impressive nor disappointing."
+neutral,"The performance is acceptable for everyday use."
+neutral,"I expected something average and that is essentially what I got."
+neutral,"The product is usable, but there are some limitations."
+neutral,"It works, although I would compare a few alternatives before buying again."
+neutral,"The design is fine but nothing especially memorable."
+neutral,"Battery life is adequate for my normal usage."
+neutral,"The product performs roughly as expected."
+neutral,"There is nothing seriously wrong with it."
+neutral,"It does what it is supposed to do without any major surprises."
+neutral,"The overall quality is fair for the price."
+neutral,"I can see why some people would like it, but it is not exceptional."
+neutral,"The product has some useful features but also some drawbacks."
+neutral,"It has been reliable enough for basic tasks."
+neutral,"The experience has been fairly ordinary overall."
+neutral,"I would probably consider other options before purchasing again."
+neutral,"The product is acceptable if your expectations are realistic."
+neutral,"Some improvements would make this product much better."
+neutral,"The performance is neither particularly fast nor particularly slow."
+neutral,"The battery is fine but not impressive."
+neutral,"The display is decent and suitable for everyday use."
+neutral,"The camera produces acceptable photos in good lighting."
+neutral,"The controls are understandable after a little practice."
+neutral,"The setup was straightforward, although not especially quick."
+neutral,"It is a reasonable choice for basic requirements."
+neutral,"I have used it for a few weeks and my opinion is still mixed."
+neutral,"The product has advantages, but I am not convinced it is the best option."
+neutral,"Nothing about it really stands out."
+neutral,"The product is not bad, but I would not call it excellent."
+neutral,"It is not terrible, although there is plenty of room for improvement."
+neutral,"I cannot say that it is particularly impressive."
+neutral,"The product is decent enough for casual use."
+neutral,"It meets expectations without exceeding them."
+neutral,"The experience is acceptable, though not especially exciting."
+neutral,"The product has some good qualities and some average ones."
+neutral,"I would probably compare a few alternatives before buying."
+neutral,"The overall performance is satisfactory for ordinary tasks."
+neutral,"It is fine as long as you do not expect anything exceptional."
+neutral,"The product is usable, but I would not go out of my way to recommend it."
+neutral,"There are a few areas where refinement would help."
+neutral,"It works reasonably well most of the time."
+neutral,"The product is neither a great success nor a major disappointment."
+neutral,"I have seen better products, but I have also seen worse."
+neutral,"The design is attractive although the performance is ordinary."
+neutral,"The battery is great but the camera is only average."
+neutral,"The setup was easy, but the overall experience is fairly ordinary."
+neutral,"The product has some impressive moments but is inconsistent overall."
+neutral,"It is somewhat better than expected, but not enough to stand out."
+neutral,"The product has a few limitations, although none are deal breakers."
+neutral,"I would describe the purchase as acceptable rather than excellent."
+neutral,"The product is serviceable for its intended purpose."
+neutral,"There are no major complaints, but there is also little to praise."
+neutral,"I am satisfied enough with it, but I would still consider alternatives."
+neutral,"The experience depends largely on what you expect from the product."
+neutral,"It performs adequately under normal conditions."
+neutral,"I would not call it bad, but I would not call it great either."

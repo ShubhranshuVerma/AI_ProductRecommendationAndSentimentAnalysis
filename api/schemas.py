@@ -23,6 +23,8 @@ class SentimentRequest(BaseModel):
 
 class SentimentResponse(BaseModel):
     sentiment: str
+    confidence: float | None = None
+    model: str | None = None
 
 class ReviewItem(BaseModel):
     sentiment: str = Field(..., min_length=1)

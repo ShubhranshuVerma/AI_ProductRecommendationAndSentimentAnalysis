@@ -19,6 +19,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.naive_bayes import MultinomialNB
+from sentiment.transformer_service import (
+    predict_sentiment as predict_transformer,
+)
 
 from evaluate import (
     evaluate_predictions,
@@ -162,7 +165,7 @@ def log_mlflow_run(
 
         mlflow.set_tag(
             "dataset",
-            "synthetic_product_reviews",
+            "real_english_sentiment_reviews",
         )
 
         mlflow.set_tag(
@@ -193,7 +196,117 @@ def log_mlflow_run(
             f"MLflow run logged: {model_name}"
         )
 
+# ============================================================
+# Transformer evaluation
+# ============================================================
 
+def evaluate_transformer(
+    X_test,
+    y_test,
+):
+    model_name = "twitter_roberta"
+
+    print()
+    print("=" * 70)
+    print("Evaluating: twitter_roberta")
+    print("=" * 70)
+
+    start_time = time.perf_counter()
+
+    predictions = []
+
+    for text in X_test:
+        result = predict_transformer(
+            text
+        )
+
+        predictions.append(
+            result["sentiment"]
+        )
+
+    evaluation_time = (
+        time.perf_counter()
+        - start_time
+    )
+
+    metrics = evaluate_predictions(
+        model_name,
+        y_test,
+        predictions,
+    )
+
+    print()
+    print(
+        "Natural-language evaluation:"
+    )
+
+    # Evaluate the same natural-language dataset.
+    natural_df = pd.read_csv(
+        Path("sentiment")
+        / "natural_eval.csv"
+    )
+
+    natural_predictions = []
+
+    for text in natural_df[
+        "review_text"
+    ]:
+        result = predict_transformer(
+            text
+        )
+
+        natural_predictions.append(
+            result["sentiment"]
+        )
+
+    natural_metrics = evaluate_predictions(
+        "twitter_roberta_natural",
+        natural_df["sentiment"],
+        natural_predictions,
+    )
+
+    metrics.update({
+        "natural_eval_accuracy":
+            natural_metrics["accuracy"],
+
+        "natural_eval_macro_f1":
+            natural_metrics["macro_f1"],
+
+        "natural_eval_weighted_f1":
+            natural_metrics["weighted_f1"],
+    })
+
+    metrics["model"] = model_name
+
+    # This is evaluation/inference time,
+    # not model training time.
+    metrics["training_time_seconds"] = 0.0
+
+    metrics["inference_time_seconds"] = (
+        evaluation_time
+    )
+
+    print(
+        f"Natural accuracy: "
+        f"{metrics['natural_eval_accuracy']:.4f}"
+    )
+
+    print(
+        f"Natural macro F1: "
+        f"{metrics['natural_eval_macro_f1']:.4f}"
+    )
+
+    print(
+        f"Natural weighted F1: "
+        f"{metrics['natural_eval_weighted_f1']:.4f}"
+    )
+
+    print(
+        f"Inference time: "
+        f"{evaluation_time:.4f} seconds"
+    )
+
+    return metrics
 # ============================================================
 # Train and evaluate
 # ============================================================
@@ -310,6 +423,84 @@ def train_and_evaluate(
     return models, all_results
 
 
+def log_transformer_mlflow_run(
+    metrics,
+    inference_time,
+):
+    with mlflow.start_run(
+        run_name="twitter_roberta"
+    ):
+
+        mlflow.log_param(
+            "model",
+            "twitter_roberta",
+        )
+
+        mlflow.log_param(
+            "model_name",
+            "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        )
+
+        mlflow.log_param(
+            "model_type",
+            "pretrained_transformer",
+        )
+
+        mlflow.log_param(
+            "framework",
+            "huggingface_transformers",
+        )
+
+        mlflow.log_param(
+            "device",
+            "cpu",
+        )
+
+        for name, value in metrics.items():
+
+            if (
+                name != "model"
+                and name != "training_time_seconds"
+                and name != "inference_time_seconds"
+            ):
+                try:
+                    mlflow.log_metric(
+                        name,
+                        float(value),
+                    )
+                except Exception:
+                    pass
+
+        mlflow.log_metric(
+            "inference_time_seconds",
+            float(inference_time),
+        )
+
+        mlflow.set_tag(
+            "task",
+            "sentiment_classification",
+        )
+
+        mlflow.set_tag(
+            "model_family",
+            "transformer",
+        )
+
+        mlflow.set_tag(
+            "candidate_model",
+            "twitter_roberta",
+        )
+
+        mlflow.set_tag(
+            "dataset",
+            "real_english_sentiment_reviews",
+        )
+
+        print(
+            "MLflow run logged: twitter_roberta"
+        )
+
+
 # ============================================================
 # Save comparison
 # ============================================================
@@ -326,10 +517,9 @@ def save_comparison(results):
 
     results_df = results_df.sort_values(
         by=[
-            "natural_eval_accuracy",
-            "natural_eval_macro_f1",
-            "natural_eval_weighted_f1",
-            "weighted_f1",
+            "accuracy",
+            "macro_f1",
+            "negative_recall",
         ],
         ascending=False,
     )
@@ -337,7 +527,8 @@ def save_comparison(results):
 
     print()
     print(
-        f"Selected production model: {best_model_name}"
+        f"Best candidate by evaluation metrics: "
+        f"{best_model_name}"
     )
     output_path = (
         ARTIFACT_DIR
@@ -373,7 +564,18 @@ def save_comparison(results):
         "negative_f1",
         "negative_recall",
         "training_time_seconds",
+        "inference_time_seconds",
     ]
+
+    if "inference_time_seconds" not in results_df.columns:
+        results_df["inference_time_seconds"] = 0.0
+
+    results_df[
+        "inference_time_seconds"
+    ] = results_df[
+        "inference_time_seconds"
+    ].fillna(0.0)\
+
     print(
         results_df[
             display_columns
@@ -389,124 +591,6 @@ def save_comparison(results):
     )
 
     return results_df
-
-
-def build_production_pipeline():
-    """
-    Build the complete production sentiment pipeline.
-
-    Raw review text
-        -> TF-IDF features
-        -> Naive Bayes
-        -> sentiment label
-    """
-
-    vectorizer = FeatureUnion([
-        (
-            "word",
-            TfidfVectorizer(
-                lowercase=True,
-                analyzer="word",
-                ngram_range=(1, 3),
-                min_df=2,
-                max_df=0.95,
-                sublinear_tf=True,
-            ),
-        ),
-        (
-            "char",
-            TfidfVectorizer(
-                lowercase=True,
-                analyzer="char_wb",
-                ngram_range=(3, 5),
-                min_df=2,
-                max_df=0.98,
-                sublinear_tf=True,
-            ),
-        ),
-    ])
-
-    return Pipeline([
-        ("tfidf", vectorizer),
-        ("classifier", MultinomialNB()),
-    ])
-
-def train_production_model():
-    """
-    Train the selected production model on the complete
-    sentiment dataset and save it as a single pipeline.
-    """
-
-    print()
-    print("=" * 70)
-    print("TRAINING PRODUCTION SENTIMENT MODEL")
-    print("=" * 70)
-
-    train_df = pd.read_csv(
-        DATA_DIR / "train.csv"
-    )
-
-    test_df = pd.read_csv(
-        DATA_DIR / "test.csv"
-    )
-
-    full_df = pd.concat(
-        [train_df, test_df],
-        ignore_index=True,
-    )
-
-    X = full_df["review_text"]
-    y = full_df["sentiment"]
-
-    model = build_production_pipeline()
-
-    start_time = time.perf_counter()
-
-    model.fit(
-        X,
-        y,
-    )
-
-    training_time = (
-        time.perf_counter()
-        - start_time
-    )
-
-    print(
-        f"Production model: naive_bayes"
-    )
-
-    print(
-        f"Training samples: {len(X):,}"
-    )
-
-    print(
-        f"Training time: {training_time:.4f} seconds"
-    )
-
-    output_dir = Path("models")
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    output_path = (
-        output_dir
-        / "sentiment_model.joblib"
-    )
-
-    import joblib
-
-    joblib.dump(
-        model,
-        output_path,
-    )
-
-    print(
-        f"Production model saved to: {output_path}"
-    )
-
-    return model
 
 # ============================================================
 # Main
@@ -585,6 +669,26 @@ def main():
         )
     )
 
+    # ========================================================
+    # Transformer candidate
+    # ========================================================
+
+    transformer_metrics = evaluate_transformer(
+        X_test,
+        y_test,
+    )
+
+    log_transformer_mlflow_run(
+        transformer_metrics,
+        transformer_metrics[
+            "inference_time_seconds"
+        ],
+    )
+
+    results.append(
+        transformer_metrics
+    )
+
     results_df = save_comparison(
         results
     )
@@ -599,4 +703,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    train_production_model()
