@@ -1,9 +1,9 @@
-.venv/
-__pycache__/
+.git
+.venv
+venv
+__pycache__
 *.pyc
-.pytest_cache/
-.git/
-.gitignore
+.pytest_cache
 .DS_Store
-tests/
-final_report/
+*.log
+.env

@@ -9,62 +9,40 @@ _model = None
 
 
 def get_model():
-
-    global _tokenizer
-    global _model
+    global _tokenizer, _model
 
     if _model is None:
-
-        _tokenizer = AutoTokenizer.from_pretrained(
-            MODEL_NAME
-        )
-
-        _model = AutoModelForSequenceClassification.from_pretrained(
-            MODEL_NAME
-        )
-
+        _tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+        _model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
         _model.eval()
 
     return _tokenizer, _model
 
 
 def predict_sentiment(text: str):
+    if not text or not text.strip():
+        raise ValueError("Review text cannot be empty.")
 
     tokenizer, model = get_model()
 
     inputs = tokenizer(
-        text,
+        text.strip(),
         return_tensors="pt",
         truncation=True,
         max_length=512,
     )
 
-    with torch.no_grad():
-
+    with torch.inference_mode():
         outputs = model(**inputs)
 
-    probabilities = torch.softmax(
-        outputs.logits,
-        dim=-1,
-    )[0]
+    probabilities = torch.softmax(outputs.logits, dim=-1)[0]
+    predicted_id = int(torch.argmax(probabilities))
 
-    predicted_id = int(
-        torch.argmax(probabilities)
-    )
-
-    label = model.config.id2label[
-        predicted_id
-    ].lower()
-
-    confidence = float(
-        probabilities[predicted_id]
-    )
+    sentiment = model.config.id2label[predicted_id].lower()
+    confidence = float(probabilities[predicted_id])
 
     return {
-        "sentiment": label,
-        "confidence": round(
-            confidence,
-            4,
-        ),
+        "sentiment": sentiment,
+        "confidence": round(confidence, 4),
         "model": MODEL_NAME,
     }

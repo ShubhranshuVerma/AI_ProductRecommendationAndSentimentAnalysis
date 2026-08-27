@@ -43,12 +43,16 @@ import base64
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8001").rstrip("/")
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-if not (PROJECT_ROOT / "data").exists():
-    PROJECT_ROOT = PROJECT_ROOT.parent
 
-CUSTOMERS_PATH = PROJECT_ROOT / "data" / "processed" / "recommendation" / "customers.csv"
-PRODUCTS_PATH = PROJECT_ROOT / "data" / "processed" / "recommendation" / "products.csv"
-REVIEWS_PATH = PROJECT_ROOT / "data" / "raw" / "reviews.csv"
+DATA_ROOT = PROJECT_ROOT / "data"
+
+if not DATA_ROOT.exists():
+    DATA_ROOT = PROJECT_ROOT.parent / "data"
+
+CUSTOMERS_PATH = DATA_ROOT / "processed" / "recommendation" / "customers.csv"
+PRODUCTS_PATH = DATA_ROOT / "processed" / "recommendation" / "products.csv"
+REVIEWS_PATH = DATA_ROOT / "raw" / "reviews.csv"
+
 IMAGE_PATH = PROJECT_ROOT / "image.png"
 LOGO_PATH = PROJECT_ROOT / "logo1.png"
 

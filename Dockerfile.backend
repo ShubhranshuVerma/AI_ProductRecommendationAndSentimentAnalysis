@@ -1,0 +1,35 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
+ENV HF_HOME=/app/.cache/huggingface
+
+COPY requirements.txt .
+
+RUN pip install --upgrade pip setuptools wheel
+
+RUN pip install \
+    --default-timeout=1200 \
+    --index-url https://download.pytorch.org/whl/cpu \
+    torch
+
+RUN pip install \
+    --default-timeout=1200 \
+    -r requirements.txt
+
+# Download RoBERTa during image build
+RUN python -c "from transformers import AutoTokenizer, AutoModelForSequenceClassification; m='cardiffnlp/twitter-roberta-base-sentiment-latest'; AutoTokenizer.from_pretrained(m); AutoModelForSequenceClassification.from_pretrained(m)"
+
+COPY api ./api
+COPY recommendation ./recommendation
+COPY sentiment ./sentiment
+COPY llm ./llm
+COPY mlflow_tracking ./mlflow_tracking
+COPY data ./data
+
+EXPOSE 8000
+
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
