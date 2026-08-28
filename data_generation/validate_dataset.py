@@ -6,10 +6,8 @@ import pandas as pd
 DATA_DIR = Path("data/raw")
 
 
-# ============================================================
-# File Loading
-# ============================================================
-
+  # File Loading
+  
 def load_dataset(filename):
     path = DATA_DIR / filename
 
@@ -21,10 +19,8 @@ def load_dataset(filename):
     return pd.read_csv(path)
 
 
-# ============================================================
-# Basic Information
-# ============================================================
-
+  # Basic Information
+  
 def print_basic_information(
     customers,
     products,
@@ -43,10 +39,8 @@ def print_basic_information(
     print()
 
 
-# ============================================================
-# Missing Values
-# ============================================================
-
+  # Missing Values
+  
 def check_missing_values(
     customers,
     products,
@@ -78,10 +72,8 @@ def check_missing_values(
     print()
 
 
-# ============================================================
-# Duplicate Checks
-# ============================================================
-
+  # Duplicate Checks
+  
 def check_duplicates(
     customers,
     products,
@@ -131,10 +123,8 @@ def check_duplicates(
     print()
 
 
-# ============================================================
-# Referential Integrity
-# ============================================================
-
+  # Referential Integrity
+  
 def check_referential_integrity(
     customers,
     products,
@@ -198,10 +188,8 @@ def check_referential_integrity(
     print()
 
 
-# ============================================================
-# Rating Analysis
-# ============================================================
-
+  # Rating Analysis
+  
 def analyze_ratings(interactions, reviews):
     print("=" * 70)
     print("RATING ANALYSIS")
@@ -238,10 +226,8 @@ def analyze_ratings(interactions, reviews):
     print()
 
 
-# ============================================================
-# Sentiment Analysis
-# ============================================================
-
+  # Sentiment Analysis
+  
 def analyze_sentiment(reviews):
     print("=" * 70)
     print("SENTIMENT ANALYSIS")
@@ -279,10 +265,8 @@ def analyze_sentiment(reviews):
     print()
 
 
-# ============================================================
-# Interaction Analysis
-# ============================================================
-
+  # Interaction Analysis
+  
 def analyze_interactions(interactions):
     print("=" * 70)
     print("INTERACTION ANALYSIS")
@@ -325,10 +309,8 @@ def analyze_interactions(interactions):
     print()
 
 
-# ============================================================
-# Customer Analysis
-# ============================================================
-
+  # Customer Analysis
+  
 def analyze_customers(
     customers,
     interactions,
@@ -379,10 +361,8 @@ def analyze_customers(
     print()
 
 
-# ============================================================
-# Recommendation Signal Analysis
-# ============================================================
-
+  # Recommendation Signal Analysis
+  
 def analyze_recommendation_signal(
     customers,
     products,
@@ -472,10 +452,8 @@ def analyze_recommendation_signal(
     print()
 
 
-# ============================================================
-# Leakage Check
-# ============================================================
-
+  # Leakage Check
+  
 def check_possible_leakage(reviews):
     print("=" * 70)
     print("POTENTIAL DATA LEAKAGE CHECK")
@@ -505,10 +483,8 @@ def check_possible_leakage(reviews):
     print()
 
 
-# ============================================================
-# Main Validation
-# ============================================================
-
+  # Main Validation
+  
 def main():
     customers = load_dataset(
         "customers.csv"

@@ -6,10 +6,8 @@ import numpy as np
 import pandas as pd
 
 
-# ============================================================
-# Configuration
-# ============================================================
-
+  # Configuration
+  
 SEED = 42
 
 NUM_CUSTOMERS = 1000
@@ -23,10 +21,8 @@ random.seed(SEED)
 np.random.seed(SEED)
 
 
-# ============================================================
-# Product configuration
-# ============================================================
-
+  # Product configuration
+  
 CATEGORY_CONFIG = {
     "Electronics": {
         "subcategories": [
@@ -216,10 +212,8 @@ BASE_INTERACTION_WEIGHTS = {
 }
 
 
-# ============================================================
-# Review vocabulary
-# ============================================================
-
+  # Review vocabulary
+  
 POSITIVE_OPENINGS = [
     "I am quite happy with this purchase.",
     "Overall, this turned out to be a good purchase.",
@@ -313,10 +307,8 @@ MIXED_PHRASES = [
 ]
 
 
-# ============================================================
-# Utility functions
-# ============================================================
-
+  # Utility functions
+  
 def weighted_choice(values, weights):
     return random.choices(
         values,
@@ -371,10 +363,8 @@ def price_match_score(price, preference):
     return 0.2
 
 
-# ============================================================
-# Customer-product relevance
-# ============================================================
-
+  # Customer-product relevance
+  
 def category_relevance(product_category, customer):
     if product_category == customer["preferred_category"]:
         return 1.0
@@ -419,10 +409,8 @@ def calculate_product_relevance(product, customer):
     )
 
 
-# ============================================================
-# Review sentiment
-# ============================================================
-
+  # Review sentiment
+  
 def sentiment_from_rating(rating):
     random_value = random.random()
 
@@ -828,10 +816,8 @@ def build_review_text(product, experience_score):
             )
 
     return " ".join(sentences)
-# ============================================================
-# Customer generation
-# ============================================================
-
+  # Customer generation
+  
 def generate_customers():
     categories = list(
         CATEGORY_CONFIG.keys()
@@ -898,10 +884,8 @@ def generate_customers():
     return pd.DataFrame(customers)
 
 
-# ============================================================
-# Product generation
-# ============================================================
-
+  # Product generation
+  
 def generate_products():
     categories = list(
         CATEGORY_CONFIG.keys()
@@ -1005,10 +989,8 @@ def generate_products():
     return pd.DataFrame(products)
 
 
-# ============================================================
-# Interaction volume
-# ============================================================
-
+  # Interaction volume
+  
 def generate_interaction_counts(customers):
     counts = {}
 
@@ -1045,10 +1027,8 @@ def generate_interaction_counts(customers):
     return counts
 
 
-# ============================================================
-# Interaction type probabilities
-# ============================================================
-
+  # Interaction type probabilities
+  
 def get_interaction_type_weights(
     relevance,
 ):
@@ -1070,10 +1050,8 @@ def get_interaction_type_weights(
     ]
 
 
-# ============================================================
-# Interaction generation
-# ============================================================
-
+  # Interaction generation
+  
 def generate_interactions(
     customers_df,
     products_df,
@@ -1355,10 +1333,8 @@ def generate_interactions(
     )
 
 
-# ============================================================
-# Review generation
-# ============================================================
-
+  # Review generation
+  
 def generate_reviews(
     customers_df,
     products_df,
@@ -1550,10 +1526,8 @@ def generate_reviews(
     )
 
 
-# ============================================================
-# Main
-# ============================================================
-
+  # Main
+  
 def main():
     OUTPUT_DIR.mkdir(
         parents=True,

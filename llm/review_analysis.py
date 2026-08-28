@@ -3,10 +3,6 @@ import json
 from llm.client import generate_response
 
 
-# ============================================================
-# Build review analysis prompt
-# ============================================================
-
 def build_analysis_prompt(
     product_name,
     reviews,
@@ -61,12 +57,7 @@ Rules:
 """
 
     return prompt
-
-
-# ============================================================
-# Analyze reviews
-# ============================================================
-
+ 
 def analyze_reviews(
     product_name,
     reviews,
@@ -88,12 +79,7 @@ def analyze_reviews(
     return parse_analysis_response(
         response
     )
-
-
-# ============================================================
-# Parse LLM response
-# ============================================================
-
+ 
 def parse_analysis_response(
     response,
 ):

@@ -3,10 +3,8 @@ from pathlib import Path
 import pandas as pd
 
 
-# ============================================================
-# Configuration
-# ============================================================
-
+  # Configuration
+  
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 DATA_DIR = (
@@ -26,10 +24,8 @@ INTERACTION_WEIGHTS = {
 }
 
 
-# ============================================================
-# Recommendation Engine
-# ============================================================
-
+  # Recommendation Engine
+  
 class ProductRecommender:
 
     def __init__(
@@ -65,9 +61,9 @@ class ProductRecommender:
         self._load_data()
         self._prepare_features()
 
-    # ========================================================
+      
     # Load data
-    # ========================================================
+      
 
     def _load_data(self):
 
@@ -83,17 +79,17 @@ class ProductRecommender:
             self.interactions_path
         )
 
-    # ========================================================
+      
     # Prepare recommendation features
-    # ========================================================
+      
 
     def _prepare_features(self):
 
         interactions = self.interactions.copy()
 
-        # ----------------------------------------------------
+          
         # Validate required columns
-        # ----------------------------------------------------
+          
 
         required_interaction_columns = [
             "customer_id",
@@ -130,9 +126,9 @@ class ProductRecommender:
                 + ", ".join(missing_product_columns)
             )
 
-        # ----------------------------------------------------
+          
         # Add product category to interactions
-        # ----------------------------------------------------
+          
 
         product_categories = (
             self.products[
@@ -164,9 +160,9 @@ class ProductRecommender:
                 "could not be matched to a product category."
             )
 
-        # ----------------------------------------------------
+          
         # Interaction strength
-        # ----------------------------------------------------
+          
 
         interactions["interaction_weight"] = (
             interactions[
@@ -178,9 +174,9 @@ class ProductRecommender:
             .fillna(0)
         )
 
-        # ----------------------------------------------------
+          
         # Customer-category preference
-        # ----------------------------------------------------
+          
 
         category_scores = (
             interactions
@@ -220,9 +216,9 @@ class ProductRecommender:
             category_scores
         )
 
-        # ----------------------------------------------------
+          
         # Product popularity
-        # ----------------------------------------------------
+          
 
         popularity = (
             interactions
@@ -247,9 +243,9 @@ class ProductRecommender:
             popularity
         )
 
-        # ----------------------------------------------------
+          
         # Product ratings
-        # ----------------------------------------------------
+          
 
         if "rating" in interactions.columns:
 
@@ -277,9 +273,9 @@ class ProductRecommender:
                 )
             )
 
-    # ========================================================
+      
     # Get customer history
-    # ========================================================
+      
 
     def _get_customer_history(
         self,
@@ -293,9 +289,9 @@ class ProductRecommender:
             == customer_id
         ]
 
-    # ========================================================
+      
     # Score products
-    # ========================================================
+      
 
     def _score_products(
         self,
@@ -332,9 +328,9 @@ class ProductRecommender:
             self.products.copy()
         )
 
-        # ----------------------------------------------------
+          
         # Category affinity
-        # ----------------------------------------------------
+          
 
         products[
             "category_affinity"
@@ -344,9 +340,9 @@ class ProductRecommender:
             category_map
         ).fillna(0)
 
-        # ----------------------------------------------------
+          
         # Popularity
-        # ----------------------------------------------------
+          
 
         products[
             "popularity_score"
@@ -356,9 +352,9 @@ class ProductRecommender:
             self.product_popularity
         ).fillna(0)
 
-        # ----------------------------------------------------
+          
         # Rating
-        # ----------------------------------------------------
+          
 
         products[
             "rating_score"
@@ -377,9 +373,9 @@ class ProductRecommender:
             / 5.0
         )
 
-        # ----------------------------------------------------
+          
         # Combined recommendation score
-        # ----------------------------------------------------
+          
 
         products[
             "recommendation_score"
@@ -400,9 +396,9 @@ class ProductRecommender:
             ]
         )
 
-        # ----------------------------------------------------
+          
         # Remove products already seen
-        # ----------------------------------------------------
+          
 
         seen_products = set(
             history[
@@ -420,9 +416,9 @@ class ProductRecommender:
 
         return products
 
-    # ========================================================
+      
     # Recommend
-    # ========================================================
+      
 
     def recommend(
         self,
@@ -453,9 +449,9 @@ class ProductRecommender:
             )
         )
 
-        # ----------------------------------------------------
+          
         # Existing customer
-        # ----------------------------------------------------
+          
 
         if not history.empty:
 
@@ -465,9 +461,9 @@ class ProductRecommender:
                 )
             )
 
-        # ----------------------------------------------------
+          
         # Cold-start customer
-        # ----------------------------------------------------
+          
 
         else:
 
@@ -514,9 +510,9 @@ class ProductRecommender:
                 ]
             )
 
-        # ----------------------------------------------------
+          
         # Sort and select Top-N
-        # ----------------------------------------------------
+          
 
         recommendations = (
             recommendations

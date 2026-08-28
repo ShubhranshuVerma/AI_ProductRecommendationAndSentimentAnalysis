@@ -4,10 +4,8 @@ from dotenv import load_dotenv
 from google import genai
 
 
-# ============================================================
-# Environment configuration
-# ============================================================
-
+  # Environment configuration
+  
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv(
@@ -20,10 +18,8 @@ GEMINI_MODEL = os.getenv(
 )
 
 
-# ============================================================
-# Create Gemini client
-# ============================================================
-
+  # Create Gemini client
+  
 def create_client():
 
     if not GEMINI_API_KEY:
@@ -37,10 +33,8 @@ def create_client():
     )
 
 
-# ============================================================
-# Generate response
-# ============================================================
-
+  # Generate response
+  
 def generate_response(prompt):
 
     client = create_client()

@@ -42,10 +42,8 @@ ARTIFACT_DIR = Path(
 RANDOM_STATE = 42
 
 
-# ============================================================
-# Load data
-# ============================================================
-
+  # Load data
+  
 def load_data():
     train_df = pd.read_csv(
         DATA_DIR / "train.csv"
@@ -58,10 +56,8 @@ def load_data():
     return train_df, test_df
 
 
-# ============================================================
-# TF-IDF
-# ============================================================
-
+  # TF-IDF
+  
 def create_tfidf_features(X_train, X_test):
     vectorizer = FeatureUnion([
         ("word", TfidfVectorizer(lowercase=True, analyzer="word", ngram_range=(1, 3), min_df=2, max_df=0.95, sublinear_tf=True)),
@@ -72,10 +68,8 @@ def create_tfidf_features(X_train, X_test):
     return vectorizer, X_train_tfidf, X_test_tfidf
 
 
-# ============================================================
-# Candidate models
-# ============================================================
-
+  # Candidate models
+  
 def create_models():
     return {
         "logistic_regression": LogisticRegression(
@@ -196,10 +190,8 @@ def log_mlflow_run(
             f"MLflow run logged: {model_name}"
         )
 
-# ============================================================
-# Transformer evaluation
-# ============================================================
-
+  # Transformer evaluation
+  
 def evaluate_transformer(
     X_test,
     y_test,
@@ -307,10 +299,8 @@ def evaluate_transformer(
     )
 
     return metrics
-# ============================================================
-# Train and evaluate
-# ============================================================
-
+  # Train and evaluate
+  
 def train_and_evaluate(
     models,
     vectorizer,
@@ -501,10 +491,8 @@ def log_transformer_mlflow_run(
         )
 
 
-# ============================================================
-# Save comparison
-# ============================================================
-
+  # Save comparison
+  
 def save_comparison(results):
     ARTIFACT_DIR.mkdir(
         parents=True,
@@ -592,10 +580,8 @@ def save_comparison(results):
 
     return results_df
 
-# ============================================================
-# Main
-# ============================================================
-
+  # Main
+  
 def main():
 
     configure_mlflow()
@@ -669,10 +655,8 @@ def main():
         )
     )
 
-    # ========================================================
     # Transformer candidate
-    # ========================================================
-
+    
     transformer_metrics = evaluate_transformer(
         X_test,
         y_test,
